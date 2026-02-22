@@ -1,6 +1,6 @@
 # Chapitre 08 - Mecanismes de Persistance 🔁
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce chapitre est **strictement educatif** dans le cadre de CTF et labs de securite.
 > Les techniques de persistance sont etudiees pour que les **defenseurs sachent
 > ou chercher lors d'un incident response**. Le code fourni agit **uniquement
@@ -9,7 +9,7 @@
 
 ---
 
-## Concept 📖
+## Concept 
 
 La **persistance** consiste a faire en sorte qu'un programme soit **re-execute
 automatiquement** apres un reboot ou une reconnexion, sans que l'utilisateur
@@ -20,7 +20,7 @@ persistance ("persistence points") pour identifier si une compromission est touj
 
 ---
 
-## Schema ASCII - Timeline Boot → Login → Persistence Trigger 🏗️
+## Schema ASCII - Timeline Boot  Login  Persistence Trigger 
 
 ```
 MACHINE ALLUMEE
@@ -37,15 +37,15 @@ MACHINE ALLUMEE
 │     ▼                                                               │
 │  Kernel + init system (systemd / launchd)                           │
 │     │                                                               │
-│     ├──► Services systemd (Linux)  ◄── POINT DE PERSISTANCE #1      │
+│     ├── Services systemd (Linux)  ◄── POINT DE PERSISTANCE #1      │
 │     │    /etc/systemd/system/*.service                              │
 │     │    /usr/lib/systemd/system/*.service                          │
 │     │                                                               │
-│     ├──► Launch Daemons (macOS)    ◄── POINT DE PERSISTANCE #2      │
+│     ├── Launch Daemons (macOS)    ◄── POINT DE PERSISTANCE #2      │
 │     │    /Library/LaunchDaemons/*.plist                             │
 │     │    ~/Library/LaunchAgents/*.plist                             │
 │     │                                                               │
-│     └──► Cron daemon (crond)       ◄── POINT DE PERSISTANCE #3      │
+│     └── Cron daemon (crond)       ◄── POINT DE PERSISTANCE #3      │
 │          /etc/cron.d/                                               │
 │          /var/spool/cron/crontabs/                                  │
 └─────────────────────────────────────────────────────────────────────┘
@@ -56,14 +56,14 @@ MACHINE ALLUMEE
 │                                                                     │
 │  Shell de login                                                     │
 │     │                                                               │
-│     ├──► /etc/profile  (tous les users)                             │
-│     ├──► ~/.bash_profile ou ~/.zprofile  ◄── PERSISTANCE #4         │
+│     ├── /etc/profile  (tous les users)                             │
+│     ├── ~/.bash_profile ou ~/.zprofile  ◄── PERSISTANCE #4         │
 │     │                                                               │
 │  Shell interactif                                                   │
-│     ├──► ~/.bashrc ou ~/.zshrc       ◄── PERSISTANCE #5             │
+│     ├── ~/.bashrc ou ~/.zshrc       ◄── PERSISTANCE #5             │
 │     │                                                               │
 │  Interface graphique (si applicable)                                │
-│     └──► XDG Autostart : ~/.config/autostart/*.desktop  ◄── #6      │
+│     └── XDG Autostart : ~/.config/autostart/*.desktop  ◄── #6      │
 └─────────────────────────────────────────────────────────────────────┘
       │
       ▼
@@ -71,13 +71,13 @@ MACHINE ALLUMEE
 │  PHASE 3 : TRIGGERS DE PERSISTANCE                                  │
 │                                                                     │
 │  Cron job (* * * * * /chemin/payload)                               │
-│     └──► Execute TOUTES LES MINUTES (ou selon schedule)             │
+│     └── Execute TOUTES LES MINUTES (ou selon schedule)             │
 │                                                                     │
 │  .bashrc modifie                                                    │
-│     └──► Execute a CHAQUE ouverture de terminal                     │
+│     └── Execute a CHAQUE ouverture de terminal                     │
 │                                                                     │
 │  Service systemd (Type=simple, Restart=always)                      │
-│     └──► Execute au boot, REDEMARRAGE AUTOMATIQUE si crash          │
+│     └── Execute au boot, REDEMARRAGE AUTOMATIQUE si crash          │
 └─────────────────────────────────────────────────────────────────────┘
 
 
@@ -97,7 +97,7 @@ RESUME : OU CHERCHER EN INCIDENT RESPONSE
 
 ---
 
-## Methode 1 - Cron Jobs 💻
+## Methode 1 - Cron Jobs 
 
 ```bash
 # Voir la crontab actuelle
@@ -126,7 +126,7 @@ crontab -l
 
 ---
 
-## Methode 2 - Modification de .bashrc / .profile 💻
+## Methode 2 - Modification de .bashrc / .profile 
 
 ```cpp
 // Ajouter une ligne a la fin de ~/.bashrc
@@ -145,7 +145,7 @@ void addBashrcEntry(const std::string& command) {
 
 ---
 
-## Methode 3 - Service Systemd (Linux) 💻
+## Methode 3 - Service Systemd (Linux) 
 
 ```ini
 # /etc/systemd/system/my-service.service
@@ -174,7 +174,7 @@ systemctl status my-service
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Apres ce chapitre, tu dois savoir :
 - [ ] Les principaux points de persistance sur Linux et macOS

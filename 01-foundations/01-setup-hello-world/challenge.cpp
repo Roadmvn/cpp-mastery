@@ -17,7 +17,7 @@
 // Ca te montre comment fonctionne le phishing de terminal
 // et pourquoi il faut TOUJOURS verifier ce qu'on execute.
 //
-// ⚠️  Usage educatif uniquement.
+//   Usage educatif uniquement.
 // ============================================================
 
 #include <iostream>

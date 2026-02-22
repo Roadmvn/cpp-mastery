@@ -1,6 +1,6 @@
 /*
  * ============================================
- *  HEAP / PRIORITY QUEUE - Templates 🏔️
+ *  HEAP / PRIORITY QUEUE - Templates 🏔
  * ============================================
  *
  * 3 variantes principales :
@@ -18,7 +18,7 @@ using namespace std;
 // Template 1 : Kth Largest (min-heap de taille k)
 // ════════════════════════════════════════════
 // Utiliser quand : trouver le k-ieme plus grand/petit element
-// Cle : maintenir un min-heap de taille k → top() = k-ieme plus grand
+// Cle : maintenir un min-heap de taille k  top() = k-ieme plus grand
 
 class KthLargestTemplate {
 public:

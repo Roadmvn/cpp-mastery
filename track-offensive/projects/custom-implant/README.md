@@ -1,6 +1,6 @@
-# Projet : Custom Implant C2 (Simulation Educative) 🎓
+# Projet : Custom Implant C2 (Simulation Educative) 
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce projet est une **simulation educative** strictement limitee a localhost.
 > Il est concu pour comprendre les architectures C2 dans le cadre de :
 > - CTF (Capture The Flag)
@@ -16,7 +16,7 @@
 
 ---
 
-## Architecture 🏗️
+## Architecture 
 
 ```
 SIMULATION C2 EDUCATIVE (localhost uniquement)
@@ -33,25 +33,25 @@ SIMULATION C2 EDUCATIVE (localhost uniquement)
 │       │   TCP localhost:4444            │                   │
 │       │ ◄───────────────────────────── │ connect()         │
 │       │                                 │                   │
-│       │  "whoami\n"       ──────────── ►│                   │
+│       │  "whoami\n"       ──────────── │                   │
 │       │                                 │ popen("whoami")   │
-│       │                                 │ → "user\n"        │
+│       │                                 │  "user\n"        │
 │       │ ◄──────────────  "user\n"       │                   │
 │       │                                 │                   │
-│       │  "ls\n"           ──────────── ►│                   │
+│       │  "ls\n"           ──────────── │                   │
 │       │ ◄──────────────  "fichiers\n"   │                   │
 │       │                                 │                   │
-│       │  "exit\n"         ──────────── ►│ close()           │
+│       │  "exit\n"         ──────────── │ close()           │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 
 FLUX DE DONNEES :
-  Operateur tape cmd → Serveur envoie → Implant recoit → popen() → Resultat → Serveur affiche
+  Operateur tape cmd  Serveur envoie  Implant recoit  popen()  Resultat  Serveur affiche
 ```
 
 ---
 
-## Fichiers 📁
+## Fichiers 
 
 | Fichier     | Role                                                        |
 |-------------|-------------------------------------------------------------|
@@ -60,7 +60,7 @@ FLUX DE DONNEES :
 
 ---
 
-## Compilation 💻
+## Compilation 
 
 ```bash
 # Compiler l'implant
@@ -72,7 +72,7 @@ g++ -std=c++17 -o implant main.cpp
 
 ---
 
-## Utilisation (lab local) 🔬
+## Utilisation (lab local) 
 
 ### Methode 1 : avec netcat (simple)
 
@@ -105,24 +105,24 @@ g++ -std=c++17 -o server server.cpp && ./server
 
 ---
 
-## Commandes autorisees (whitelist) 📋
+## Commandes autorisees (whitelist) 
 
 ```
-whoami     → nom de l'utilisateur courant
-ls         → liste du repertoire courant
-pwd        → repertoire de travail courant
-id         → UID, GID et groupes
-hostname   → nom de la machine
-uname -a   → informations systeme
-date       → date et heure
-uptime     → temps depuis le boot
-help       → afficher la whitelist
-exit       → deconnexion propre
+whoami      nom de l'utilisateur courant
+ls          liste du repertoire courant
+pwd         repertoire de travail courant
+id          UID, GID et groupes
+hostname    nom de la machine
+uname -a    informations systeme
+date        date et heure
+uptime      temps depuis le boot
+help        afficher la whitelist
+exit        deconnexion propre
 ```
 
 ---
 
-## Concepts appris 🎓
+## Concepts appris 
 
 - Architecture client/serveur avec sockets TCP POSIX
 - `popen()` pour executer des commandes et capturer stdout

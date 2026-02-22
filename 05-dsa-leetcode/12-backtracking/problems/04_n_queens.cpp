@@ -32,9 +32,9 @@ using namespace std;
  *
  *  Attaques d'une reine en (r,c) :
  *  . . X . X . .
- *  . . . X . . .      ↖ ↑ ↗
- *  X . . Q . . X       ← Q →    (ligne = meme r)
- *  . . . X . . .      ↙ ↓ ↘
+ *  . . . X . . .      ↖  
+ *  X . . Q . . X        Q     (ligne = meme r)
+ *  . . . X . . .      ↙  
  *  . . X . X . .
  *
  * Complexite :
@@ -89,8 +89,8 @@ public:
  * Au lieu de scanner l'echiquier pour verifier les conflits,
  * on maintient 3 sets :
  *  - cols       : colonnes occupees
- *  - diag1      : diagonales ↘ (row - col = constante)
- *  - diag2      : diagonales ↗ (row + col = constante)
+ *  - diag1      : diagonales  (row - col = constante)
+ *  - diag2      : diagonales  (row + col = constante)
  *
  *  Visualisation des diagonales :
  *

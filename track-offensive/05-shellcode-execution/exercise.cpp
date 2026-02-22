@@ -49,9 +49,9 @@ void disassemble(const unsigned char* code, size_t len) {
     std::cout << "[*] Desassemblage simplifie :" << std::endl;
     // TON CODE ICI
     // Indice pour x86_64 :
-    // 48 31 ff       → xor rdi, rdi
-    // 48 c7 c0 XX... → mov rax, XX...
-    // 0f 05          → syscall
+    // 48 31 ff        xor rdi, rdi
+    // 48 c7 c0 XX...  mov rax, XX...
+    // 0f 05           syscall
 }
 
 int main() {

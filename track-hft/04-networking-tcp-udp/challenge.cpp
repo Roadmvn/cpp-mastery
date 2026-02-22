@@ -136,7 +136,7 @@ public:
         double sum = std::accumulate(latencies.begin(), latencies.end(), 0.0);
 
         std::cout << "\n╔══════════════════════════════════════════════════╗" << std::endl;
-        std::cout << "║  UDP MARKET DATA FEED STATISTICS 📊              ║" << std::endl;
+        std::cout << "║  UDP MARKET DATA FEED STATISTICS               ║" << std::endl;
         std::cout << "╚══════════════════════════════════════════════════╝" << std::endl;
 
         std::cout << std::fixed;
@@ -184,7 +184,7 @@ public:
 
 int main() {
     std::cout << "╔══════════════════════════════════════════════════╗" << std::endl;
-    std::cout << "║  UDP MARKET DATA FEED CHALLENGE 🌐              ║" << std::endl;
+    std::cout << "║  UDP MARKET DATA FEED CHALLENGE               ║" << std::endl;
     std::cout << "╚══════════════════════════════════════════════════╝" << std::endl;
 
     constexpr int PORT = 12350;

@@ -6,9 +6,9 @@
 // longue sous-sequence strictement croissante (pas forcément contiguë).
 //
 // Exemple :
-//   nums=[10,9,2,5,3,7,101,18] → 4  (2,3,7,101 ou 2,5,7,101)
-//   nums=[0,1,0,3,2,3]         → 4  (0,1,2,3 ou 0,1,3 ou ...)
-//   nums=[7,7,7,7]             → 1
+//   nums=[10,9,2,5,3,7,101,18]  4  (2,3,7,101 ou 2,5,7,101)
+//   nums=[0,1,0,3,2,3]          4  (0,1,2,3 ou 0,1,3 ou ...)
+//   nums=[7,7,7,7]              1
 //
 // Compile : g++ -std=c++17 04_longest_increasing_subsequence.cpp -o 04
 
@@ -53,10 +53,10 @@ int longestIncreasingSubsequenceBrute(vector<int>& nums) {
 //   │ dp │  1 │ 1 │ 1 │ 2 │ 2 │  3  │ 4  │  4 │
 //   └────┴────┴───┴───┴───┴───┴─────┴────┘
 //
-//   dp[3]=2 : nums[3]=5, nums[2]=2 < 5 → dp[3]=dp[2]+1=2
+//   dp[3]=2 : nums[3]=5, nums[2]=2 < 5  dp[3]=dp[2]+1=2
 //   dp[5]=3 : nums[5]=7 > nums[4]=3 (dp=2) et > nums[3]=5 (dp=2)
-//             → dp[5] = max(dp[3]+1, dp[4]+1) = 3
-//   dp[6]=4 : nums[6]=101 est plus grand que tout → dp[6]=max(dp[*])+1=4
+//              dp[5] = max(dp[3]+1, dp[4]+1) = 3
+//   dp[6]=4 : nums[6]=101 est plus grand que tout  dp[6]=max(dp[*])+1=4
 //
 //   Reponse : max(dp) = 4
 // -----------------------------------------------
@@ -92,13 +92,13 @@ int longestIncreasingSubsequenceDP(vector<int>& nums) {
 //
 // Exemple : nums = [10, 9, 2, 5, 3, 7, 101, 18]
 //   i=0: tails=[10]
-//   i=1: 9 remplace 10 → tails=[9]
-//   i=2: 2 remplace 9  → tails=[2]
-//   i=3: 5 > 2 → extend → tails=[2,5]
-//   i=4: 3 remplace 5  → tails=[2,3]
-//   i=5: 7 > 3 → extend → tails=[2,3,7]
-//   i=6: 101 > 7 → extend → tails=[2,3,7,101]
-//   i=7: 18 remplace 101 → tails=[2,3,7,18]
+//   i=1: 9 remplace 10  tails=[9]
+//   i=2: 2 remplace 9   tails=[2]
+//   i=3: 5 > 2  extend  tails=[2,5]
+//   i=4: 3 remplace 5   tails=[2,3]
+//   i=5: 7 > 3  extend  tails=[2,3,7]
+//   i=6: 101 > 7  extend  tails=[2,3,7,101]
+//   i=7: 18 remplace 101  tails=[2,3,7,18]
 //   len(tails) = 4
 // -----------------------------------------------
 int longestIncreasingSubsequenceUltra(vector<int>& nums) {

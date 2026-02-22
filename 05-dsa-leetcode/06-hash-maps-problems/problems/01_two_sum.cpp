@@ -43,10 +43,10 @@ vector<int> twoSumBrute(vector<int>& nums, int target) {
 //   nums   = [2, 7, 11, 15]  target = 9
 //
 //   i=0 : nums[0]=2, complement=7
-//          map={} → 7 absent → map={2:0}
+//          map={}  7 absent  map={2:0}
 //
 //   i=1 : nums[1]=7, complement=2
-//          map={2:0} → 2 PRESENT ! → return [map[2], 1] = [0, 1]
+//          map={2:0}  2 PRESENT !  return [map[2], 1] = [0, 1]
 //
 //   ┌────────────────────────────────────────┐
 //   │ map[valeur] = indice                   │

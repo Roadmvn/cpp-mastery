@@ -30,7 +30,7 @@ void partie1() {
 // Implemente des fonctions recursives qui operent sur un array
 
 // TODO: int sommeArray(const int arr[], int size)
-//       Cas de base : size == 0 → return 0
+//       Cas de base : size == 0  return 0
 //       Cas recursif : arr[size-1] + sommeArray(arr, size-1)
 
 // TODO: int maxArray(const int arr[], int size)
@@ -57,8 +57,8 @@ void partie2() {
 void partie3() {
     cout << "=== PARTIE 3 : Affichage recursif ===" << endl;
 
-    // TODO: countdown(5)  → 5 4 3 2 1
-    // TODO: countup(5)    → 1 2 3 4 5
+    // TODO: countdown(5)   5 4 3 2 1
+    // TODO: countup(5)     1 2 3 4 5
 
     cout << endl;
 }

@@ -1,6 +1,6 @@
-# Chapitre 02 - Enumeration de Processus 🔍
+# Chapitre 02 - Enumeration de Processus 
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce chapitre est **strictement educatif**. L'enumeration de processus est une technique
 > de base en administration systeme et en securite. Elle est utilisee legitimement par
 > les outils de monitoring, les EDR, et les outils de forensic.
@@ -8,7 +8,7 @@
 
 ---
 
-## Concept 📖
+## Concept 
 
 Chaque programme en cours d'execution est un **processus**. L'OS lui attribue :
 - Un **PID** (Process ID) : identifiant unique
@@ -17,7 +17,7 @@ Chaque programme en cours d'execution est un **processus**. L'OS lui attribue :
 - De la **memoire** : heap, stack, code, data
 - Des **descripteurs** : fichiers ouverts, sockets, etc.
 
-### Pourquoi c'est important en Red Team ? 🎯
+### Pourquoi c'est important en Red Team ? 
 
 L'enumeration de processus permet de :
 - **Identifier les defenses** : antivirus, EDR, monitoring en cours d'execution
@@ -27,7 +27,7 @@ L'enumeration de processus permet de :
 
 ---
 
-## Schema ASCII - Arbre de Processus 🌳
+## Schema ASCII - Arbre de Processus 
 
 ```
                         ┌─────────────┐
@@ -62,31 +62,31 @@ L'enumeration de processus permet de :
        └─────────────┘
 ```
 
-### Structure d'un Processus en Memoire 🧠
+### Structure d'un Processus en Memoire 
 
 ```
 ┌──────────────────────────────────┐  Adresses hautes
-│           STACK                   │  ← Variables locales, retours
-│           ↓ (grandit vers le bas)│
+│           STACK                   │   Variables locales, retours
+│            (grandit vers le bas)│
 ├──────────────────────────────────┤
 │                                  │
 │       (espace libre)             │
 │                                  │
 ├──────────────────────────────────┤
-│           ↑ (grandit vers haut)  │
-│           HEAP                   │  ← Allocations dynamiques (new/malloc)
+│            (grandit vers haut)  │
+│           HEAP                   │   Allocations dynamiques (new/malloc)
 ├──────────────────────────────────┤
-│           BSS                    │  ← Variables non initialisees
+│           BSS                    │   Variables non initialisees
 ├──────────────────────────────────┤
-│           DATA                   │  ← Variables initialisees
+│           DATA                   │   Variables initialisees
 ├──────────────────────────────────┤
-│           TEXT (CODE)            │  ← Instructions du programme
+│           TEXT (CODE)            │   Instructions du programme
 └──────────────────────────────────┘  Adresses basses
 ```
 
 ---
 
-## Methodes d'Enumeration par OS 🖥️
+## Methodes d'Enumeration par OS 
 
 ```
 ┌────────────┬─────────────────────────────────────────┐
@@ -105,7 +105,7 @@ L'enumeration de processus permet de :
 
 ---
 
-## Exemple - Enumeration Cross-Platform 💻
+## Exemple - Enumeration Cross-Platform 
 
 ```cpp
 #include <iostream>
@@ -179,7 +179,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Apres ce chapitre, tu dois savoir :
 - [ ] Ce qu'est un PID et un PPID, et comment ils forment un arbre

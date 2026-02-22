@@ -1,4 +1,4 @@
-# Typedef & Aliases 🏷️
+# Typedef & Aliases 
 
 ## Pourquoi c'est important
 
@@ -160,7 +160,7 @@ Ordre #100001 : 5 lots de ETH/USD a 3245.67 USD
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer aux exercices, assure-toi de savoir repondre :
 
@@ -175,4 +175,4 @@ Avant de passer aux exercices, assure-toi de savoir repondre :
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

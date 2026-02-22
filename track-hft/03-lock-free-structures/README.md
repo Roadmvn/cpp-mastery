@@ -1,6 +1,6 @@
 # Chapitre 03 - Lock-Free Structures 🔓
 
-## Pourquoi c'est critique en HFT ⚡
+## Pourquoi c'est critique en HFT 
 
 Un `std::mutex` coute **~25 ns** non-conteste, **~1000+ ns** sous contention. En HFT,
 le market data feed et le trading engine communiquent via des queues partagees.
@@ -41,7 +41,7 @@ LOCK-FREE (non-blocking):
   Aucun thread ne bloque JAMAIS l'autre
 ```
 
-## Compare-And-Swap (CAS) - L'operation fondamentale 🔧
+## Compare-And-Swap (CAS) - L'operation fondamentale 
 
 ```
 CAS = Compare And Swap (compare_exchange sur x86)
@@ -54,10 +54,10 @@ CAS = Compare And Swap (compare_exchange sur x86)
   │                                             │
   │  if (variable == expected) {                │
   │      variable = desired;   // swap!         │
-  │      return true;          // succes ✅     │
+  │      return true;          // succes      │
   │  } else {                                   │
   │      expected = variable;  // charge valeur │
-  │      return false;         // echec ❌      │
+  │      return false;         // echec       │
   │  }                                          │
   │                                             │
   └─────────────────────────────────────────────┘
@@ -68,14 +68,14 @@ CAS = Compare And Swap (compare_exchange sur x86)
      │                       │
      │  val = 5               │  val = 5
      │  expected = 5          │  expected = 5
-     │  CAS(5, 6) → true ✅  │
-     │  val = 6               │  CAS(5, 6) → false ❌
+     │  CAS(5, 6)  true   │
+     │  val = 6               │  CAS(5, 6)  false 
      │                       │  expected = 6 (mis a jour)
-     │                       │  CAS(6, 7) → true ✅ (retry)
+     │                       │  CAS(6, 7)  true  (retry)
      │                       │  val = 7
 ```
 
-## Memory Ordering - Les garanties 📋
+## Memory Ordering - Les garanties 
 
 ```
 Ordres du plus faible au plus fort:
@@ -95,14 +95,14 @@ Ordres du plus faible au plus fort:
   │   Producer   │                    │   Consumer   │
   │              │                    │              │
   │ data = 42;  │     release        │              │
-  │ flag.store  ├────────────────────►│ flag.load    │
+  │ flag.store  ├────────────────────│ flag.load    │
   │ (true,      │                    │ (acquire)    │
   │  release)   │     acquire        │ // data = 42 │
   │              │                    │ // garanti!  │
   └──────────────┘                    └──────────────┘
 ```
 
-## SPSC Lock-Free Queue 🚀
+## SPSC Lock-Free Queue 
 
 ```
 Single Producer Single Consumer - La structure HFT par excellence
@@ -133,12 +133,12 @@ Single Producer Single Consumer - La structure HFT par excellence
 
   Utilisation typique en HFT:
   ┌─────────┐    SPSC Queue    ┌─────────────┐
-  │ Network │ ───────────────► │   Strategy  │
+  │ Network │ ─────────────── │   Strategy  │
   │ Thread  │   market data    │   Thread    │
   └─────────┘                  └─────────────┘
 ```
 
-## Exemple concret 📈
+## Exemple concret 
 
 ```cpp
 #include <atomic>
@@ -171,7 +171,7 @@ public:
 };
 ```
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au chapitre suivant, tu dois savoir :
 - [ ] Pourquoi les mutex sont problematiques en HFT (contention, latence imprevisible)

@@ -1,16 +1,16 @@
-# Big O Complexity - Notation et Analyse 📊
+# Big O Complexity - Notation et Analyse 
 
-## C'est quoi Big O ? 🤔
+## C'est quoi Big O ? 
 
 Big O decrit comment le temps d'execution ou la memoire **grandit** quand l'input grandit.
 On s'interesse au **pire cas** et on ignore les constantes.
 
 ---
 
-## Tableau comparatif des complexites 📋
+## Tableau comparatif des complexites 
 
 ```
-Temps ↑
+Temps 
 |
 |                                                    * O(2^n)
 |                                                *
@@ -37,9 +37,9 @@ Temps ↑
 
 ---
 
-## Les complexites en detail 🔍
+## Les complexites en detail 
 
-### O(1) - Constant ⚡
+### O(1) - Constant 
 
 **Temps fixe**, peu importe la taille de l'input.
 
@@ -64,7 +64,7 @@ int getElement(vector<int>& arr, int i) {
 
 ---
 
-### O(log n) - Logarithmique 🌳
+### O(log n) - Logarithmique 
 
 A chaque etape, on **divise le probleme par 2**. Tres rapide meme pour des inputs enormes.
 
@@ -96,7 +96,7 @@ int binarySearch(vector<int>& arr, int target) {
 
 ---
 
-### O(n) - Lineaire 📏
+### O(n) - Lineaire 
 
 Le temps croit **proportionnellement** a l'input.
 
@@ -125,7 +125,7 @@ int findMax(vector<int>& arr) {
 
 ---
 
-### O(n log n) - Linearithmique 📊
+### O(n log n) - Linearithmique 
 
 Typique des **algorithmes de tri optimaux**. On divise ET on parcourt.
 
@@ -162,7 +162,7 @@ void mergeSort(vector<int>& arr, int l, int r) {
 n=10      -> 100 operations
 n=100     -> 10000 operations
 n=1000    -> 1000000 operations
-n=10000   -> 100000000 operations  ⚠️ LENT
+n=10000   -> 100000000 operations   LENT
 ```
 
 **Exemples concrets :**
@@ -185,15 +185,15 @@ vector<pair<int,int>> allPairs(vector<int>& arr) {
 
 ---
 
-### O(2^n) - Exponentielle 💥
+### O(2^n) - Exponentielle 
 
 Le temps **double** a chaque element ajoute. Explose tres vite.
 
 ```
 n=10  -> 1024 operations
 n=20  -> 1048576 operations
-n=30  -> 1073741824 operations  ⚠️ TRES LENT
-n=40  -> ~1 trillion  ☠️
+n=30  -> 1073741824 operations   TRES LENT
+n=40  -> ~1 trillion  
 ```
 
 **Exemples concrets :**
@@ -211,7 +211,7 @@ int fib(int n) {
 
 ---
 
-## Resume rapide 📝
+## Resume rapide 
 
 ```
 +------------+----------------+---------------------------+
@@ -226,7 +226,7 @@ int fib(int n) {
 +------------+----------------+---------------------------+
 ```
 
-## Regles pratiques pour identifier la complexite 🎯
+## Regles pratiques pour identifier la complexite 
 
 1. **Une boucle simple** sur n elements -> O(n)
 2. **Deux boucles imbriquees** -> O(n²)
@@ -237,7 +237,7 @@ int fib(int n) {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 - [ ] Tu sais classer O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2^n)
 - [ ] Tu identifies la complexite d'une boucle simple

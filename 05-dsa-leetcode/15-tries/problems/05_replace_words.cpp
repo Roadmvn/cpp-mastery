@@ -82,23 +82,23 @@ string replaceWordsBrute(vector<string>& dictionary, const string& sentence) {
 //   ROOT
 //   ├── [b]
 //   │   └── [a]
-//   │       └── [t]*   ← "bat"
+//   │       └── [t]*    "bat"
 //   ├── [c]
 //   │   └── [a]
-//   │       └── [t]*   ← "cat"
+//   │       └── [t]*    "cat"
 //   └── [r]
 //       └── [a]
-//           └── [t]*   ← "rat"
+//           └── [t]*    "rat"
 //
 //   Mot "cattle" :
-//   ROOT → [c] → [a] → [t]*  ← isEnd=true → retourner "cat" !
+//   ROOT  [c]  [a]  [t]*   isEnd=true  retourner "cat" !
 //   (on s'arrete des la premiere racine trouvee)
 //
 //   Mot "rattled" :
-//   ROOT → [r] → [a] → [t]*  ← isEnd=true → retourner "rat" !
+//   ROOT  [r]  [a]  [t]*   isEnd=true  retourner "rat" !
 //
 //   Mot "the" :
-//   ROOT → pas de [t] → retourner "the" (inchange)
+//   ROOT  pas de [t]  retourner "the" (inchange)
 // -----------------------------------------------
 struct TrieNode {
     TrieNode* children[26];
@@ -141,7 +141,7 @@ public:
             node = node->children[idx];
             if (node->isEnd) return node->root; // racine trouvee !
         }
-        return word; // aucune racine trouvee → retourner le mot original
+        return word; // aucune racine trouvee  retourner le mot original
     }
 };
 

@@ -123,8 +123,8 @@ int main() {
 
     cout << endl;
     cout << "--- Conclusions HFT ---" << endl;
-    cout << "1. Gros struct → TOUJOURS const& (economise des copies couteuses)" << endl;
-    cout << "2. Type primitif → par valeur (la ref ajoute une indirection inutile)" << endl;
+    cout << "1. Gros struct  TOUJOURS const& (economise des copies couteuses)" << endl;
+    cout << "2. Type primitif  par valeur (la ref ajoute une indirection inutile)" << endl;
     cout << "3. Seuil : au-dela de ~16 octets, const& devient avantageux" << endl;
     cout << "(result checksum: " << result << ")" << endl;
 

@@ -60,7 +60,7 @@ void partie3() {
     cout << "=== PARTIE 3 : Pointeurs en parametres ===" << endl;
 
     // TODO: Teste tripler() sur un int
-    // TODO: Teste ordonner() sur deux int (ex: 50 et 20 → 20 et 50)
+    // TODO: Teste ordonner() sur deux int (ex: 50 et 20  20 et 50)
 
     cout << endl;
 }

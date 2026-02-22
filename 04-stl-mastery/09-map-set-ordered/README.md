@@ -1,4 +1,4 @@
-# Map et Set ordonnes 🌳
+# Map et Set ordonnes 
 
 > Arbres rouge-noir — ordre garanti, O(log n) partout, puissants pour les range queries
 
@@ -106,7 +106,7 @@ for (auto it = lo; it != hi; ++it) {
 
 ---
 
-## Patterns LeetCode avec set ordonne 🏆
+## Patterns LeetCode avec set ordonne 
 
 ### Sliding window minimum/maximum
 
@@ -171,7 +171,7 @@ ms.erase(1);           // supprimer TOUTES les occurrences de 1
 
 ---
 
-## Complexites a retenir 📋
+## Complexites a retenir 
 
 | Operation               | map/set  | unordered_map/set |
 |------------------------|----------|-------------------|
@@ -182,7 +182,7 @@ ms.erase(1);           // supprimer TOUTES les occurrences de 1
 
 ---
 
-## Quand utiliser map/set ordonne 🎯
+## Quand utiliser map/set ordonne 
 
 | Signal dans l'enonce                        | Pattern                         |
 |--------------------------------------------|---------------------------------|

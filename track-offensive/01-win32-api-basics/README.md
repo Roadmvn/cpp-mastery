@@ -1,6 +1,6 @@
-# Chapitre 01 - APIs Systeme : Comment l'OS Expose ses Fonctions 🔧
+# Chapitre 01 - APIs Systeme : Comment l'OS Expose ses Fonctions 
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce chapitre est **strictement educatif**. Il explique comment les systemes d'exploitation
 > exposent leurs fonctions internes via des APIs. Ces connaissances sont essentielles pour
 > la comprehension defensive, les CTF, et les labs de securite autorises.
@@ -8,13 +8,13 @@
 
 ---
 
-## Concept 📖
+## Concept 
 
 Un systeme d'exploitation est une couche entre les programmes et le hardware.
 Les programmes **ne peuvent pas** acceder directement au hardware : ils doivent
 **demander a l'OS** via des **appels systeme** (syscalls).
 
-### Pourquoi c'est important en Red Team ? 🎯
+### Pourquoi c'est important en Red Team ? 
 
 En securite offensive, comprendre les APIs systeme permet de :
 - Savoir **quelles informations** un programme peut collecter sur un systeme
@@ -24,7 +24,7 @@ En securite offensive, comprendre les APIs systeme permet de :
 
 ---
 
-## Schema ASCII - Architecture des Appels Systeme 🏗️
+## Schema ASCII - Architecture des Appels Systeme 
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -46,7 +46,7 @@ En securite offensive, comprendre les APIs systeme permet de :
 │  ┌─────────────────────────────────────────────────────────┐    │
 │  │              INTERFACE SYSCALL                            │    │
 │  │   Linux: int 0x80 / syscall      macOS: syscall           │    │
-│  │   Windows: ntdll.dll → sysenter                           │    │
+│  │   Windows: ntdll.dll  sysenter                           │    │
 │  └──────────────────────┬──────────────────────────────────┘    │
 │                         │                                        │
 ╠═════════════════════════╪════════════════════════════════════════╣
@@ -66,7 +66,7 @@ En securite offensive, comprendre les APIs systeme permet de :
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Comparaison Windows vs Unix 🔄
+### Comparaison Windows vs Unix 
 
 ```
 ┌─────────────────────────┬──────────────────────────────┐
@@ -87,7 +87,7 @@ En securite offensive, comprendre les APIs systeme permet de :
 
 ---
 
-## Exemple - Wrapper Cross-Platform 💻
+## Exemple - Wrapper Cross-Platform 
 
 ```cpp
 #include <iostream>
@@ -193,7 +193,7 @@ g++ -std=c++17 -o api_basics example.cpp
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Apres ce chapitre, tu dois savoir :
 - [ ] Ce qu'est un syscall et pourquoi les programmes ne touchent pas le hardware directement

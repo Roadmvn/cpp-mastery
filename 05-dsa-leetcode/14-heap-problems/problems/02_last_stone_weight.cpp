@@ -1,6 +1,6 @@
 /*
  * ============================================
- *  LeetCode #1046 - Last Stone Weight (Easy) 🏔️
+ *  LeetCode #1046 - Last Stone Weight (Easy) 🏔
  * ============================================
  *  Lien : https://leetcode.com/problems/last-stone-weight/
  *
@@ -14,10 +14,10 @@
  *  Exemple :
  *  Input:  stones = [2,7,4,1,8,1]
  *  Output: 1
- *  Trace : [2,7,4,1,8,1] → 8 vs 7 → [2,4,1,1,1] → 4 vs 2 → [1,1,2]
- *          → 2 vs 1 → [1,1] → 1 vs 1 → [0] → resultat = 1... wait
- *          [2,7,4,1,8,1] → 8,7→1 [2,4,1,1,1] → 4,2→2 [1,1,2]
- *          → 2,1→1 [1,1] → 1,1→0 [] → 1 (la derniere)
+ *  Trace : [2,7,4,1,8,1]  8 vs 7  [2,4,1,1,1]  4 vs 2  [1,1,2]
+ *           2 vs 1  [1,1]  1 vs 1  [0]  resultat = 1... wait
+ *          [2,7,4,1,8,1]  8,71 [2,4,1,1,1]  4,22 [1,1,2]
+ *           2,11 [1,1]  1,10 []  1 (la derniere)
  *
  *  Contraintes :
  *  - 1 <= stones.length <= 30
@@ -66,10 +66,10 @@ public:
  *
  *  Max-heap initial : [8, 7, 4, 2, 1, 1]
  *
- *  Tour 1: pop 8, pop 7 → push 1    heap: [4, 2, 1, 1, 1]
- *  Tour 2: pop 4, pop 2 → push 2    heap: [2, 1, 1, 1]
- *  Tour 3: pop 2, pop 1 → push 1    heap: [1, 1, 1]
- *  Tour 4: pop 1, pop 1 → rien      heap: [1]
+ *  Tour 1: pop 8, pop 7  push 1    heap: [4, 2, 1, 1, 1]
+ *  Tour 2: pop 4, pop 2  push 2    heap: [2, 1, 1, 1]
+ *  Tour 3: pop 2, pop 1  push 1    heap: [1, 1, 1]
+ *  Tour 4: pop 1, pop 1  rien      heap: [1]
  *
  *  Resultat : 1
  *

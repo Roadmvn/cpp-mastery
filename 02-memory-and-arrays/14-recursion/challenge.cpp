@@ -32,22 +32,22 @@ int binarySearch(const int arr[], int left, int right, int target) {
     Binary Search recursif sur [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     Cherche 70 :
 
-    Etape 1 : left=0, right=9, mid=4 → arr[4]=50 < 70 → cherche a droite
+    Etape 1 : left=0, right=9, mid=4  arr[4]=50 < 70  cherche a droite
     ┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
     │ 10 │ 20 │ 30 │ 40 │ 50 │ 60 │ 70 │ 80 │ 90 │100│
     └────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
-                          mid ↑     ←─── cherche ici ──→
+                          mid      ─── cherche ici ──
 
-    Etape 2 : left=5, right=9, mid=7 → arr[7]=80 > 70 → cherche a gauche
+    Etape 2 : left=5, right=9, mid=7  arr[7]=80 > 70  cherche a gauche
     ┌────┬────┬────┬────┬────┐
     │ 60 │ 70 │ 80 │ 90 │100│
     └────┴────┴────┴────┴────┘
-              mid ↑
-         ←ici
+              mid 
+         ici
 
-    Etape 3 : left=5, right=6, mid=5 → arr[5]=60 < 70 → cherche a droite
+    Etape 3 : left=5, right=6, mid=5  arr[5]=60 < 70  cherche a droite
 
-    Etape 4 : left=6, right=6, mid=6 → arr[6]=70 == 70 → TROUVE !
+    Etape 4 : left=6, right=6, mid=6  arr[6]=70 == 70  TROUVE !
 */
 
 // ============================================================
@@ -92,10 +92,10 @@ long long fibMemo(int n) {
 /*
     Avec memoization, chaque fib(k) est calcule UNE SEULE FOIS :
 
-    fib(5) → calcule fib(4), fib(3)
-    fib(4) → calcule fib(3), fib(2)
-    fib(3) → CACHE ! (deja calcule par fib(4))
-    fib(2) → CACHE !
+    fib(5)  calcule fib(4), fib(3)
+    fib(4)  calcule fib(3), fib(2)
+    fib(3)  CACHE ! (deja calcule par fib(4))
+    fib(2)  CACHE !
 
     Total : 5 calculs au lieu de 15
 */

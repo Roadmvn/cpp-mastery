@@ -1,10 +1,10 @@
 # Chapitre 09 - Classes Abstraites et Interfaces 🎨
 
-## Concept fondamental 🎯
+## Concept fondamental 
 
 Une **classe abstraite** est une classe qui ne peut pas etre instanciee. Elle contient au moins une **fonction virtuelle pure** (= 0). Elle sert de contrat : les classes derivees DOIVENT implementer les methodes pures.
 
-## Fonction virtuelle pure 📝
+## Fonction virtuelle pure 
 
 ```cpp
 class Forme {
@@ -17,7 +17,7 @@ public:
 // Forme f;  // ERREUR : ne peut pas instancier une classe abstraite
 ```
 
-## Interface pattern 📋
+## Interface pattern 
 
 En C++, une **interface** est une classe abstraite avec uniquement des methodes pure virtual (pas de donnees) :
 
@@ -36,7 +36,7 @@ public:
 };
 ```
 
-## Classe abstraite vs Interface 🔍
+## Classe abstraite vs Interface 
 
 ```
 Classe abstraite                Interface (convention C++)
@@ -49,7 +49,7 @@ Classe abstraite                Interface (convention C++)
   "Base commune avec code"        "Contrat pur"
 ```
 
-## Implementation concrete 🔧
+## Implementation concrete 
 
 ```cpp
 class Cercle : public Forme {
@@ -70,7 +70,7 @@ public:
 
 Si une derivee n'implemente pas TOUTES les methodes pure virtual, elle est aussi abstraite.
 
-## Pourquoi c'est utile ? 💡
+## Pourquoi c'est utile ? 
 
 ```
 1. CONTRAT : Force les derivees a implementer les methodes critiques
@@ -84,7 +84,7 @@ void traiter(const ISerializable& obj) {
 }
 ```
 
-## Classe abstraite avec methodes implementees ⚡
+## Classe abstraite avec methodes implementees 
 
 ```cpp
 class Logger {
@@ -98,7 +98,7 @@ public:
 };
 ```
 
-## Bonnes pratiques 💡
+## Bonnes pratiques 
 
 1. Utiliser des interfaces pour definir des **contrats**
 2. Prefixer les interfaces par `I` (ISerializable, IComparable)

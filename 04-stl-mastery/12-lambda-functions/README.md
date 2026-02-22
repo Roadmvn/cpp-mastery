@@ -1,4 +1,4 @@
-# Lambdas et fonctions d'ordre superieur 🎛️
+# Lambdas et fonctions d'ordre superieur 🎛
 
 > Fonctions anonymes a la volee — le sucre syntaxique le plus puissant de C++11
 
@@ -42,7 +42,7 @@ CAPTURE PAR VALEUR [x] :
 │          la creation de la lambda        │
 │                  │                       │
 │          [x]{ return x + 1; }           │
-│               ↑                          │
+│                                         │
 │          x copie = 10 (immutable)        │
 │          Modifier x ici = ERREUR         │
 │          (sauf si mutable)               │
@@ -56,7 +56,7 @@ CAPTURE PAR REFERENCE [&x] :
 │          (acces en lecture/ecriture)     │
 │                  │                       │
 │          [&x]{ x++; }                   │
-│               ↑                          │
+│                                         │
 │          x original modifie !            │
 │          ATTENTION : duree de vie !      │
 │          Si lambda outlive x => UB       │
@@ -148,7 +148,7 @@ int prod = accumulate(v.begin(), v.end(), 1,
 
 ---
 
-## Patterns LeetCode avec lambdas 🏆
+## Patterns LeetCode avec lambdas 
 
 ### Trier des structures complexes
 
@@ -185,7 +185,7 @@ function<int(int)> fib = [&](int n) -> int {
 
 ---
 
-## Complexites a retenir 📋
+## Complexites a retenir 
 
 | Usage                         | Overhead lambda  | Notes                          |
 |------------------------------|------------------|--------------------------------|
@@ -197,7 +197,7 @@ function<int(int)> fib = [&](int n) -> int {
 
 ---
 
-## Quand utiliser les lambdas 🎯
+## Quand utiliser les lambdas 
 
 | Besoin                                    | Solution                              |
 |------------------------------------------|---------------------------------------|

@@ -15,13 +15,13 @@ triés par prix et par priorité temps (FIFO).
     │                                               │
     │  Prix     │ Volume │ Ordres                   │
     │  ─────────┼────────┼──────────────────────── │
-    │  100.50   │  3000  │ [500@t3][1500@t1][1000@t4] │  ← best ask
+    │  100.50   │  3000  │ [500@t3][1500@t1][1000@t4] │   best ask
     │  100.40   │  2000  │ [2000@t2]                │
     │  100.30   │  5000  │ [2000@t1][3000@t5]       │
     │                                               │
     │  ─────── SPREAD = 100.30 - 100.20 = 0.10 ─── │
     │                                               │
-    │  100.20   │  4000  │ [4000@t1]                │  ← best bid
+    │  100.20   │  4000  │ [4000@t1]                │   best bid
     │  100.10   │  1500  │ [500@t2][1000@t3]        │
     │  100.00   │  8000  │ [3000@t1][5000@t4]       │
     │                                               │
@@ -42,7 +42,7 @@ Order Book:
 │  PriceLevel:                                                     │
 │  ┌────────────────────────────────────┐                          │
 │  │  total_volume: int                 │                          │
-│  │  orders: std::deque<Order>         │  ← FIFO par niveau      │
+│  │  orders: std::deque<Order>         │   FIFO par niveau      │
 │  └────────────────────────────────────┘                          │
 │                                                                  │
 │  Order:                                                          │
@@ -65,15 +65,15 @@ Matching engine: quand un ordre arrive, on le matche contre le book opposé.
 
   ASKS disponibles:
   ┌──────────────────────────────────────────────┐
-  │ 100.30 → [1000@t1][500@t2][2000@t3]          │ ← meilleur ask ≤ 100.30
-  │ 100.40 → [2000@t4]                           │
+  │ 100.30  [1000@t1][500@t2][2000@t3]          │  meilleur ask ≤ 100.30
+  │ 100.40  [2000@t4]                           │
   └──────────────────────────────────────────────┘
 
   Matching:
-  1. ask 100.30, ordre t1: qty=1000 → trade 1000 @ 100.30  (reste: 2000)
-  2. ask 100.30, ordre t2: qty=500  → trade  500 @ 100.30  (reste: 1500)
-  3. ask 100.30, ordre t3: qty=2000 → trade 1500 @ 100.30  (ordre partiellement rempli)
-     → order t3 reste dans le book avec qty=500
+  1. ask 100.30, ordre t1: qty=1000  trade 1000 @ 100.30  (reste: 2000)
+  2. ask 100.30, ordre t2: qty=500   trade  500 @ 100.30  (reste: 1500)
+  3. ask 100.30, ordre t3: qty=2000  trade 1500 @ 100.30  (ordre partiellement rempli)
+      order t3 reste dans le book avec qty=500
 
   FIFO = premier entré, premier servi POUR UN MÊME PRIX.
 ```
@@ -112,7 +112,7 @@ std::map (arbre équilibré):           Price Ladder (array):
   │99.5 │                              index = (price - price_min) / tick
   ├──┬──┤
   │  │  │                              Array: [0][1][2]...[200]
-  99.0 100.0                                   ↑              ↑
+  99.0 100.0                                                 
    └──┘  └──┘                             99.00             101.00
 
   En production HFT: price ladder pour les 20 meilleurs niveaux,

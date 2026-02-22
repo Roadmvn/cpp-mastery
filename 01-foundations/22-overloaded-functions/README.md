@@ -98,7 +98,7 @@ format("Prix", 150.258);    // "Prix: 150.26"
 
 ---
 
-## Attention aux ambiguites ⚠️
+## Attention aux ambiguites 
 
 ```cpp
 void f(int x);
@@ -114,7 +114,7 @@ Si le compilateur ne peut pas decider, il te donnera une erreur d'ambiguite.
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Qu'est-ce que la surcharge de fonctions ?**
    > Plusieurs fonctions avec le meme nom mais des signatures differentes (types/nombre de parametres).
@@ -127,4 +127,4 @@ Si le compilateur ne peut pas decider, il te donnera une erreur d'ambiguite.
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

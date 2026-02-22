@@ -54,18 +54,18 @@ vector<int> dailyTemperaturesBrute(vector<int>& temperatures) {
 //   indices      :   0   1   2   3   4   5   6   7
 //
 //   i=0: pile=[0]               temp[0]=73
-//   i=1: 74>73 → pop 0, ans[0]=1-0=1, pile=[1]
-//   i=2: 75>74 → pop 1, ans[1]=2-1=1, pile=[2]
+//   i=1: 74>73  pop 0, ans[0]=1-0=1, pile=[1]
+//   i=2: 75>74  pop 1, ans[1]=2-1=1, pile=[2]
 //   i=3: 71<75, pile=[2,3]
 //   i=4: 69<71, pile=[2,3,4]
-//   i=5: 72>69 → pop 4, ans[4]=5-4=1
-//         72>71 → pop 3, ans[3]=5-3=2
+//   i=5: 72>69  pop 4, ans[4]=5-4=1
+//         72>71  pop 3, ans[3]=5-3=2
 //         72<75, pile=[2,5]
-//   i=6: 76>72 → pop 5, ans[5]=6-5=1
-//         76>75 → pop 2, ans[2]=6-2=4
+//   i=6: 76>72  pop 5, ans[5]=6-5=1
+//         76>75  pop 2, ans[2]=6-2=4
 //         pile=[], empiler 6, pile=[6]
 //   i=7: 73<76, pile=[6,7]
-//   Fin : pile=[6,7] → ans[6]=ans[7]=0 (deja 0 par defaut)
+//   Fin : pile=[6,7]  ans[6]=ans[7]=0 (deja 0 par defaut)
 //
 //   Resultat : [1,1,4,2,1,1,0,0]
 // -----------------------------------------------

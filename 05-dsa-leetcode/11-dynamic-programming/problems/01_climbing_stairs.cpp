@@ -7,8 +7,8 @@
 // peux-tu atteindre le sommet ?
 //
 // Exemple :
-//   n=2 → 2  (1+1 | 2)
-//   n=3 → 3  (1+1+1 | 1+2 | 2+1)
+//   n=2  2  (1+1 | 2)
+//   n=3  3  (1+1+1 | 1+2 | 2+1)
 //
 // Compile : g++ -std=c++17 01_climbing_stairs.cpp -o 01
 
@@ -25,12 +25,12 @@ using namespace std;
 //   climb(4)
 //   ├── climb(3)      (+1 marche)
 //   │   ├── climb(2)  (+1)
-//   │   │   ├── climb(1) → 1 facon
-//   │   │   └── climb(0) → 1 facon
-//   │   └── climb(1)  (+2) → 1 facon
+//   │   │   ├── climb(1)  1 facon
+//   │   │   └── climb(0)  1 facon
+//   │   └── climb(1)  (+2)  1 facon
 //   └── climb(2)      (+2 marche)
-//       ├── climb(1) → 1 facon
-//       └── climb(0) → 1 facon
+//       ├── climb(1)  1 facon
+//       └── climb(0)  1 facon
 //   Total : 5 facons
 // -----------------------------------------------
 int climbStairsBrute(int n) {
@@ -86,12 +86,12 @@ int main() {
 
     for (int n : {1, 2, 3, 4, 5, 10, 20}) {
         memo.clear();
-        cout << "n=" << n << " → ";
+        cout << "n=" << n << "  ";
         cout << "Brute=" << climbStairsBrute(n);
         cout << " | TopDown=" << climbStairsTopDown(n);
         cout << " | Optimal=" << climbStairsOptimal(n) << endl;
     }
-    // n=1 → 1 | n=2 → 2 | n=3 → 3 | n=4 → 5 | n=5 → 8
+    // n=1  1 | n=2  2 | n=3  3 | n=4  5 | n=5  8
 
     cout << "\nComplexite Brute   : O(2^n) temps | O(n) espace" << endl;
     cout << "Complexite TopDown : O(n)   temps | O(n) espace" << endl;

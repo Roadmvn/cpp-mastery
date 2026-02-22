@@ -15,7 +15,7 @@ std::string s = "Hello";
 
 Stack (objet string)            Heap (donnees)
 ┌──────────────────┐            ┌───┬───┬───┬───┬───┬────┐
-│ _data  ──────────┼───────────→│ H │ e │ l │ l │ o │ \0 │
+│ _data  ──────────┼───────────│ H │ e │ l │ l │ o │ \0 │
 │ _size   = 5      │            └───┴───┴───┴───┴───┴────┘
 │ _capacity = 15   │                 (caracteres contigus)
 └──────────────────┘
@@ -25,7 +25,7 @@ Pour les strings courtes (< ~22 chars selon l'implementation),
 les donnees sont stockees DANS l'objet, pas sur la heap.
 
 ┌────────────────────────────┐
-│ H │ e │ l │ l │ o │\0│ ...│  ← directement dans le stack
+│ H │ e │ l │ l │ o │\0│ ...│   directement dans le stack
 │ _size = 5                  │     pas d'allocation heap !
 └────────────────────────────┘
 ```
@@ -128,7 +128,7 @@ int idx = c - 'a';   // position dans l'alphabet (0-25)
 
 ---
 
-## Patterns LeetCode avec les strings 🏆
+## Patterns LeetCode avec les strings 
 
 ### Reverse d'une string (Two Pointers)
 ```cpp
@@ -172,7 +172,7 @@ int lengthOfLongestSubstring(string s) {
 
 ---
 
-## Complexites a retenir 📋
+## Complexites a retenir 
 
 | Operation        | Complexite |
 |-----------------|------------|
@@ -186,7 +186,7 @@ int lengthOfLongestSubstring(string s) {
 
 ---
 
-## Quand utiliser quoi en LeetCode 🎯
+## Quand utiliser quoi en LeetCode 
 
 | Besoin                          | Outil                      |
 |---------------------------------|----------------------------|

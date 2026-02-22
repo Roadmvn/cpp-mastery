@@ -1,12 +1,12 @@
-# Chapitre 01 - Cache Optimization 🔥
+# Chapitre 01 - Cache Optimization 
 
-## Pourquoi c'est critique en HFT ⚡
+## Pourquoi c'est critique en HFT 
 
 En HFT, chaque **nanoseconde** compte. La difference entre lire depuis le cache L1 et la RAM,
 c'est un facteur **~100x**. Un code qui provoque des **cache misses** perd la course avant meme
 de commencer. Les meilleurs systemes HFT sont designes autour du cache, pas autour de la logique.
 
-## Hierarchie memoire - Latences reelles 📊
+## Hierarchie memoire - Latences reelles 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -38,7 +38,7 @@ de commencer. Les meilleurs systemes HFT sont designes autour du cache, pas auto
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## Cache Line - L'unite fondamentale 📦
+## Cache Line - L'unite fondamentale 
 
 Le CPU ne lit **jamais** un seul octet. Il charge toujours une **cache line** de **64 octets**.
 
@@ -59,10 +59,10 @@ Adresse memoire:  0x1000  0x1040  0x1080  0x10C0
                  └──────┘
 ```
 
-## Data Locality - Sequentiel vs Random 🎯
+## Data Locality - Sequentiel vs Random 
 
 ```
-ACCES SEQUENTIEL (cache-friendly) ✅          ACCES RANDOM (cache-hostile) ❌
+ACCES SEQUENTIEL (cache-friendly)           ACCES RANDOM (cache-hostile) 
 ┌───┬───┬───┬───┬───┬───┬───┬───┐           ┌───┬───┬───┬───┬───┬───┬───┬───┐
 │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │           │   │   │ 3 │   │   │ 1 │   │ 2 │
 └─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┘           └───┴───┴─┬─┴───┴───┴─┬─┴───┴─┬─┘
@@ -72,7 +72,7 @@ ACCES SEQUENTIEL (cache-friendly) ✅          ACCES RANDOM (cache-hostile) ❌
   7 hits gratuits apres 1 miss!             Latence x100 a chaque saut
 ```
 
-## Struct Padding & Alignment 🧱
+## Struct Padding & Alignment 
 
 Le compilateur ajoute du **padding** pour aligner les membres. Ca gaspille de la memoire
 et ca peut causer des cache misses supplementaires.
@@ -94,7 +94,7 @@ Layout memoire:                             Layout memoire:
      3 lignes potentielles                       2 lignes max = plus compact
 ```
 
-## alignas - Forcer l'alignement 🔧
+## alignas - Forcer l'alignement 
 
 ```cpp
 // Force la struct a etre alignee sur une cache line
@@ -113,7 +113,7 @@ struct alignas(64) PerThreadCounter {
 };
 ```
 
-## Prefetching 🚀
+## Prefetching 
 
 Dire au CPU de charger une donnee en cache **avant** d'en avoir besoin.
 
@@ -125,7 +125,7 @@ for (int i = 0; i < N; i++) {
 }
 ```
 
-## Exemple concret - Impact mesurable 📈
+## Exemple concret - Impact mesurable 
 
 ```cpp
 #include <iostream>
@@ -177,7 +177,7 @@ int main() {
 }
 ```
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au chapitre suivant, tu dois savoir :
 - [ ] Pourquoi le CPU charge des cache lines de 64 bytes et pas des bytes individuels

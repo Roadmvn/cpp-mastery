@@ -1,13 +1,13 @@
 # Stacks & Queues - Pattern 📚
 
-## C'est quoi Stack et Queue ? 🤔
+## C'est quoi Stack et Queue ? 
 
 - **Stack** (pile) : LIFO - Last In, First Out. Le dernier entre, le premier sort.
 - **Queue** (file) : FIFO - First In, First Out. Le premier entre, le premier sort.
 
 ---
 
-## Schema ASCII 📐
+## Schema ASCII 
 
 ### Stack (LIFO) :
 
@@ -60,7 +60,7 @@
 
 ---
 
-## Quand utiliser Stacks/Queues ? 🎯
+## Quand utiliser Stacks/Queues ? 
 
 **Stack :**
 - Parentheses matching / validation
@@ -76,7 +76,7 @@
 
 ---
 
-## Template de code 💻
+## Template de code 
 
 ```cpp
 // Stack classique
@@ -105,7 +105,7 @@ vector<int> nextGreater(vector<int>& nums) {
 
 ---
 
-## Complexite typique 📊
+## Complexite typique 
 
 | Operation     | Stack  | Queue  |
 |---------------|--------|--------|
@@ -116,7 +116,7 @@ vector<int> nextGreater(vector<int>& nums) {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 - [ ] Tu sais quand utiliser une stack vs une queue
 - [ ] Tu comprends le pattern monotonic stack

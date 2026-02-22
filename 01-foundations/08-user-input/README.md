@@ -1,4 +1,4 @@
-# Saisie Utilisateur 📝
+# Saisie Utilisateur 
 
 ## Pourquoi c'est important
 
@@ -46,7 +46,7 @@ std::getline(std::cin, phrase);  // Lit toute la ligne, espaces inclus
 
 ---
 
-## Le piege cin + getline 🪤
+## Le piege cin + getline 
 
 ```
   Buffer apres cin >> age (tu tapes "25\n")
@@ -151,7 +151,7 @@ AAPL x 100 @ 178.5 = 17850 USD
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Quelle est la difference entre `cin >>` et `getline()` ?**
    > `cin >>` lit jusqu'au premier espace ou retour a la ligne. `getline()` lit toute la ligne, espaces inclus.

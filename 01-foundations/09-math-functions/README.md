@@ -1,4 +1,4 @@
-# Fonctions Mathematiques 📐
+# Fonctions Mathematiques 
 
 ## Pourquoi c'est important
 
@@ -146,7 +146,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Quelle est la difference entre `round(3.5)`, `ceil(3.5)` et `floor(3.5)` ?**
    > `round(3.5) = 4` (au plus proche), `ceil(3.5) = 4` (superieur), `floor(3.5) = 3` (inferieur).

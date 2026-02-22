@@ -1,4 +1,4 @@
-# Vectors 🧱
+# Vectors 
 
 > Le conteneur le plus important de C++
 
@@ -25,7 +25,7 @@ Array C classique :
 
 Vector C++ :
 ┌───┬───┬───┐
-│ 1 │ 2 │ 3 │ ← ← ← ←  Grandit automatiquement
+│ 1 │ 2 │ 3 │      Grandit automatiquement
 └───┴───┴───┘            Connait sa taille (3)
  vector<int> v = {1,2,3};
 ```
@@ -79,7 +79,7 @@ vector<int> v5(v2.begin(), v2.begin() + 3);  // {1, 2, 3}
 
 ---
 
-## Size vs Capacity — CRUCIAL pour la perf 🔥
+## Size vs Capacity — CRUCIAL pour la perf 
 
 C'est LA distinction que 90% des devs C++ ne comprennent pas.
 
@@ -93,7 +93,7 @@ Exemple apres push_back de 5 elements :
               ┌─────────────────┐
               v                 v
 ┌───┬───┬───┬───┬───┬───┬───┬───┐
-│ 1 │ 2 │ 3 │ 4 │ 5 │   │   │   │  ← memoire allouee
+│ 1 │ 2 │ 3 │ 4 │ 5 │   │   │   │   memoire allouee
 └───┴───┴───┴───┴───┴───┴───┴───┘
                           ^       ^
                           └───────┘
@@ -108,9 +108,9 @@ AVANT : capacity = 4, size = 4 (PLEIN)
 ┌───┬───┬───┬───┐
 │ A │ B │ C │ D │
 └───┴───┴───┴───┘
-        ↓
+        
    push_back('E')
-        ↓
+        
 ETAPE 1 : Allouer un nouveau bloc 2x plus grand
 ┌───┬───┬───┬───┬───┬───┬───┬───┐
 │   │   │   │   │   │   │   │   │  (nouveau bloc, capacity = 8)
@@ -118,7 +118,7 @@ ETAPE 1 : Allouer un nouveau bloc 2x plus grand
 
 ETAPE 2 : Copier tous les elements
 ┌───┬───┬───┬───┬───┬───┬───┬───┐
-│ A │ B │ C │ D │   │   │   │   │  ← copie de l'ancien bloc
+│ A │ B │ C │ D │   │   │   │   │   copie de l'ancien bloc
 └───┴───┴───┴───┴───┴───┴───┴───┘
 
 ETAPE 3 : Ajouter le nouvel element
@@ -128,7 +128,7 @@ ETAPE 3 : Ajouter le nouvel element
 
 ETAPE 4 : Liberer l'ancien bloc
 ┌───┬───┬───┬───┐
-│ X │ X │ X │ X │  ← FREE (memoire rendue au systeme)
+│ X │ X │ X │ X │   FREE (memoire rendue au systeme)
 └───┴───┴───┴───┘
 ```
 
@@ -158,11 +158,11 @@ std::vector<int> v = {10, 20, 30};
 
 Stack (objet vector)          Heap (donnees)
 ┌──────────────────┐          ┌────┬────┬────┬────┐
-│ _begin  ──────────┼────────→│ 10 │ 20 │ 30 │    │
+│ _begin  ──────────┼────────│ 10 │ 20 │ 30 │    │
 │ _size   = 3      │          └────┴────┴────┴────┘
-│ _capacity = 4    │                ↑         ↑
+│ _capacity = 4    │                         
 └──────────────────┘           _begin    _begin + size
-                                         _begin + capacity ──→ ┘
+                                         _begin + capacity ── ┘
 
 Quand le vector est detruit (sort du scope),
 il appelle delete[] sur le pointeur _begin

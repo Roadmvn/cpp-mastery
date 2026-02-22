@@ -9,9 +9,9 @@
 // lettres en minuscules et retire tous les caracteres non-alphanumeriques,
 // elle se lit de la meme facon de gauche a droite et de droite a gauche.
 //
-// Exemple 1 : "A man, a plan, a canal: Panama" → true
-// Exemple 2 : "race a car" → false
-// Exemple 3 : " " → true (vide apres nettoyage = palindrome)
+// Exemple 1 : "A man, a plan, a canal: Panama"  true
+// Exemple 2 : "race a car"  false
+// Exemple 3 : " "  true (vide apres nettoyage = palindrome)
 //
 // Contraintes :
 // - 1 <= s.length <= 2 * 10^5

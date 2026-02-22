@@ -237,7 +237,7 @@ int main() {
     std::cout << "  ~" << stress_us * 1000 / 100000 << " ns/operation\n";
 
     std::cout << "\n╔══════════════════════════════════════════════════════╗" << std::endl;
-    std::cout << "║  En HFT, JAMAIS de new/delete sur le hot path 🔥     ║" << std::endl;
+    std::cout << "║  En HFT, JAMAIS de new/delete sur le hot path      ║" << std::endl;
     std::cout << "║  Pool pour alloc/dealloc individuels                  ║" << std::endl;
     std::cout << "║  Arena pour batch processing (reset par frame)        ║" << std::endl;
     std::cout << "╚══════════════════════════════════════════════════════╝" << std::endl;

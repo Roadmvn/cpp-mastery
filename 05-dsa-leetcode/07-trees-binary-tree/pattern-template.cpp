@@ -1,5 +1,5 @@
 // ============================================
-// PATTERN : Arbre Binaire - Templates 🌳
+// PATTERN : Arbre Binaire - Templates 
 // ============================================
 // Squelettes copier-coller pour arbres binaires
 // Compile : g++ -std=c++17 -o pattern pattern-template.cpp

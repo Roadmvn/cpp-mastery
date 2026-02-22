@@ -1,4 +1,4 @@
-# Unordered Set 🎯
+# Unordered Set 
 
 > Hash set — existence en O(1), zero doublons
 
@@ -15,11 +15,11 @@ unordered_set<int> s = {10, 20, 30, 40};
 
 Hash Table interne (meme structure que unordered_map, sans valeurs) :
 ┌─────┬──────────────────┐
-│ [0] │ → null           │
-│ [1] │ → (20) → null   │
-│ [2] │ → (10) → null   │
-│ [3] │ → (30) → (40) → null  │  ← collision
-│ [4] │ → null           │
+│ [0] │  null           │
+│ [1] │  (20)  null   │
+│ [2] │  (10)  null   │
+│ [3] │  (30)  (40)  null  │   collision
+│ [4] │  null           │
 │ ... │                  │
 └─────┴──────────────────┘
 
@@ -80,7 +80,7 @@ Map = "quelle est la valeur associee a X ?"
 
 ---
 
-## Patterns LeetCode avec Set 🏆
+## Patterns LeetCode avec Set 
 
 ### Detecter des doublons
 ```cpp
@@ -127,7 +127,7 @@ int longestConsecutive(vector<int>& nums) {
 
 ---
 
-## Quand utiliser unordered_set 🎯
+## Quand utiliser unordered_set 
 
 | Besoin                              | Utiliser          |
 |-------------------------------------|-------------------|

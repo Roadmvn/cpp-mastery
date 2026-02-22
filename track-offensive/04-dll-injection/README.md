@@ -1,6 +1,6 @@
 # Chapitre 04 - Injection de Bibliotheques Dynamiques (dlopen/dlsym) 📚
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce chapitre est **strictement educatif**. Le chargement dynamique de bibliotheques
 > est une technique de developpement standard, aussi utilisee en securite pour comprendre
 > comment du code peut etre charge dans un processus a la volee.
@@ -8,7 +8,7 @@
 
 ---
 
-## Concept 📖
+## Concept 
 
 Les bibliotheques dynamiques (.so sur Linux, .dylib sur macOS, .dll sur Windows) sont
 des fichiers contenant du code executable **charge au runtime** plutot qu'a la compilation.
@@ -17,7 +17,7 @@ des fichiers contenant du code executable **charge au runtime** plutot qu'a la c
 - **Liaison dynamique** : le code est charge en memoire a l'execution
 - **Chargement explicite** : le programme decide LUI-MEME quand charger une lib (dlopen)
 
-### Pourquoi c'est important en Red Team ? 🎯
+### Pourquoi c'est important en Red Team ? 
 
 L'injection de DLL/shared library permet de :
 - **Charger du code** dans un processus en cours d'execution
@@ -27,7 +27,7 @@ L'injection de DLL/shared library permet de :
 
 ---
 
-## Schema ASCII - Chargement Dynamique 🏗️
+## Schema ASCII - Chargement Dynamique 
 
 ### Liaison Statique vs Dynamique
 
@@ -101,7 +101,7 @@ LIAISON STATIQUE                     LIAISON DYNAMIQUE
 
 ---
 
-## Exemple - Plugin System avec dlopen 💻
+## Exemple - Plugin System avec dlopen 
 
 ### Etape 1 : La shared library (plugin)
 
@@ -200,7 +200,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Apres ce chapitre, tu dois savoir :
 - [ ] La difference entre liaison statique et dynamique

@@ -1,10 +1,10 @@
 # Chapitre 04 - Constructeurs et Destructeurs 🔨
 
-## Concept fondamental 🎯
+## Concept fondamental 
 
 Un **constructeur** est une methode speciale appelee automatiquement a la creation d'un objet. Un **destructeur** est appele automatiquement a sa destruction. Ils garantissent qu'un objet est toujours dans un etat valide.
 
-## Types de constructeurs 📝
+## Types de constructeurs 
 
 ### Constructeur par defaut
 
@@ -31,7 +31,7 @@ Timer t(60);      // 60 secondes
 Timer t2{120};    // Initialisation uniforme (prefere)
 ```
 
-### Liste d'initialisation vs corps ⚡
+### Liste d'initialisation vs corps 
 
 ```cpp
 class Personne {
@@ -79,7 +79,7 @@ public:
 };
 ```
 
-## Destructeur 💀
+## Destructeur 
 
 ```cpp
 class Fichier {
@@ -98,7 +98,7 @@ public:
 // Le fichier est ferme automatiquement quand l'objet sort du scope
 ```
 
-## Quand les destructeurs sont appeles 🔄
+## Quand les destructeurs sont appeles 
 
 ```
 {
@@ -125,7 +125,7 @@ public:
 };
 ```
 
-## Bonnes pratiques 💡
+## Bonnes pratiques 
 
 1. **Toujours** utiliser la liste d'initialisation
 2. Initialiser les membres dans l'ordre de declaration

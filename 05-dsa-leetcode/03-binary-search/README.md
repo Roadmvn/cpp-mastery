@@ -1,13 +1,13 @@
-# Binary Search - Pattern 🔍
+# Binary Search - Pattern 
 
-## C'est quoi le Binary Search ? 🤔
+## C'est quoi le Binary Search ? 
 
 Le binary search divise l'espace de recherche **par 2** a chaque etape.
 Au lieu de chercher lineairement en O(n), on trouve en O(log n).
 
 ---
 
-## Schema ASCII 📐
+## Schema ASCII 
 
 ### Binary Search classique sur array trie :
 
@@ -51,7 +51,7 @@ On binary search sur la reponse :
 
 ---
 
-## Quand utiliser le Binary Search ? 🎯
+## Quand utiliser le Binary Search ? 
 
 - Array **trie** (ou espace de recherche monotone)
 - On cherche un element, une position, ou une valeur optimale
@@ -60,7 +60,7 @@ On binary search sur la reponse :
 
 ---
 
-## Template de code 💻
+## Template de code 
 
 ### Recherche exacte :
 ```cpp
@@ -103,7 +103,7 @@ int searchOnAnswer(int lo, int hi) {
 
 ---
 
-## Complexite typique 📊
+## Complexite typique 
 
 | Approche      | Temps     | Espace |
 |---------------|-----------|--------|
@@ -112,7 +112,7 @@ int searchOnAnswer(int lo, int hi) {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 - [ ] Tu sais ecrire un binary search sans bug (lo <= hi vs lo < hi)
 - [ ] Tu sais calculer mid sans overflow : `lo + (hi - lo) / 2`

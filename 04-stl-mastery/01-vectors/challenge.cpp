@@ -26,8 +26,8 @@ using namespace std;
 // les elements qui ne sont pas egaux a val.
 //
 // Exemple :
-// nums = [3,2,2,3], val = 3  →  k=2, nums = [2,2,...]
-// nums = [0,1,2,2,3,0,4,2], val = 2  →  k=5, nums = [0,1,3,0,4,...]
+// nums = [3,2,2,3], val = 3    k=2, nums = [2,2,...]
+// nums = [0,1,2,2,3,0,4,2], val = 2    k=5, nums = [0,1,3,0,4,...]
 //
 // Contrainte : modifier nums in-place, pas de vector supplementaire
 //
@@ -58,8 +58,8 @@ int removeElement(vector<int>& nums, int val) {
 // Retourne le nombre d'elements uniques (k).
 //
 // Exemple :
-// nums = [1,1,2]  →  k=2, nums = [1,2,...]
-// nums = [0,0,1,1,1,2,2,3,3,4]  →  k=5, nums = [0,1,2,3,4,...]
+// nums = [1,1,2]    k=2, nums = [1,2,...]
+// nums = [0,0,1,1,1,2,2,3,3,4]    k=5, nums = [0,1,2,3,4,...]
 //
 // Contrainte : le vector est DEJA TRIE. Modifier in-place.
 //

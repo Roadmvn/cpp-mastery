@@ -115,7 +115,7 @@ C'est utile pour parcourir un tableau des deux bouts (ex: verifier si un mot est
 
 ---
 
-## for vs while 📋
+## for vs while 
 
 ```
   Situation                    -->  Boucle
@@ -128,7 +128,7 @@ C'est utile pour parcourir un tableau des deux bouts (ex: verifier si un mot est
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Quels sont les 3 composants d'un for classique ?**
    > Initialisation, condition, increment -- separes par des points-virgules.
@@ -141,4 +141,4 @@ C'est utile pour parcourir un tableau des deux bouts (ex: verifier si un mot est
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

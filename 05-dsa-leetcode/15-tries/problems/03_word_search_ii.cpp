@@ -80,23 +80,23 @@ vector<string> findWordsBrute(vector<vector<char>>& board, vector<string>& words
 //     ROOT
 //     ├── [e]
 //     │   └── [a]
-//     │       └── [t]*   ← "eat"
+//     │       └── [t]*    "eat"
 //     └── [o]
 //         └── [a]
 //             └── [t]
-//                 └── [h]*  ← "oath"
+//                 └── [h]*   "oath"
 //
 //   DFS depuis board[1][0]='e' :
-//   'e' → noeud [e] dans trie
-//     voisin (1,1)='t' → pas dans enfants de [e]
-//     voisin (0,0)='o' → pas dans enfants de [e]
-//     voisin (1,2)='a' → dans enfants de [e] !
-//       'a' → noeud [a]
-//         voisin (1,3)='e' → pas dans enfants de [a]
-//         voisin (0,2)='a' → pas dans enfants de [a]
-//         voisin (2,2)='k' → pas dans enfants de [a]
-//         voisin (1,1)='t' → dans enfants de [a] !
-//           't' → noeud [t], isEnd=true → "eat" TROUVE !
+//   'e'  noeud [e] dans trie
+//     voisin (1,1)='t'  pas dans enfants de [e]
+//     voisin (0,0)='o'  pas dans enfants de [e]
+//     voisin (1,2)='a'  dans enfants de [e] !
+//       'a'  noeud [a]
+//         voisin (1,3)='e'  pas dans enfants de [a]
+//         voisin (0,2)='a'  pas dans enfants de [a]
+//         voisin (2,2)='k'  pas dans enfants de [a]
+//         voisin (1,1)='t'  dans enfants de [a] !
+//           't'  noeud [t], isEnd=true  "eat" TROUVE !
 // -----------------------------------------------
 struct TrieNode {
     TrieNode* children[26];

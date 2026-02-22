@@ -1,4 +1,4 @@
-# Mini-Projet : Jeu de Devinette 🎲
+# Mini-Projet : Jeu de Devinette 
 
 ## Description
 

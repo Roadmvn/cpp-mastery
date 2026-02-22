@@ -1,10 +1,10 @@
 # Chapitre 08 - Polymorphisme et Fonctions Virtual 🎭
 
-## Concept fondamental 🎯
+## Concept fondamental 
 
 Le **polymorphisme** permet d'appeler la bonne methode selon le type reel de l'objet, meme a travers un pointeur ou une reference vers la classe de base. C'est rendu possible par le mot-cle `virtual`.
 
-## Le probleme sans virtual ❌
+## Le probleme sans virtual 
 
 ```cpp
 class Animal {
@@ -21,7 +21,7 @@ Animal* a = new Chien();
 a->parler();   // Affiche "..." et PAS "Woof!" -> MAUVAIS
 ```
 
-## La solution : virtual ✅
+## La solution : virtual 
 
 ```cpp
 class Animal {
@@ -39,7 +39,7 @@ Animal* a = new Chien();
 a->parler();   // Affiche "Woof!" -> CORRECT (late binding)
 ```
 
-## Comment ca marche : vtable et vptr 🧠
+## Comment ca marche : vtable et vptr 
 
 ```
 Chaque classe avec virtual a une vtable (table de fonctions virtuelles).
@@ -68,7 +68,7 @@ Quand on fait a->parler() :
 3. Appeler la bonne version -> LATE BINDING
 ```
 
-## override (C++11) - Securite 🛡️
+## override (C++11) - Securite 
 
 ```cpp
 class Base {
@@ -104,7 +104,7 @@ class SousDerivee : public Derivee {
 };
 ```
 
-## Destructeur virtuel : OBLIGATOIRE ⚠️
+## Destructeur virtuel : OBLIGATOIRE 
 
 ```cpp
 class Base {
@@ -115,7 +115,7 @@ public:
 
 Sans destructeur virtuel, `delete base_ptr` ne detruit pas la partie derivee -> fuite memoire.
 
-## Cout du polymorphisme 💰
+## Cout du polymorphisme 
 
 ```
 Appel normal (compile-time) :     Appel virtual (runtime) :
@@ -129,7 +129,7 @@ Appel normal (compile-time) :     Appel virtual (runtime) :
 
 En HFT, on evite le virtual dans le hot path. En code normal, le cout est negligeable.
 
-## Bonnes pratiques 💡
+## Bonnes pratiques 
 
 1. Si une methode est surchargee dans une derivee : la marquer `virtual` dans la base
 2. **Toujours** utiliser `override` dans les classes derivees

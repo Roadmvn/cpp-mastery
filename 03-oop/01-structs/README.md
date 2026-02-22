@@ -1,10 +1,10 @@
-# Chapitre 01 - Les Structures (struct) en C++ 🏗️
+# Chapitre 01 - Les Structures (struct) en C++ 
 
-## Concept fondamental 🎯
+## Concept fondamental 
 
 Une **struct** est un type de donnees compose qui regroupe plusieurs variables (membres) sous un meme nom. C'est la brique de base de la programmation orientee objet en C++.
 
-## Declaration et utilisation 📝
+## Declaration et utilisation 
 
 ```cpp
 struct Point {
@@ -20,7 +20,7 @@ Point p2 = {1.0, 2.0};   // Initialisation agregate
 Point p3{5.0, 10.0};     // Initialisation uniforme (C++11)
 ```
 
-## Representation en memoire 🧠
+## Representation en memoire 
 
 ```
 +------------------+
@@ -32,7 +32,7 @@ Point p3{5.0, 10.0};     // Initialisation uniforme (C++11)
   Total: 16 bytes
 ```
 
-## Struct avec methodes 🔧
+## Struct avec methodes 
 
 En C++, contrairement au C, les structs peuvent avoir des methodes :
 
@@ -51,7 +51,7 @@ struct Rectangle {
 };
 ```
 
-## Struct vs Class - La vraie difference ⚡
+## Struct vs Class - La vraie difference 
 
 | Aspect | struct | class |
 |--------|--------|-------|
@@ -79,7 +79,7 @@ Config c1;           // port=8080, host="localhost", debug=false
 Config c2{9090};     // port=9090, host="localhost", debug=false
 ```
 
-## Struct imbriquees 📦
+## Struct imbriquees 
 
 ```cpp
 struct Adresse {
@@ -95,7 +95,7 @@ struct Personne {
 };
 ```
 
-## Passage par reference vs copie ⚠️
+## Passage par reference vs copie 
 
 ```cpp
 void modifier(Point& p) {    // Par reference - modifie l'original
@@ -107,7 +107,7 @@ void afficher(const Point& p) {  // Par const ref - lecture seule, pas de copie
 }
 ```
 
-## Bonnes pratiques 💡
+## Bonnes pratiques 
 
 1. Utiliser `struct` pour les types simples (donnees groupees)
 2. Toujours passer les structs par **const reference** si pas de modification

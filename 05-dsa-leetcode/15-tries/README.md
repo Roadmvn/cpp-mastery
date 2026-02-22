@@ -1,6 +1,6 @@
 # 15 - Tries (Prefix Trees) 🌲
 
-## C'est quoi un Trie ? 🤔
+## C'est quoi un Trie ? 
 
 Un trie (prononce "try") est un **arbre de prefixes** ou chaque noeud represente
 un **caractere**. Les chemins de la racine aux noeuds forment des mots ou prefixes.
@@ -10,7 +10,7 @@ un **caractere**. Les chemins de la racine aux noeuds forment des mots ou prefix
 
 ---
 
-## Quand l'utiliser ? 🎯
+## Quand l'utiliser ? 
 
 - **Recherche de prefixes** (autocompletion, dictionnaire)
 - **Verification de mots** dans un dictionnaire
@@ -20,7 +20,7 @@ un **caractere**. Les chemins de la racine aux noeuds forment des mots ou prefix
 
 ---
 
-## Schema ASCII - Trie avec mots inseres 🌳
+## Schema ASCII - Trie avec mots inseres 
 
 ```
     Insertion des mots : "cat", "car", "card", "dog", "do"
@@ -31,7 +31,7 @@ un **caractere**. Les chemins de la racine aux noeuds forment des mots ou prefix
                       |      |
                      [a]    [o]
                     /   \    |  \
-                  [t]*  [r]* [g]* ← * = fin de mot (isEnd=true)
+                  [t]*  [r]* [g]*  * = fin de mot (isEnd=true)
                          |
                         [d]*
 
@@ -41,16 +41,16 @@ un **caractere**. Les chemins de la racine aux noeuds forment des mots ou prefix
     Recherche du mot "car" :
     ═══════════════════════════════════════════════
 
-    ROOT → 'c' existe ? OUI
-            → 'a' existe ? OUI
-              → 'r' existe ? OUI, et isEnd=true → TROUVE ✓
+    ROOT  'c' existe ? OUI
+             'a' existe ? OUI
+               'r' existe ? OUI, et isEnd=true  TROUVE 
 
     Recherche du prefixe "ca" :
-    ROOT → 'c' → 'a' → noeud existe → PREFIXE VALIDE ✓
+    ROOT  'c'  'a'  noeud existe  PREFIXE VALIDE 
     (peu importe isEnd)
 
     Recherche du mot "can" :
-    ROOT → 'c' → 'a' → 'n' existe ? NON → PAS TROUVE ✗
+    ROOT  'c'  'a'  'n' existe ? NON  PAS TROUVE 
 
     ═══════════════════════════════════════════════
     Structure interne d'un noeud :
@@ -71,7 +71,7 @@ un **caractere**. Les chemins de la racine aux noeuds forment des mots ou prefix
 
 ---
 
-## Le pattern general 📐
+## Le pattern general 
 
 ```
 struct TrieNode {
@@ -103,7 +103,7 @@ startsWith(prefix):
 
 ---
 
-## Comparaison avec d'autres structures 📊
+## Comparaison avec d'autres structures 
 
 | Operation | Trie | Hash Set | Tableau trie |
 |-----------|------|----------|-------------|
@@ -116,7 +116,7 @@ L = longueur du mot, N = nombre de mots, SIGMA = taille alphabet
 
 ---
 
-## Complexite typique ⏱️
+## Complexite typique 
 
 | Operation | Temps | Espace |
 |-----------|-------|--------|
@@ -127,7 +127,7 @@ L = longueur du mot, N = nombre de mots, SIGMA = taille alphabet
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au pattern suivant, tu dois pouvoir :
 - [ ] Implementer un Trie from scratch (insert, search, startsWith)

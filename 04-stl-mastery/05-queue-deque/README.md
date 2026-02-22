@@ -44,7 +44,7 @@ En interne, deque utilise des blocs de memoire :
 │ bloc 0  │   │ bloc 1  │   │ bloc 2  │
 │ [a][b]  │   │ [c][d]  │   │ [e][f]  │
 └─────────┘   └─────────┘   └─────────┘
-     ↑              ↑              ↑
+                                 
      └──────────────┼──────────────┘
               map de pointeurs
          (acces O(1) par index)
@@ -80,7 +80,7 @@ En interne, deque utilise des blocs de memoire :
 
 ---
 
-## BFS avec queue — Le pattern fondamental 🏆
+## BFS avec queue — Le pattern fondamental 
 
 ```cpp
 #include <queue>
@@ -123,7 +123,7 @@ int bfs(vector<vector<int>>& grid, pair<int,int> start, pair<int,int> end) {
 
 ---
 
-## Quand utiliser queue vs deque 🎯
+## Quand utiliser queue vs deque 
 
 | Besoin                                | Utiliser           |
 |---------------------------------------|-------------------|

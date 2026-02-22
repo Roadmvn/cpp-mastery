@@ -11,7 +11,7 @@
  *
  *  Exemple :
  *  Input:  hand = [1,2,3,6,2,3,4,7,8], groupSize = 3
- *  Output: true → [1,2,3], [2,3,4], [6,7,8]
+ *  Output: true  [1,2,3], [2,3,4], [6,7,8]
  *
  *  Contraintes :
  *  - 1 <= hand.length <= 10^4
@@ -83,7 +83,7 @@ public:
  *  Map: {6:1, 7:1, 8:1}
  *
  *  Iteration 3: start=6, groupe [6,7,8]
- *  Map: {} → true
+ *  Map: {}  true
  *
  * Complexite :
  *  - Temps  : O(n log n) - operations sur la map

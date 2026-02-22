@@ -40,8 +40,8 @@ using namespace std;
  *  A D E E
  *
  *  Recherche "ABCCED" :
- *  A → B → C → C → E → D ✓
- *       ↓   ↓   ↓   ↓
+ *  A  B  C  C  E  D 
+ *                
  *     droite bas bas gauche
  *
  * Complexite :
@@ -99,11 +99,11 @@ public:
  *
  *  Mot = "SEE"
  *  A B C E          On ne demarre le DFS que
- *  S F C S   →      depuis les cellules 'S'
+ *  S F C S         depuis les cellules 'S'
  *  A D E E          (2 cellules au lieu de 12)
  *
- *  Depuis S(1,0) : S→? F≠E ✗
- *  Depuis S(1,3) : S→E(2,3)→E(2,2) ✓
+ *  Depuis S(1,0) : S? F≠E 
+ *  Depuis S(1,3) : SE(2,3)E(2,2) 
  *
  * Complexite :
  *  - Temps  : O(m * n * 3^L) - 3 au lieu de 4 car on ne revient pas

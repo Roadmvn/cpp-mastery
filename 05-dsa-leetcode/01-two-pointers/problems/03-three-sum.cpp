@@ -10,9 +10,9 @@
 // et nums[i] + nums[j] + nums[k] == 0.
 // La solution NE DOIT PAS contenir de triplets en double.
 //
-// Exemple 1 : nums = [-1,0,1,2,-1,-4] → [[-1,-1,2],[-1,0,1]]
-// Exemple 2 : nums = [0,1,1] → []
-// Exemple 3 : nums = [0,0,0] → [[0,0,0]]
+// Exemple 1 : nums = [-1,0,1,2,-1,-4]  [[-1,-1,2],[-1,0,1]]
+// Exemple 2 : nums = [0,1,1]  []
+// Exemple 3 : nums = [0,0,0]  [[0,0,0]]
 //
 // Contraintes :
 // - 3 <= nums.length <= 3000

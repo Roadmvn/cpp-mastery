@@ -7,8 +7,8 @@
 // Retourner le maximum que tu peux voler.
 //
 // Exemple :
-//   nums=[1,2,3,1] → 4 (voler maisons 0 et 2 : 1+3)
-//   nums=[2,7,9,3,1] → 12 (voler maisons 0,2,4 : 2+9+1)
+//   nums=[1,2,3,1]  4 (voler maisons 0 et 2 : 1+3)
+//   nums=[2,7,9,3,1]  12 (voler maisons 0,2,4 : 2+9+1)
 //
 // Compile : g++ -std=c++17 02_house_robber.cpp -o 02
 
@@ -66,7 +66,7 @@ int robMemo(const vector<int>& nums, int i) {
 //   dp[1] = max(dp[0], nums[1]) = max(2, 7) = 7
 //   dp[2] = max(dp[1], dp[0]+nums[2]) = max(7, 2+9) = 11
 //   dp[3] = max(dp[2], dp[1]+nums[3]) = max(11, 7+3) = 11
-//   dp[4] = max(dp[3], dp[2]+nums[4]) = max(11, 11+1) = 12  ← reponse
+//   dp[4] = max(dp[3], dp[2]+nums[4]) = max(11, 11+1) = 12   reponse
 //
 //   Maisons volees : 0 (2) + 2 (9) + 4 (1) = 12
 // -----------------------------------------------

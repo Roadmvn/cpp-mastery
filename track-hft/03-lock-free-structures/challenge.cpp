@@ -200,7 +200,7 @@ int main() {
     }
 
     std::cout << "\n╔══════════════════════════════════════════════════════╗" << std::endl;
-    std::cout << "║  En HFT, la SPSC queue lock-free est la norme 🚀     ║" << std::endl;
+    std::cout << "║  En HFT, la SPSC queue lock-free est la norme      ║" << std::endl;
     std::cout << "║  Mutex = contention = latence imprevisible           ║" << std::endl;
     std::cout << "║  Lock-free = deterministe = victoire                 ║" << std::endl;
     std::cout << "╚══════════════════════════════════════════════════════╝" << std::endl;

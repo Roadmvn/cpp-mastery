@@ -33,10 +33,10 @@ using namespace std;
  *
  *  Exemple : nums = [1,2,3], n=3, 2^3 = 8 masques
  *
- *  mask=000 → []        mask=100 → [3]
- *  mask=001 → [1]       mask=101 → [1,3]
- *  mask=010 → [2]       mask=110 → [2,3]
- *  mask=011 → [1,2]     mask=111 → [1,2,3]
+ *  mask=000  []        mask=100  [3]
+ *  mask=001  [1]       mask=101  [1,3]
+ *  mask=010  [2]       mask=110  [2,3]
+ *  mask=011  [1,2]     mask=111  [1,2,3]
  *
  * Complexite :
  *  - Temps  : O(n * 2^n) - 2^n sous-ensembles, n pour construire chacun

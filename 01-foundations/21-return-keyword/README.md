@@ -1,4 +1,4 @@
-# Le Mot-Cle Return ↩️
+# Le Mot-Cle Return ↩
 
 ## Pourquoi c'est important
 
@@ -54,7 +54,7 @@ void process(int x) {
 
 ---
 
-## Early Return (retour anticipe) 🎯
+## Early Return (retour anticipe) 
 
 L'early return simplifie le code en traitant les cas d'erreur en premier :
 
@@ -130,7 +130,7 @@ echo $?   # Affiche le code de retour (0 = ok, autre = erreur)
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Peut-on avoir plusieurs return dans une fonction ?**
    > Oui, mais un seul sera execute (le premier atteint).
@@ -143,4 +143,4 @@ echo $?   # Affiche le code de retour (0 = ok, autre = erreur)
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

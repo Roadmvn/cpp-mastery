@@ -1,6 +1,6 @@
-# Projet : Architecture C2 Educative (C++) 🎓
+# Projet : Architecture C2 Educative (C++) 
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce projet est une **simulation pedagogique** d'architecture Command & Control.
 > Il est concu EXCLUSIVEMENT pour :
 > - Comprendre les architectures reseau des outils offensifs
@@ -17,7 +17,7 @@
 
 ---
 
-## Architecture 🏗️
+## Architecture 
 
 ```
 ARCHITECTURE C2 EDUCATIVE
@@ -32,13 +32,13 @@ ARCHITECTURE C2 EDUCATIVE
   │    whoami             │             │                       │
   │         │             │             │                       │
   │         │  TCP :4444  │             │                       │
-  │         └────────────►│─────────────►popen("whoami")        │
-  │                       │             │  ↓                    │
+  │         └────────────│─────────────popen("whoami")        │
+  │                       │             │                      │
   │  Resultat:            │◄────────────│"testuser\n"           │
   │  testuser             │             │                       │
   │                       │             │                       │
   │  > Entrez commande:   │             │                       │
-  │    exit               │─────────────►close() + exit         │
+  │    exit               │─────────────close() + exit         │
   └───────────────────────┘             └───────────────────────┘
 
   LOCALHOST UNIQUEMENT - PORT 4444
@@ -46,31 +46,31 @@ ARCHITECTURE C2 EDUCATIVE
 
 
 PROTOCOLE TEXTUEL :
-  Server → Client : "<commande>\n"
-  Client → Server : "<sortie de la commande>\n"
-  Server → Client : "exit\n"  (pour terminer)
+  Server  Client : "<commande>\n"
+  Client  Server : "<sortie de la commande>\n"
+  Server  Client : "exit\n"  (pour terminer)
 
 
 FLUX DETAILLE :
   ┌────────────────────────────────────────────────────────────────┐
   │ 1. server : bind(4444) + listen()                              │
   │ 2. client : connect(127.0.0.1:4444)                            │
-  │ 3. server : accept() → fd client                               │
+  │ 3. server : accept()  fd client                               │
   │ 4. [BOUCLE]                                                    │
   │    a. server : lire stdin de l'operateur                       │
   │    b. server : send(fd, commande)                              │
   │    c. client : recv() la commande                              │
   │    d. client : verifier whitelist                              │
-  │    e. client : popen(commande) → capturer stdout               │
+  │    e. client : popen(commande)  capturer stdout               │
   │    f. client : send(fd, resultat)                              │
   │    g. server : recv() + afficher le resultat                   │
-  │ 5. "exit" → client se deconnecte, server ferme                 │
+  │ 5. "exit"  client se deconnecte, server ferme                 │
   └────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Fichiers 📁
+## Fichiers 
 
 | Fichier      | Role                                                           |
 |--------------|----------------------------------------------------------------|
@@ -79,7 +79,7 @@ FLUX DETAILLE :
 
 ---
 
-## Compilation 💻
+## Compilation 
 
 ```bash
 # Compiler les deux binaires
@@ -89,7 +89,7 @@ g++ -std=c++17 -o client client.cpp
 
 ---
 
-## Utilisation 🔬
+## Utilisation 
 
 ```bash
 # Terminal 1 : lancer le serveur C2
@@ -128,7 +128,7 @@ testuser
 
 ---
 
-## Commandes autorisees (whitelist) 📋
+## Commandes autorisees (whitelist) 
 
 ```
 whoami    ls    pwd    id    hostname    uname -a    date    uptime
@@ -137,7 +137,7 @@ help      exit
 
 ---
 
-## Concepts appris 🎓
+## Concepts appris 
 
 - Sockets TCP POSIX : `socket()`, `bind()`, `listen()`, `accept()`, `connect()`
 - Protocol request/response textuel simple

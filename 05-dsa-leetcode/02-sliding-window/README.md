@@ -1,13 +1,13 @@
 # Sliding Window - Pattern 🪟
 
-## C'est quoi le Sliding Window ? 🤔
+## C'est quoi le Sliding Window ? 
 
 Le sliding window maintient une **fenetre** qui glisse sur un tableau ou une string.
 Au lieu de recalculer depuis zero a chaque position, on **ajoute/retire** un element a la fois.
 
 ---
 
-## Schema ASCII 📐
+## Schema ASCII 
 
 ### Fenetre fixe (taille k) :
 
@@ -50,7 +50,7 @@ String: "abcabcbb"    -> Plus longue substring sans repetition
 
 ---
 
-## Quand utiliser le Sliding Window ? 🎯
+## Quand utiliser le Sliding Window ? 
 
 - Sous-array/substring **contigue**
 - On cherche un min/max/somme sur une fenetre
@@ -59,7 +59,7 @@ String: "abcabcbb"    -> Plus longue substring sans repetition
 
 ---
 
-## Template de code 💻
+## Template de code 
 
 ### Fenetre fixe :
 ```cpp
@@ -97,7 +97,7 @@ int variableWindow(string& s) {
 
 ---
 
-## Complexite typique 📊
+## Complexite typique 
 
 | Approche      | Temps    | Espace |
 |---------------|----------|--------|
@@ -106,7 +106,7 @@ int variableWindow(string& s) {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 - [ ] Tu comprends la difference entre fenetre fixe et variable
 - [ ] Tu sais quand shrink la fenetre (condition violee)

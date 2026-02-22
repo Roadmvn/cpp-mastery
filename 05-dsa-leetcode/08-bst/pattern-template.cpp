@@ -1,5 +1,5 @@
 // ============================================
-// PATTERN : BST (Binary Search Tree) - Templates 🔍
+// PATTERN : BST (Binary Search Tree) - Templates 
 // ============================================
 // Squelettes copier-coller pour BST
 // Compile : g++ -std=c++17 -o pattern pattern-template.cpp

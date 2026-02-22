@@ -228,7 +228,7 @@ public:
 //   mid[t+1] = mid[t] + N(0, sigma)
 //   bid_price = round_to_tick(mid - spread/2 + noise)
 //   ask_price = round_to_tick(mid + spread/2 + noise)
-//   volume = LogNormal(mu=6, sigma=1) → médiane ~403
+//   volume = LogNormal(mu=6, sigma=1)  médiane ~403
 
 struct GeneratedOrder {
     Side   side;

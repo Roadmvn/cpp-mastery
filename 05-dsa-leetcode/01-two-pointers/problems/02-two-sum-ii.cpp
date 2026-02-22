@@ -9,9 +9,9 @@
 // trouver deux nombres dont la somme egale target.
 // Retourner les indices (1-indexed) [index1, index2] avec index1 < index2.
 //
-// Exemple 1 : numbers = [2,7,11,15], target = 9 → [1,2]
-// Exemple 2 : numbers = [2,3,4], target = 6 → [1,3]
-// Exemple 3 : numbers = [-1,0], target = -1 → [1,2]
+// Exemple 1 : numbers = [2,7,11,15], target = 9  [1,2]
+// Exemple 2 : numbers = [2,3,4], target = 6  [1,3]
+// Exemple 3 : numbers = [-1,0], target = -1  [1,2]
 //
 // Contraintes :
 // - 2 <= numbers.length <= 3 * 10^4
@@ -48,9 +48,9 @@ vector<int> twoSum_bruteforce(vector<int>& numbers, int target) {
 // Complexite : O(n) temps, O(1) espace
 // ============================================================
 // L'array est TRIE, c'est la cle. Avec deux pointeurs :
-// - Si la somme est trop petite → left++ (augmenter la somme)
-// - Si la somme est trop grande → right-- (diminuer la somme)
-// - Si la somme == target → on a trouve
+// - Si la somme est trop petite  left++ (augmenter la somme)
+// - Si la somme est trop grande  right-- (diminuer la somme)
+// - Si la somme == target  on a trouve
 //
 // Pourquoi ca marche :
 // Quand on fait left++, on augmente forcement la somme car l'array est trie.

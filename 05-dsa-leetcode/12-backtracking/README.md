@@ -1,6 +1,6 @@
 # 12 - Backtracking 🔙
 
-## C'est quoi le Backtracking ? 🤔
+## C'est quoi le Backtracking ? 
 
 Le backtracking est une technique de **recherche exhaustive** ou tu explores toutes les
 possibilites en construisant une solution **etape par etape**, et tu **reviens en arriere**
@@ -11,7 +11,7 @@ possibilites en construisant une solution **etape par etape**, et tu **reviens e
 
 ---
 
-## Quand l'utiliser ? 🎯
+## Quand l'utiliser ? 
 
 - Generer **toutes les combinaisons/permutations/sous-ensembles**
 - Problemes de **placement** (N-Queens, Sudoku)
@@ -21,17 +21,17 @@ possibilites en construisant une solution **etape par etape**, et tu **reviens e
 
 ---
 
-## Schema ASCII - Arbre de decision avec pruning 🌳
+## Schema ASCII - Arbre de decision avec pruning 
 
 ```
                     Subsets de [1,2,3]
                          []
                        / | \
-                   [1]  [2]  [3]       ← choix: prendre ou pas
+                   [1]  [2]  [3]        choix: prendre ou pas
                   / \    |
-             [1,2] [1,3] [2,3]        ← on continue avec les elements restants
+             [1,2] [1,3] [2,3]         on continue avec les elements restants
               |
-           [1,2,3]                     ← feuille = solution complete
+           [1,2,3]                      feuille = solution complete
 
     Arbre de decision detaille (include/exclude):
 
@@ -50,16 +50,16 @@ possibilites en construisant une solution **etape par etape**, et tu **reviens e
                               []
                      /        |        \
                    [1]       [2]       [3]
-                  / \         |         X  ← PRUNE si somme > cible
+                  / \         |         X   PRUNE si somme > cible
              [1,2] [1,3]   [2,3]
               |      X       X
            [1,2,3]
-            ← seule solution valide si cible = 6
+             seule solution valide si cible = 6
 ```
 
 ---
 
-## Le pattern general 📐
+## Le pattern general 
 
 ```
 backtrack(candidats, chemin_actuel, resultat):
@@ -71,12 +71,12 @@ backtrack(candidats, chemin_actuel, resultat):
         si candidat est valide (pruning):
             ajouter candidat au chemin
             backtrack(candidats_restants, chemin, resultat)
-            retirer candidat du chemin  ← BACKTRACK
+            retirer candidat du chemin   BACKTRACK
 ```
 
 ---
 
-## Les 3 cles du backtracking 🔑
+## Les 3 cles du backtracking 
 
 | Etape | Description | Code |
 |-------|-------------|------|
@@ -86,7 +86,7 @@ backtrack(candidats, chemin_actuel, resultat):
 
 ---
 
-## Variantes courantes 🔄
+## Variantes courantes 
 
 | Variante | Difference | Exemple |
 |----------|-----------|---------|
@@ -98,7 +98,7 @@ backtrack(candidats, chemin_actuel, resultat):
 
 ---
 
-## Complexite typique ⏱️
+## Complexite typique 
 
 | Type | Temps | Espace |
 |------|-------|--------|
@@ -109,7 +109,7 @@ backtrack(candidats, chemin_actuel, resultat):
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au pattern suivant, tu dois pouvoir :
 - [ ] Expliquer la difference entre backtracking et brute force

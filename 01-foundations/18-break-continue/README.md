@@ -1,4 +1,4 @@
-# Break & Continue ⏭️
+# Break & Continue ⏭
 
 ## Pourquoi c'est important
 
@@ -103,7 +103,7 @@ for (int i = 0; i < 100 && !stop; i++) {
 
 ---
 
-## Bonnes pratiques 📋
+## Bonnes pratiques 
 
 ```
   Utilise break quand :
@@ -119,7 +119,7 @@ for (int i = 0; i < 100 && !stop; i++) {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Que fait `break` dans une boucle ?**
    > Termine immediatement la boucle en cours et reprend apres.
@@ -132,4 +132,4 @@ for (int i = 0; i < 100 && !stop; i++) {
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

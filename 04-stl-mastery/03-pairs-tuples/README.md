@@ -1,4 +1,4 @@
-# Pairs et Tuples 🔗
+# Pairs et Tuples 
 
 > Grouper des valeurs sans creer de struct
 
@@ -16,12 +16,12 @@ pair<int, string> p = {42, "hello"};
 Stack (objet pair)
 ┌───────────────────────────┐
 │ first  = 42     (int)     │
-│ second = "hello" (string) │  ← deux membres, acces direct
+│ second = "hello" (string) │   deux membres, acces direct
 └───────────────────────────┘
 
 pair<int, int> coord = {3, 7};
 ┌───────────┐
-│ first = 3 │  ← souvent utilise pour (x, y) ou (index, valeur)
+│ first = 3 │   souvent utilise pour (x, y) ou (index, valeur)
 │ second= 7 │
 └───────────┘
 ```
@@ -55,7 +55,7 @@ pair<int,int> b = {1, 3};
 
 ---
 
-## Cas d'utilisation en LeetCode 🏆
+## Cas d'utilisation en LeetCode 
 
 | Pattern                   | pair utilise              |
 |---------------------------|---------------------------|
@@ -136,7 +136,7 @@ struct Custom { int x, y, z; };
 
 ---
 
-## Complexites 📋
+## Complexites 
 
 | Operation              | Complexite |
 |-----------------------|------------|

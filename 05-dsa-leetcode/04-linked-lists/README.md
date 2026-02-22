@@ -1,13 +1,13 @@
-# Linked Lists - Pattern 🔗
+# Linked Lists - Pattern 
 
-## C'est quoi une Linked List ? 🤔
+## C'est quoi une Linked List ? 
 
 Une linked list est une structure ou chaque **noeud** pointe vers le suivant.
 Contrairement aux arrays, les elements ne sont PAS contigus en memoire.
 
 ---
 
-## Schema ASCII 📐
+## Schema ASCII 
 
 ### Singly Linked List :
 
@@ -57,7 +57,7 @@ Detecter un cycle :
 
 ---
 
-## Quand utiliser les Linked Lists ? 🎯
+## Quand utiliser les Linked Lists ? 
 
 - Inverser, fusionner, detecter un cycle
 - Manipulations de pointeurs (reorder, remove nth)
@@ -66,7 +66,7 @@ Detecter un cycle :
 
 ---
 
-## Template de code 💻
+## Template de code 
 
 ### Structure de base :
 ```cpp
@@ -107,7 +107,7 @@ ListNode* findMiddle(ListNode* head) {
 
 ---
 
-## Complexite typique 📊
+## Complexite typique 
 
 | Operation          | Temps | Espace |
 |--------------------|-------|--------|
@@ -118,7 +118,7 @@ ListNode* findMiddle(ListNode* head) {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 - [ ] Tu sais reverser une linked list iterativement
 - [ ] Tu comprends le pattern fast/slow pointer

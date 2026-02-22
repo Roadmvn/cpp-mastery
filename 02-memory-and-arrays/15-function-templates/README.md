@@ -1,6 +1,6 @@
-# Chapitre 15 : Function Templates 🧬
+# Chapitre 15 : Function Templates 
 
-## Ce que tu vas apprendre 🎯
+## Ce que tu vas apprendre 
 
 - `template<typename T>` pour creer des fonctions generiques
 - La deduction automatique de type
@@ -24,7 +24,7 @@ Meme logique, types differents. C'est du **code duplique** — un enfer a mainte
 
 ---
 
-## La solution : templates 🎯
+## La solution : templates 
 
 ```cpp
 template<typename T>
@@ -45,11 +45,11 @@ Le compilateur **genere** automatiquement une version pour chaque type utilise. 
     SOURCE                              COMPILATION
 
     template<typename T>                ┌─────────────────────┐
-    T maxVal(T a, T b);                 │ int maxVal(int, int) │  ← genere
+    T maxVal(T a, T b);                 │ int maxVal(int, int) │   genere
                                         ├─────────────────────┤
-    maxVal(10, 20);      ─────────────► │ dbl maxVal(dbl, dbl) │  ← genere
+    maxVal(10, 20);      ───────────── │ dbl maxVal(dbl, dbl) │   genere
     maxVal(3.14, 2.71);                 ├─────────────────────┤
-    maxVal('a', 'z');                   │ chr maxVal(chr, chr) │  ← genere
+    maxVal('a', 'z');                   │ chr maxVal(chr, chr) │   genere
                                         └─────────────────────┘
 
     Le compilateur genere du code specifique pour chaque type.
@@ -58,7 +58,7 @@ Le compilateur **genere** automatiquement une version pour chaque type utilise. 
 
 ---
 
-## Syntaxe detaillee 📝
+## Syntaxe detaillee 
 
 ```cpp
 // template avec typename
@@ -82,7 +82,7 @@ void afficher(T premier, U second) {
 
 ---
 
-## Deduction de type 🔍
+## Deduction de type 
 
 Le compilateur deduit T automatiquement :
 
@@ -107,7 +107,7 @@ maxVal<double>(5, 3.14);   // OK : T = double, 5 converti en 5.0
 
 ---
 
-## Templates sur arrays 📊
+## Templates sur arrays 
 
 ```cpp
 template<typename T>
@@ -130,7 +130,7 @@ int main() {
 
 ---
 
-## Specialisation de template 🎛️
+## Specialisation de template 🎛
 
 Parfois, un type a besoin d'un traitement special :
 
@@ -155,7 +155,7 @@ int main() {
 
 ---
 
-## Template avec contrainte de type (concept simple) 🛡️
+## Template avec contrainte de type (concept simple) 
 
 Avant C++20 concepts, on verifie a la main :
 
@@ -172,7 +172,7 @@ L'erreur arrive quand tu utilises `minimum` avec un type qui n'a pas `operator<`
 
 ---
 
-## Points cles a retenir 🔑
+## Points cles a retenir 
 
 1. **`template<typename T>`** cree une fonction generique
 2. Le compilateur **genere le code** pour chaque type utilise
@@ -183,7 +183,7 @@ L'erreur arrive quand tu utilises `minimum` avec un type qui n'a pas `operator<`
 
 ---
 
-## Compilation 🔧
+## Compilation 
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp && ./exercise

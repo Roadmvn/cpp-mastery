@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #207 - Course Schedule (Medium) 📊
+// LeetCode #207 - Course Schedule (Medium) 
 // https://leetcode.com/problems/course-schedule/
 // ============================================
 //

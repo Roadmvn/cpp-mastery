@@ -148,7 +148,7 @@ public:
                       << std::setw(W_PRICE) << price
                       << " | " << std::setw(W_VOL) << level->total_volume
                       << " | " << std::left << std::setw(W_ORDERS) << orders_ss.str()
-                      << " |" << (is_best ? " ← best ask" : "") << "\n";
+                      << " |" << (is_best ? "  best ask" : "") << "\n";
         }
 
         // Spread
@@ -173,7 +173,7 @@ public:
                       << std::setw(W_PRICE) << price
                       << " | " << std::setw(W_VOL) << level.total_volume
                       << " | " << std::left << std::setw(W_ORDERS) << orders_ss.str()
-                      << " |" << (is_best ? " ← best bid" : "") << "\n";
+                      << " |" << (is_best ? "  best bid" : "") << "\n";
         }
 
         sep();

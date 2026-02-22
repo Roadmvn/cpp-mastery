@@ -1,10 +1,10 @@
 # Chapitre 05 - Surcharge de Constructeurs (Constructor Overloading) 🔀
 
-## Concept fondamental 🎯
+## Concept fondamental 
 
 La **surcharge de constructeurs** permet de creer un objet de differentes manieres. Chaque constructeur a une signature differente (nombre ou type de parametres).
 
-## Multiples constructeurs 📝
+## Multiples constructeurs 
 
 ```cpp
 class Couleur {
@@ -20,7 +20,7 @@ Couleur gris(128);       // Couleur(int)
 Couleur rouge(255,0,0);  // Couleur(int,int,int)
 ```
 
-## Delegation de constructeurs (C++11) 🔗
+## Delegation de constructeurs (C++11) 
 
 Un constructeur peut appeler un autre constructeur de la meme classe :
 
@@ -59,7 +59,7 @@ Connexion("srv", 443) --> Connexion("srv", 443, 30)
               Constructeur principal (h, p, t)
 ```
 
-## Constructeur de copie 📋
+## Constructeur de copie 
 
 ```cpp
 class Buffer {
@@ -96,7 +96,7 @@ Poids p2 = 75.0;    // ERREUR avec explicit (OK sans)
 // peser(75.0);      // ERREUR avec explicit (empeche les bugs)
 ```
 
-## = default et = delete 🛠️
+## = default et = delete 
 
 ```cpp
 class Singleton {
@@ -107,7 +107,7 @@ public:
 };
 ```
 
-## Bonnes pratiques 💡
+## Bonnes pratiques 
 
 1. Utiliser la **delegation** plutot que dupliquer du code
 2. Mettre `explicit` sur les constructeurs a un seul parametre

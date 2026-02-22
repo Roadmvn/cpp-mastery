@@ -2,7 +2,7 @@
 // main.cpp - Simulation d'implant C2 (EDUCATIF)
 // ==========================================================================
 //
-// DISCLAIMER EDUCATIF ⚠️
+// DISCLAIMER EDUCATIF 
 // Ce programme est une SIMULATION EDUCATIVE uniquement.
 // - Communication EXCLUSIVEMENT sur 127.0.0.1 (localhost)
 // - Commandes limitees a une whitelist explicite
@@ -11,7 +11,7 @@
 // - Toute utilisation malveillante est illegale
 //
 // Architecture :
-//   [Serveur C2] ←──── TCP localhost:4444 ────→ [Implant (ce fichier)]
+//   [Serveur C2] ──── TCP localhost:4444 ──── [Implant (ce fichier)]
 //
 // Compile :
 //   g++ -std=c++17 -o implant main.cpp

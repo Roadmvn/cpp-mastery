@@ -1,4 +1,4 @@
-# 07 - Trees : Arbre Binaire 🌳
+# 07 - Trees : Arbre Binaire 
 
 ## C'est quoi un arbre binaire ?
 
@@ -31,7 +31,7 @@ struct TreeNode {
 };
 ```
 
-## Les 3 parcours DFS (Depth-First Search) 🔍
+## Les 3 parcours DFS (Depth-First Search) 
 
 ```
         [1]
@@ -53,7 +53,7 @@ POSTORDER (Gauche -> Droite -> Racine) :
   Mnemonique : G-D-R (Root POST = apres tout)
 ```
 
-## Parcours BFS (Breadth-First Search) - Level Order 📊
+## Parcours BFS (Breadth-First Search) - Level Order 
 
 ```
         [1]           Niveau 0 -> [1]
@@ -66,7 +66,7 @@ Resultat : [[1], [2,3], [4,5,6]]
 Utilise une queue (file) pour parcourir niveau par niveau
 ```
 
-## Quand utiliser ce pattern ? 🎯
+## Quand utiliser ce pattern ? 
 
 | Situation | Approche |
 |-----------|----------|
@@ -76,7 +76,7 @@ Utilise une queue (file) pour parcourir niveau par niveau
 | Comparer deux arbres | DFS recursif simultane |
 | Construire un arbre | DFS recursif avec indices |
 
-## Complexites typiques 📈
+## Complexites typiques 
 
 | Operation | Temps | Espace |
 |-----------|-------|--------|
@@ -86,7 +86,7 @@ Utilise une queue (file) pour parcourir niveau par niveau
 
 `h` = hauteur de l'arbre. Pire cas h = n (arbre degenere), meilleur cas h = log(n) (arbre equilibre).
 
-## Template de base 📋
+## Template de base 
 
 ```cpp
 // DFS Recursif
@@ -116,7 +116,7 @@ void bfs(TreeNode* root) {
 }
 ```
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au pattern suivant, tu dois savoir :
 - [ ] Creer un TreeNode et construire un arbre

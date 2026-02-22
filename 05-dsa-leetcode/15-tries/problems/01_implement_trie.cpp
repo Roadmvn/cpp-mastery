@@ -9,11 +9,11 @@
 //
 // Exemple :
 //   trie.insert("apple")
-//   trie.search("apple")    → true
-//   trie.search("app")      → false
-//   trie.startsWith("app")  → true
+//   trie.search("apple")     true
+//   trie.search("app")       false
+//   trie.startsWith("app")   true
 //   trie.insert("app")
-//   trie.search("app")      → true
+//   trie.search("app")       true
 //
 // Compile : g++ -std=c++17 01_implement_trie.cpp -o 01
 
@@ -63,15 +63,15 @@ public:
 //           |
 //          [p]
 //           |
-//          [p]*  ← isEnd=true (mot "app")
+//          [p]*   isEnd=true (mot "app")
 //           |
 //          [l]
 //         /   \
-//       [e]*   [y]*  ← isEnd=true ("apple" et "apply")
+//       [e]*   [y]*   isEnd=true ("apple" et "apply")
 //
-//   search("app")     → ROOT→a→p→p : isEnd=true → true
-//   search("ap")      → ROOT→a→p   : isEnd=false → false
-//   startsWith("appl")→ ROOT→a→p→p→l : existe → true
+//   search("app")      ROOTapp : isEnd=true  true
+//   search("ap")       ROOTap   : isEnd=false  false
+//   startsWith("appl") ROOTappl : existe  true
 // -----------------------------------------------
 struct TrieNode {
     TrieNode* children[26];

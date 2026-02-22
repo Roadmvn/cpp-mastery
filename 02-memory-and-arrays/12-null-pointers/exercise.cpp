@@ -38,7 +38,7 @@ void partie2() {
     // TODO: delete p;
     // TODO: p = nullptr;   (empeche le dangling)
     // TODO: Essaie d'afficher *p avec verification null
-    //       → doit dire "Pointeur null"
+    //        doit dire "Pointeur null"
 
     cout << endl;
 }
@@ -50,8 +50,8 @@ void partie2() {
 // et gere les deux cas (donnee presente vs absente)
 
 // TODO: Implemente void afficherNote(const string& nom, const int* note)
-//       - Si note est null → affiche "Nom : pas de note"
-//       - Si note est valide → affiche "Nom : note/20"
+//       - Si note est null  affiche "Nom : pas de note"
+//       - Si note est valide  affiche "Nom : note/20"
 
 void partie3() {
     cout << "=== PARTIE 3 : Pointeur optionnel ===" << endl;

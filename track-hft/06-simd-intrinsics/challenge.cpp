@@ -7,9 +7,9 @@
 // SCHÉMA - Traitement de 4 doubles en parallèle (AVX2):
 //
 //  Entrée (array de N doubles):
-//  ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬────►
+//  ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┬────
 //  │100.1 │ 99.8 │100.5 │ 99.9 │100.2 │100.0 │ 99.7 │100.3 │ ...
-//  └──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴────►
+//  └──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┴────
 //    ├─────────────────────┤  ├─────────────────────┤
 //      Chunk 0 (4 doubles)     Chunk 1 (4 doubles)
 //           │                       │
@@ -78,7 +78,7 @@ Stats compute_naive(const double* data, int n) {
 //
 // std::min et std::max sur des doubles compilent en instructions
 // conditionnelles (cmovsd) ou VMINPD/VMAXPD selon le compilateur.
-// Pas de branch misprediction → vectorisable.
+// Pas de branch misprediction  vectorisable.
 //
 // TODO: même logique mais avec std::min/std::max au lieu de if/else.
 
@@ -201,8 +201,8 @@ int main() {
     std::cout << "=== Challenge 06: Min/Max/Mean sur 10M doubles ===\n\n";
 
     std::cout << "Schéma - traitement vectorisé 4 doubles/instruction:\n";
-    std::cout << "  [d0][d1][d2][d3] → VMINPD → [min0][min1][min2][min3]\n";
-    std::cout << "  [d4][d5][d6][d7] → VMINPD → [min4][min5][min6][min7]\n";
+    std::cout << "  [d0][d1][d2][d3]  VMINPD  [min0][min1][min2][min3]\n";
+    std::cout << "  [d4][d5][d6][d7]  VMINPD  [min4][min5][min6][min7]\n";
     std::cout << "  ...réduction finale des lanes...\n\n";
 
     constexpr int N = 10'000'000;

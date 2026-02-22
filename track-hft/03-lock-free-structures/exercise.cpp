@@ -62,7 +62,7 @@ public:
         // TODO:
         // 1. Charge read_pos_ (relaxed - seul le consumer lit)
         // 2. Verifie que la queue n'est pas vide:
-        //    read_pos == write_pos (acquire) → vide
+        //    read_pos == write_pos (acquire)  vide
         // 3. Lis buffer_[read_pos % Size] dans item
         // 4. Store read_pos + 1 avec memory_order_release
         // 5. Return true si succes, false si vide

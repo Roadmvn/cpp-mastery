@@ -1,4 +1,4 @@
-# Priority Queue et Heap 🏔️
+# Priority Queue et Heap 🏔
 
 > Toujours acceder au max (ou min) en O(1) — la structure des Top K et Dijkstra
 
@@ -15,7 +15,7 @@ priority_queue<int> pq;  // MAX-HEAP par defaut
 pq.push(10); pq.push(30); pq.push(20); pq.push(5); pq.push(25);
 
 Representation en arbre (MAX-HEAP) :
-            30              ← top() = maximum
+            30               top() = maximum
            /  \
          25    20
         / \
@@ -49,7 +49,7 @@ Etape 1 : Ajouter a la fin
         / \   /
        5  10 15
 
-Etape 2 : 15 < 20 ? Oui → stop. (deja a la bonne place)
+Etape 2 : 15 < 20 ? Oui  stop. (deja a la bonne place)
 
 POP() :  Retirer le max, replacer, puis "bubble down"
 
@@ -60,14 +60,14 @@ Etape 1 : Remplacer root par le dernier element
         / \
        5   10
 
-Etape 2 : 15 < 25 → swap avec le plus grand enfant
+Etape 2 : 15 < 25  swap avec le plus grand enfant
             25
            /  \
          15    20
         / \
        5   10
 
-Etape 3 : 15 > 10 et 15 > 5 → stop
+Etape 3 : 15 > 10 et 15 > 5  stop
 ```
 
 ---
@@ -123,7 +123,7 @@ cout << pq.top().first;  // 2 (celui avec poids 3, le plus petit)
 
 ---
 
-## Patterns LeetCode avec Heap 🏆
+## Patterns LeetCode avec Heap 
 
 ### Top K Elements
 ```cpp
@@ -148,7 +148,7 @@ priority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> pq;
 
 ---
 
-## Complexites a retenir 📋
+## Complexites a retenir 
 
 | Operation                     | Complexite |
 |------------------------------|------------|
@@ -160,7 +160,7 @@ priority_queue<pair<int,int>, vector<pair<int,int>>, greater<>> pq;
 
 ---
 
-## Quand utiliser un Heap 🎯
+## Quand utiliser un Heap 
 
 | Signal dans l'enonce         | Pattern                  |
 |-----------------------------|--------------------------|

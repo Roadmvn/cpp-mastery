@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #200 - Number of Islands (Medium) 🔄
+// LeetCode #200 - Number of Islands (Medium) 
 // https://leetcode.com/problems/number-of-islands/
 // ============================================
 //

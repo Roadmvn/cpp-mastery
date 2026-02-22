@@ -19,12 +19,12 @@ solutions pour eviter les recalculs.
     Fibonacci sans DP :          Fibonacci avec DP :
 
     fib(5)                        fib(5)
-    ├── fib(4)                    ├── fib(4)  ← calcule une fois, stocke
-    │   ├── fib(3)                │   ├── fib(3)  ← calcule une fois, stocke
+    ├── fib(4)                    ├── fib(4)   calcule une fois, stocke
+    │   ├── fib(3)                │   ├── fib(3)   calcule une fois, stocke
     │   │   ├── fib(2)            │   │   └── ...
-    │   │   └── fib(1)            │   └── fib(2)  ← deja stocke, reutilise !
-    │   └── fib(2) ← recalcule!   └── fib(3)  ← deja stocke, reutilise !
-    └── fib(3) ← recalcule!
+    │   │   └── fib(1)            │   └── fib(2)   deja stocke, reutilise !
+    │   └── fib(2)  recalcule!   └── fib(3)   deja stocke, reutilise !
+    └── fib(3)  recalcule!
         └── ...
 
     Sans DP : O(2^n)    Avec DP : O(n)
@@ -57,13 +57,13 @@ en passant par B = plus court(A,B) + plus court(B,C).
     fib(5)                            dp[2]=1, dp[3]=2
       fib(4)                          dp[4]=3, dp[5]=5
         fib(3)
-          fib(2) → memo[2]=1          ┌──┬──┬──┬──┬──┬──┐
-          fib(1) → 1                  │0 │1 │1 │2 │3 │5 │
-        → memo[3]=2                   └──┴──┴──┴──┴──┴──┘
-        fib(2) → memo[2]=1 reutilise   0  1  2  3  4  5
-      → memo[4]=3
-      fib(3) → memo[3]=2 reutilise
-    → memo[5]=5
+          fib(2)  memo[2]=1          ┌──┬──┬──┬──┬──┬──┐
+          fib(1)  1                  │0 │1 │1 │2 │3 │5 │
+         memo[3]=2                   └──┴──┴──┴──┴──┴──┘
+        fib(2)  memo[2]=1 reutilise   0  1  2  3  4  5
+       memo[4]=3
+      fib(3)  memo[3]=2 reutilise
+     memo[5]=5
 ```
 
 ---
@@ -79,7 +79,7 @@ en passant par B = plus court(A,B) + plus court(B,C).
     b  [  0   1  1  1 ]
     c  [  0   1  2  2 ]
     d  [  0   1  2  2 ]
-    e  [  0   1  2  3 ]  ← Reponse : dp[5][3] = 3
+    e  [  0   1  2  3 ]   Reponse : dp[5][3] = 3
 
     Regle de remplissage :
     ┌────────────────────────────────────────────────────────┐
@@ -90,8 +90,8 @@ en passant par B = plus court(A,B) + plus court(B,C).
 
     Lecture : les fleches montrent d'ou vient chaque valeur
 
-    dp[3][2] = 2 car 'c'=='c' → dp[2][1] + 1 = 1 + 1 = 2
-    dp[5][3] = 3 car 'e'=='e' → dp[4][2] + 1 = 2 + 1 = 3
+    dp[3][2] = 2 car 'c'=='c'  dp[2][1] + 1 = 1 + 1 = 2
+    dp[5][3] = 3 car 'e'=='e'  dp[4][2] + 1 = 2 + 1 = 3
 ```
 
 ---
@@ -108,7 +108,7 @@ en passant par B = plus court(A,B) + plus court(B,C).
 
     Exemple : House Robber
     dp[i] = max(dp[i-1], dp[i-2] + nums[i])
-             ↑ skip i   ↑ voler i
+              skip i    voler i
 ```
 
 ### Framework 2D (LCS, Edit Distance, Knapsack)
@@ -117,7 +117,7 @@ en passant par B = plus court(A,B) + plus court(B,C).
     1. Definir dp[i][j] = reponse pour sous-probleme (i, j)
     2. Trouver la recurrence avec conditions
     3. Initialiser la premiere ligne et colonne
-    4. Remplir ligne par ligne (gauche→droite, haut→bas)
+    4. Remplir ligne par ligne (gauchedroite, hautbas)
 ```
 
 ---

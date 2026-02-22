@@ -22,19 +22,19 @@
 //  Cache locality:
 //
 //  vector (trié):  [99.10][99.20][99.30][100.00][100.10][100.20] ...
-//                   continu en mémoire → excellent cache L1
+//                   continu en mémoire  excellent cache L1
 //                   binary_search: log2(N) comparaisons
 //
-//  std::map:       noeud1 ─────────────► noeud2 ──► noeud3 ...
-//                  chaque noeud = malloc séparé → cache L1 MISS fréquents
+//  std::map:       noeud1 ───────────── noeud2 ── noeud3 ...
+//                  chaque noeud = malloc séparé  cache L1 MISS fréquents
 //
 //  unordered_map:  bucket[0] bucket[1] ... bucket[K]
-//                  hash(price) → bucket → linked list si collision
+//                  hash(price)  bucket  linked list si collision
 //                  O(1) mais hash + potential collision overhead
 //
 //  array fixe:     [slot 0][slot 1][slot 2]...[slot MAX]
 //                  index = (price - min_price) / tick_size
-//                  O(1) lookup + accès mémoire contigu → IDEAL en HFT
+//                  O(1) lookup + accès mémoire contigu  IDEAL en HFT
 //
 // PARTIE 1: implémenter les 5 structures (wrapper simple)
 // PARTIE 2: implémenter bench_structure() générique

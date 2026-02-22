@@ -52,7 +52,7 @@ void partie2() {
         cout << "Ecart entre [" << i << "] et [" << i + 1 << "] : "
              << ecart << " octets" << endl;
     }
-    cout << "Chaque int fait " << sizeof(int) << " octets → elements contigus !" << endl;
+    cout << "Chaque int fait " << sizeof(int) << " octets  elements contigus !" << endl;
 
     cout << endl;
 }

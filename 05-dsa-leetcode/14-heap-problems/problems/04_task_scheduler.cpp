@@ -1,6 +1,6 @@
 /*
  * ============================================
- *  LeetCode #621 - Task Scheduler (Medium) 🏔️
+ *  LeetCode #621 - Task Scheduler (Medium) 🏔
  * ============================================
  *  Lien : https://leetcode.com/problems/task-scheduler/
  *
@@ -37,7 +37,7 @@ using namespace std;
  *
  *  Structure (maxFreq-1 = 2 blocs de taille n+1 = 3) :
  *  [A _ _] [A _ _] [A B]
- *   ↓          ↓
+ *             
  *  [A B idle] [A B idle] [A B]
  *
  *  Total = max(tasks.size(), (maxFreq - 1) * (n + 1) + maxCount)
@@ -75,14 +75,14 @@ public:
  *
  *  Trace pour tasks=[A,A,A,B,B,B], n=2 :
  *
- *  Temps 0: heap=[3A,3B], process A → heap=[3B], wait=[(2A,t=3)]
- *  Temps 1: heap=[3B], process B → heap=[], wait=[(2A,t=3),(2B,t=4)]
- *  Temps 2: heap=[], wait non vide → IDLE
- *  Temps 3: A revient! heap=[2A], process A → wait=[(2B,t=4),(1A,t=6)]
- *  Temps 4: B revient! heap=[2B], process B → wait=[(1A,t=6),(1B,t=7)]
- *  Temps 5: heap=[], wait non vide → IDLE
- *  Temps 6: A revient! heap=[1A], process A → heap=[], wait=[(1B,t=7)]
- *  Temps 7: B revient! heap=[1B], process B → done
+ *  Temps 0: heap=[3A,3B], process A  heap=[3B], wait=[(2A,t=3)]
+ *  Temps 1: heap=[3B], process B  heap=[], wait=[(2A,t=3),(2B,t=4)]
+ *  Temps 2: heap=[], wait non vide  IDLE
+ *  Temps 3: A revient! heap=[2A], process A  wait=[(2B,t=4),(1A,t=6)]
+ *  Temps 4: B revient! heap=[2B], process B  wait=[(1A,t=6),(1B,t=7)]
+ *  Temps 5: heap=[], wait non vide  IDLE
+ *  Temps 6: A revient! heap=[1A], process A  heap=[], wait=[(1B,t=7)]
+ *  Temps 7: B revient! heap=[1B], process B  done
  *
  *  Total : 8 intervalles
  *

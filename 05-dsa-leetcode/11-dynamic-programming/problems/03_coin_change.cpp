@@ -8,9 +8,9 @@
 // un nombre illimite de fois.
 //
 // Exemple :
-//   coins=[1,5,10,25], amount=30 → 2  (25+5)
-//   coins=[1,2,5],     amount=11 → 3  (5+5+1)
-//   coins=[2],         amount=3  → -1 (impossible)
+//   coins=[1,5,10,25], amount=30  2  (25+5)
+//   coins=[1,2,5],     amount=11  3  (5+5+1)
+//   coins=[2],         amount=3   -1 (impossible)
 //
 // Compile : g++ -std=c++17 03_coin_change.cpp -o 03
 

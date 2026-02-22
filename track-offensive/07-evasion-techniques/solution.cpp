@@ -47,7 +47,7 @@ std::vector<uint8_t> xorEncode(const std::string& input, uint8_t key) {
     return result;
 }
 
-// "whoami" XOR 0x55 → stocke dans le binaire, pas de string lisible
+// "whoami" XOR 0x55  stocke dans le binaire, pas de string lisible
 static const std::vector<uint8_t> ENCODED_CMD = {
     0x22, 0x13, 0x08, 0x14, 0x12, 0x14
 };

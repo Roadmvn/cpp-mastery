@@ -35,7 +35,7 @@ using namespace std;
  *   cost:  3  4  5  1  2
  *   diff: -2 -2 -2  3  3
  *
- *   Depart=3: tank=0 +4-1=3 +5-2=6 +1-3=4 +2-4=2 +3-5=0 ✓
+ *   Depart=3: tank=0 +4-1=3 +5-2=6 +1-3=4 +2-4=2 +3-5=0 
  *
  * Complexite :
  *  - Temps  : O(n^2)
@@ -72,16 +72,16 @@ public:
  * 1. Si sum(gas) >= sum(cost), une solution existe TOUJOURS
  * 2. Si on tombe en negatif en partant de start, aucune station
  *    entre start et la position courante ne peut etre un depart valide
- *    → on recommence depuis la position suivante
+ *     on recommence depuis la position suivante
  *
  *  Trace pour gas=[1,2,3,4,5], cost=[3,4,5,1,2] :
  *
- *  i=0: diff=-2, tank=-2 < 0 → reset, start=1
- *  i=1: diff=-2, tank=-2 < 0 → reset, start=2
- *  i=2: diff=-2, tank=-2 < 0 → reset, start=3
+ *  i=0: diff=-2, tank=-2 < 0  reset, start=1
+ *  i=1: diff=-2, tank=-2 < 0  reset, start=2
+ *  i=2: diff=-2, tank=-2 < 0  reset, start=3
  *  i=3: diff=+3, tank=3
  *  i=4: diff=+3, tank=6
- *  totalTank = -2-2-2+3+3 = 0 >= 0 → start=3
+ *  totalTank = -2-2-2+3+3 = 0 >= 0  start=3
  *
  * Complexite :
  *  - Temps  : O(n) - un seul passage

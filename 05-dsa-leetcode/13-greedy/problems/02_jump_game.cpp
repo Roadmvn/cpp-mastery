@@ -11,7 +11,7 @@
  *
  *  Exemple :
  *  Input:  nums = [2,3,1,1,4]
- *  Output: true (0→1→4 ou 0→2→3→4)
+ *  Output: true (014 ou 0234)
  *
  *  Contraintes :
  *  - 1 <= nums.length <= 10^4
@@ -70,16 +70,16 @@ public:
  *  Value:  [2]  [3]  [1]  [1]  [4]
  *
  *  i=0: maxReach = max(0, 0+2) = 2
- *  i=1: maxReach = max(2, 1+3) = 4  ← atteint la fin !
- *  → true
+ *  i=1: maxReach = max(2, 1+3) = 4   atteint la fin !
+ *   true
  *
  *  Trace pour [3, 2, 1, 0, 4] :
  *
  *  i=0: maxReach = max(0, 0+3) = 3
  *  i=1: maxReach = max(3, 1+2) = 3
  *  i=2: maxReach = max(3, 2+1) = 3
- *  i=3: maxReach = max(3, 3+0) = 3  ← bloques ici
- *  i=4: 4 > 3 → false !
+ *  i=3: maxReach = max(3, 3+0) = 3   bloques ici
+ *  i=4: 4 > 3  false !
  *
  * Complexite :
  *  - Temps  : O(n) - un seul passage

@@ -1,6 +1,6 @@
 /*
  * ============================================
- *  LeetCode #215 - Kth Largest Element (Medium) 🏔️
+ *  LeetCode #215 - Kth Largest Element (Medium) 🏔
  * ============================================
  *  Lien : https://leetcode.com/problems/kth-largest-element-in-an-array/
  *
@@ -53,14 +53,14 @@ public:
  *
  *  Min-heap de taille k=2 pour [3,2,1,5,6,4] :
  *
- *  push 3 → [3]        taille 1 <= k, OK
- *  push 2 → [2,3]      taille 2 <= k, OK
- *  push 1 → [1,2,3]    taille 3 > k, pop min → [2,3]
- *  push 5 → [2,3,5]    taille 3 > k, pop min → [3,5]
- *  push 6 → [3,5,6]    taille 3 > k, pop min → [5,6]
- *  push 4 → [4,5,6]    taille 3 > k, pop min → [5,6]
+ *  push 3  [3]        taille 1 <= k, OK
+ *  push 2  [2,3]      taille 2 <= k, OK
+ *  push 1  [1,2,3]    taille 3 > k, pop min  [2,3]
+ *  push 5  [2,3,5]    taille 3 > k, pop min  [3,5]
+ *  push 6  [3,5,6]    taille 3 > k, pop min  [5,6]
+ *  push 4  [4,5,6]    taille 3 > k, pop min  [5,6]
  *
- *  top() = 5 = 2eme plus grand ✓
+ *  top() = 5 = 2eme plus grand 
  *
  *  Le heap garde TOUJOURS les k plus grands.
  *  Le min de ces k plus grands = le k-ieme plus grand.

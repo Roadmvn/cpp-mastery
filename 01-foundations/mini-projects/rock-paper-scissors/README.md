@@ -1,4 +1,4 @@
-# Mini-Projet : Pierre-Feuille-Ciseaux ✊
+# Mini-Projet : Pierre-Feuille-Ciseaux 
 
 ## Description
 

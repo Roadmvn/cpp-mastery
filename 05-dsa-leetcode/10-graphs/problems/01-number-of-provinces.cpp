@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #547 - Number of Provinces (Medium) 📊
+// LeetCode #547 - Number of Provinces (Medium) 
 // https://leetcode.com/problems/number-of-provinces/
 // ============================================
 //

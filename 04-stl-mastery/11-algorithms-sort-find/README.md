@@ -1,4 +1,4 @@
-# Algorithmes STL : sort, find, transform 🔧
+# Algorithmes STL : sort, find, transform 
 
 > La STL comme boite a outils — resoudre en une ligne ce qui en prendrait vingt
 
@@ -121,7 +121,7 @@ string result = accumulate(words.begin(), words.end(), string(""));
 
 ---
 
-## Patterns LeetCode one-liners 🏆
+## Patterns LeetCode one-liners 
 
 ```cpp
 // Somme d'un tableau
@@ -155,7 +155,7 @@ int idx = distance(nums.begin(), it);
 
 ---
 
-## Complexites a retenir 📋
+## Complexites a retenir 
 
 | Algorithme           | Complexite    | Notes                          |
 |---------------------|---------------|--------------------------------|
@@ -173,7 +173,7 @@ int idx = distance(nums.begin(), it);
 
 ---
 
-## Quand utiliser quel algo 🎯
+## Quand utiliser quel algo 
 
 | Besoin                                  | Algorithme                          |
 |----------------------------------------|-------------------------------------|

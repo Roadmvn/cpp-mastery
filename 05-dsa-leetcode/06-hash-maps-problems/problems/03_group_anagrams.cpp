@@ -61,14 +61,14 @@ vector<vector<string>> groupAnagramsBrute(vector<string>& strs) {
 //
 //   Input : ["eat","tea","tan","ate","nat","bat"]
 //
-//   "eat" → sort → "aet"  ─┐
-//   "tea" → sort → "aet"  ─┼─ groupe → ["eat","tea","ate"]
-//   "ate" → sort → "aet"  ─┘
+//   "eat"  sort  "aet"  ─┐
+//   "tea"  sort  "aet"  ─┼─ groupe  ["eat","tea","ate"]
+//   "ate"  sort  "aet"  ─┘
 //
-//   "tan" → sort → "ant"  ─┬─ groupe → ["tan","nat"]
-//   "nat" → sort → "ant"  ─┘
+//   "tan"  sort  "ant"  ─┬─ groupe  ["tan","nat"]
+//   "nat"  sort  "ant"  ─┘
 //
-//   "bat" → sort → "abt"  ───── groupe → ["bat"]
+//   "bat"  sort  "abt"  ───── groupe  ["bat"]
 //
 //   HashMap :
 //   ┌──────┬──────────────────────────────┐

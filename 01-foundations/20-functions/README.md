@@ -1,4 +1,4 @@
-# Fonctions 🧩
+# Fonctions 
 
 ## Pourquoi c'est important
 
@@ -119,7 +119,7 @@ void print_info(string msg) { // Ne retourne rien
 
 ---
 
-## Organisation du code 📋
+## Organisation du code 
 
 ```
   Fichier .cpp typique :
@@ -147,7 +147,7 @@ void print_info(string msg) { // Ne retourne rien
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Quelle est la difference entre declaration et definition ?**
    > La declaration (prototype) annonce la signature. La definition contient le code.
@@ -160,4 +160,4 @@ void print_info(string msg) { // Ne retourne rien
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

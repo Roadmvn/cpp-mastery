@@ -8,7 +8,7 @@
 //
 //   ┌─────────────────┐     Queue (ring buffer)     ┌──────────────────┐
 //   │  MarketFeed      │                             │  TickProcessor    │
-//   │  Thread (prod)   │ ──────── MarketTick ──────► │  Thread (cons)   │
+//   │  Thread (prod)   │ ──────── MarketTick ────── │  Thread (cons)   │
 //   │                  │   mutex + condition_var      │                  │
 //   │  - génère prix   │                             │  - compte ticks  │
 //   │  - simule spread │                             │  - calcule VWAP  │
@@ -52,7 +52,7 @@ struct MarketTick {
 //
 //   Producer                 MarketQueue                Consumer
 //       │                  ┌───────────────┐                │
-//       │  push(tick) ────►│ [t1][t2][t3]  │──► pop(tick)  │
+//       │  push(tick) ────│ [t1][t2][t3]  │── pop(tick)  │
 //       │                  │               │                │
 //       │                  │  mutex: accès │                │
 //       │                  │  cv_not_empty │                │
@@ -81,7 +81,7 @@ struct MarketQueue {
     // TODO: implémenter pop()
     // - lock le mutex
     // - attendre qu'il y ait des données (cv_not_empty) OU que done soit true
-    // - si queue vide et done → retourner false
+    // - si queue vide et done  retourner false
     // - sinon pop et retourner true
     bool pop(MarketTick& out, const std::atomic<bool>& done) {
         // TODO
@@ -137,7 +137,7 @@ struct ConsumerStats {
 };
 
 void consumer(MarketQueue& queue, std::atomic<bool>& done, ConsumerStats& stats) {
-    // TODO: loop: pop() → si false, break
+    // TODO: loop: pop()  si false, break
     // TODO: calculer mid = (bid+ask)/2
     // TODO: vwap_num += mid * volume, vwap_den += volume
     // TODO: détecter spike si prev_mid > 0 et variation > 0.5%
@@ -153,7 +153,7 @@ int main() {
 
     // Schéma du pipeline
     std::cout << "Pipeline:\n";
-    std::cout << "  [MarketFeed] ──(mutex+cv)──► [Queue 1024] ──► [TickProcessor]\n\n";
+    std::cout << "  [MarketFeed] ──(mutex+cv)── [Queue 1024] ── [TickProcessor]\n\n";
 
     MarketQueue       queue;
     std::atomic<bool> done{false};

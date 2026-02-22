@@ -1,6 +1,6 @@
-# Chapitre 11 : Pointeurs 🎯
+# Chapitre 11 : Pointeurs 
 
-## Ce que tu vas apprendre 🎯
+## Ce que tu vas apprendre 
 
 - Declarer un pointeur avec `*`
 - Obtenir l'adresse avec `&` et dereferencier avec `*`
@@ -10,14 +10,14 @@
 
 ---
 
-## C'est quoi un pointeur ? 🔍
+## C'est quoi un pointeur ? 
 
 Un pointeur est une variable qui **stocke une adresse memoire**. Au lieu de contenir une valeur directement, il contient l'adresse ou se trouve cette valeur.
 
 ```
     Variable normale          Pointeur
     ┌──────────┐              ┌──────────┐         ┌──────────┐
-    │ age = 25 │              │ ptr =    │────────► │ age = 25 │
+    │ age = 25 │              │ ptr =    │──────── │ age = 25 │
     │ @0x7FF04 │              │ 0x7FF04  │         │ @0x7FF04 │
     └──────────┘              └──────────┘         └──────────┘
                                @0x7FF10
@@ -28,7 +28,7 @@ Un pointeur est une variable qui **stocke une adresse memoire**. Au lieu de cont
 
 ---
 
-## Declaration et utilisation 📝
+## Declaration et utilisation 
 
 ```cpp
 int age = 25;
@@ -50,7 +50,7 @@ cout << *ptr << endl;   // 25 (dereferencement : valeur A l'adresse)
 
 ---
 
-## Schema detaille : pointeur vers donnee 🗺️
+## Schema detaille : pointeur vers donnee 
 
 ```
     STACK
@@ -74,7 +74,7 @@ cout << *ptr << endl;   // 25 (dereferencement : valeur A l'adresse)
 
 ---
 
-## Modifier une valeur via un pointeur ✏️
+## Modifier une valeur via un pointeur ✏
 
 ```cpp
 int score = 100;
@@ -105,10 +105,10 @@ L'arithmetique de pointeurs ne travaille pas en octets mais en **elements du typ
     0x100    0x104    0x108    0x10C    0x110
     p        p+1     p+2      p+3      p+4
 
-    p       → adresse 0x100, *p     = 10
-    p + 1   → adresse 0x104, *(p+1) = 20
-    p + 2   → adresse 0x108, *(p+2) = 30
-    p + 3   → adresse 0x10C, *(p+3) = 40
+    p        adresse 0x100, *p     = 10
+    p + 1    adresse 0x104, *(p+1) = 20
+    p + 2    adresse 0x108, *(p+2) = 30
+    p + 3    adresse 0x10C, *(p+3) = 40
 ```
 
 **p + n** avance de **n * sizeof(type)** octets.
@@ -169,7 +169,7 @@ En C++ moderne, on prefere les references (`&`), mais les pointeurs sont essenti
 
 ---
 
-## Points cles a retenir 🔑
+## Points cles a retenir 
 
 1. **`int* p`** declare un pointeur vers un int
 2. **`&var`** donne l'adresse d'une variable
@@ -180,7 +180,7 @@ En C++ moderne, on prefere les references (`&`), mais les pointeurs sont essenti
 
 ---
 
-## Compilation 🔧
+## Compilation 
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp && ./exercise

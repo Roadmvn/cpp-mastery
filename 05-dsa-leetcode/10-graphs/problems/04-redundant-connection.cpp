@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #684 - Redundant Connection (Medium) 📊
+// LeetCode #684 - Redundant Connection (Medium) 
 // https://leetcode.com/problems/redundant-connection/
 // ============================================
 //

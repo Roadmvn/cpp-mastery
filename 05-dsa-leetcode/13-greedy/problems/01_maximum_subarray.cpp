@@ -55,7 +55,7 @@ public:
  * Idee greedy : a chaque position, on a deux choix :
  * 1. Continuer le sous-tableau precedent (current + nums[i])
  * 2. Demarrer un nouveau sous-tableau (nums[i] seul)
- * → On prend le MAX des deux.
+ *  On prend le MAX des deux.
  *
  *  Trace pour [-2, 1, -3, 4, -1, 2, 1, -5, 4] :
  *
@@ -66,7 +66,7 @@ public:
  *  3     4     max(4,2)=4     4
  *  4    -1     max(-1,3)=3    4
  *  5     2     max(2,5)=5     5
- *  6     1     max(1,6)=6     6  ← MAX
+ *  6     1     max(1,6)=6     6   MAX
  *  7    -5     max(-5,1)=1    6
  *  8     4     max(4,5)=5     6
  *

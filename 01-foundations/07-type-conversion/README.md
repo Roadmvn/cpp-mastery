@@ -1,4 +1,4 @@
-# Conversion de Types 🔄
+# Conversion de Types 
 
 ## Pourquoi c'est important
 
@@ -144,7 +144,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Que vaut `int x = 9.7;` ?**
    > `x = 9`. Conversion implicite double -> int, la partie decimale est tronquee (pas arrondie).

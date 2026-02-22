@@ -1,6 +1,6 @@
-# Chapitre 07 - Techniques d'Evasion 🕵️
+# Chapitre 07 - Techniques d'Evasion 
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce chapitre est **strictement educatif** dans le cadre de CTF, labs de securite
 > et formation en cybersecurite defensive. Les techniques presentees sont etudiees
 > pour comprendre comment les **outils de securite (EDR/AV) les detectent et les bloquent**.
@@ -8,14 +8,14 @@
 
 ---
 
-## Concept 📖
+## Concept 
 
 Les techniques d'**evasion** permettent a un programme de modifier son comportement
 pour eviter d'etre detecte par des outils d'analyse (sandboxes, EDR, antivirus).
 Comprendre ces techniques est **indispensable pour les defenseurs** : on ne peut
 pas detecter ce qu'on ne comprend pas.
 
-### Trois grandes familles d'evasion 🎯
+### Trois grandes familles d'evasion 
 
 | Technique              | But                                              | Contre-mesure defensive          |
 |------------------------|--------------------------------------------------|----------------------------------|
@@ -25,7 +25,7 @@ pas detecter ce qu'on ne comprend pas.
 
 ---
 
-## Schema ASCII - Flux Normal vs Flux avec Checks d'Evasion 🏗️
+## Schema ASCII - Flux Normal vs Flux avec Checks d'Evasion 
 
 ```
 FLUX NORMAL (sans evasion)
@@ -54,16 +54,16 @@ FLUX AVEC CHECKS D'EVASION
 │   │  ├─ sleep(2)  ──────────────────────────────────────────┐           │
 │   │  │                                                       │           │
 │   │  │  Sandbox acceleree ?           Temps reel ?           │           │
-│   │  │  chrono mesure < 1s  →  EXIT  chrono mesure ≥ 2s → OK│           │
+│   │  │  chrono mesure < 1s    EXIT  chrono mesure ≥ 2s  OK│           │
 │   │  └──────────────────────────────────────────────────────┘           │
 │   │                                                                     │
 │   ▼                                                                     │
 │ [CHECK 3] Detection de VM                                               │
-│   │  ├─ CPU count < 2 ?         → Suspect (VM legere)                  │
-│   │  ├─ RAM < 2GB ?             → Suspect (VM minimale)                 │
-│   │  ├─ Hostname contient       → Suspect ("sandbox", "malware",        │
+│   │  ├─ CPU count < 2 ?          Suspect (VM legere)                  │
+│   │  ├─ RAM < 2GB ?              Suspect (VM minimale)                 │
+│   │  ├─ Hostname contient        Suspect ("sandbox", "malware",        │
 │   │  │    des patterns suspects ?          "analysis", etc.)            │
-│   │  └─ Score >= seuil         → EXIT                                   │
+│   │  └─ Score >= seuil          EXIT                                   │
 │   │                                                                     │
 │   ▼                                                                     │
 │ Environnement juge "safe" : execution de la logique principale          │
@@ -73,18 +73,18 @@ FLUX AVEC CHECKS D'EVASION
 TIMELINE D'ANALYSE EN SANDBOX
 ┌────────────────────────────────────────────────────────────────────────┐
 │  t=0s    Programme lance                                               │
-│  t=0.1s  Sandbox accelere le temps (10x → 1s "simulee" = 0.1s reelle) │
-│  t=0.1s  Programme mesure : elapsed = 0.1s << 2s attendues → EVASION  │
+│  t=0.1s  Sandbox accelere le temps (10x  1s "simulee" = 0.1s reelle) │
+│  t=0.1s  Programme mesure : elapsed = 0.1s << 2s attendues  EVASION  │
 │          Programme en environnement reel :                             │
 │  t=0s    Programme lance                                               │
 │  t=2.0s  sleep(2) s'ecoule normalement                                 │
-│  t=2.0s  elapsed = 2.0s ≥ 2s → OK, on continue                        │
+│  t=2.0s  elapsed = 2.0s ≥ 2s  OK, on continue                        │
 └────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Technique 1 - Obfuscation XOR de Strings 💻
+## Technique 1 - Obfuscation XOR de Strings 
 
 ### Pourquoi XOR ?
 
@@ -95,7 +95,7 @@ XOR permet de stocker une string encodee et de la decoder **seulement en runtime
 string originale  : "malicious_url"
 cle XOR           : 0x42
 string encodee    : stockee dans le binaire (non lisible)
-decodage runtime  : str[i] ^= 0x42  → string originale reconstituee
+decodage runtime  : str[i] ^= 0x42   string originale reconstituee
 ```
 
 ```cpp
@@ -114,7 +114,7 @@ std::string xorEncode(const std::string& input, uint8_t key) {
 
 ---
 
-## Technique 2 - Timing Check 💻
+## Technique 2 - Timing Check 
 
 Les sandboxes d'analyse accelerent souvent le temps pour analyser plus vite.
 On peut le detecter en mesurant le temps reel ecoule apres un sleep() :
@@ -131,14 +131,14 @@ bool isSandboxAccelerated() {
     auto elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>
                       (end - start).count();
 
-    // Si le temps ecoule est beaucoup plus court que prevu → sandbox
+    // Si le temps ecoule est beaucoup plus court que prevu  sandbox
     return elapsed_ms < 1500;  // moins de 1.5s pour un sleep de 2s
 }
 ```
 
 ---
 
-## Technique 3 - Detection de VM (Heuristiques) 💻
+## Technique 3 - Detection de VM (Heuristiques) 
 
 ```
 HEURISTIQUES DE DETECTION (cross-platform)
@@ -152,13 +152,13 @@ HEURISTIQUES DE DETECTION (cross-platform)
 │                     │ "analysis",      │                         │
 │                     │ "virus", etc.    │                         │
 │─────────────────────┼──────────────────┼─────────────────────────│
-│  Score > 2 points   │ → VM detectee    │                         │
+│  Score > 2 points   │  VM detectee    │                         │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Apres ce chapitre, tu dois savoir :
 - [ ] Comment fonctionne l'encodage XOR et pourquoi il cache les strings

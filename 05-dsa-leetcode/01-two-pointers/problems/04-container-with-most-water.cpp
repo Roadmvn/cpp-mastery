@@ -19,9 +19,9 @@
 //   ──────────────────
 //   1 8  6 2  5 4  8 3 7
 //     ^              ^
-//     left          right  → aire = min(8,8) * (7-1) = 48 (pas le max)
+//     left          right   aire = min(8,8) * (7-1) = 48 (pas le max)
 //
-// Exemple : height = [1,8,6,2,5,4,8,3,7] → 49
+// Exemple : height = [1,8,6,2,5,4,8,3,7]  49
 //   Les lignes aux indices 1 (hauteur 8) et 8 (hauteur 7)
 //   forment le plus grand conteneur : min(8,7) * (8-1) = 49
 //
@@ -66,9 +66,9 @@ int maxArea_bruteforce(vector<int>& height) {
 // Pourquoi deplacer le plus petit ?
 // - L'aire = min(h_left, h_right) * largeur
 // - Si on deplace le plus grand, la largeur diminue ET le min reste
-//   le meme (ou diminue) → l'aire ne peut QUE diminuer
+//   le meme (ou diminue)  l'aire ne peut QUE diminuer
 // - Si on deplace le plus petit, la largeur diminue MAIS le min
-//   pourrait augmenter → chance d'augmenter l'aire
+//   pourrait augmenter  chance d'augmenter l'aire
 //
 // Donc on ne rate jamais la solution optimale.
 

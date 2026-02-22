@@ -6,8 +6,8 @@
 // Un anagramme utilise exactement les memes lettres, dans n'importe quel ordre.
 //
 // Exemple :
-//   Input : s="anagram", t="nagaram" → Output: true
-//   Input : s="rat",     t="car"     → Output: false
+//   Input : s="anagram", t="nagaram"  Output: true
+//   Input : s="rat",     t="car"      Output: false
 //
 // Compile : g++ -std=c++17 02_valid_anagram.cpp -o 02
 
@@ -20,7 +20,7 @@ using namespace std;
 // -----------------------------------------------
 // BRUTE FORCE : O(n log n) temps | O(1) espace
 // Trier les deux strings et comparer.
-// Si elles sont identiques apres tri → anagramme.
+// Si elles sont identiques apres tri  anagramme.
 // -----------------------------------------------
 bool isAnagramBrute(string s, string t) {
     if (s.size() != t.size()) return false;
@@ -49,7 +49,7 @@ bool isAnagramBrute(string s, string t) {
 //   └─────────────────────────────────────────┘
 //
 //   Etape 3 : verifier que toutes les valeurs sont 0
-//   → OUI → Anagramme valide !
+//    OUI  Anagramme valide !
 // -----------------------------------------------
 bool isAnagramOptimal(const string& s, const string& t) {
     if (s.size() != t.size()) return false;

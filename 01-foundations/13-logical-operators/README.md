@@ -1,4 +1,4 @@
-# Operateurs Logiques 🧠
+# Operateurs Logiques 
 
 ## Pourquoi c'est important
 
@@ -223,7 +223,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Que vaut `true && false || true` ?**
    > `true`. Le `&&` est evalue en premier : `(true && false) || true` = `false || true` = `true`.

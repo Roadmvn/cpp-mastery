@@ -1,6 +1,6 @@
 # Chapitre 02 - Memory Pools & Allocators 🏊
 
-## Pourquoi c'est critique en HFT ⚡
+## Pourquoi c'est critique en HFT 
 
 `new` et `delete` appellent `malloc`/`free` qui prennent des **locks globaux**,
 fragmentent la memoire, et font potentiellement des **syscalls** (`mmap`/`brk`).
@@ -16,7 +16,7 @@ ALLOCATION STANDARD (new/malloc):
                                                         Latence
   Code           Appel          OS                     estimee
   ─────          ─────          ──                     ───────
-  new Order() ──► malloc() ──► lock(global_heap)       ~50 ns
+  new Order() ── malloc() ── lock(global_heap)       ~50 ns
                      │         cherche bloc libre       ~100 ns (fragmente)
                      │         potentiel mmap()         ~1000 ns !!
                      │         unlock()
@@ -31,7 +31,7 @@ PROBLEMES:
   4. Localite terrible = objets eparpilles en memoire
 ```
 
-## Memory Pool - Le concept 🎯
+## Memory Pool - Le concept 
 
 ```
 INITIALISATION (au demarrage, UNE SEULE fois):
@@ -58,7 +58,7 @@ next_free─┘                              └── retourne en tete de free 
 Temps: O(1) - juste un pointeur!        Temps: O(1) - juste un pointeur!
 ```
 
-## Arena Allocator - Encore plus simple 🏟️
+## Arena Allocator - Encore plus simple 🏟
 
 ```
 ARENA: alloue lineairement, libere TOUT d'un coup
@@ -84,7 +84,7 @@ ARENA: alloue lineairement, libere TOUT d'un coup
   ou toutes les allocations d'une "frame" sont liberees ensemble
 ```
 
-## Comparaison des approches 📊
+## Comparaison des approches 
 
 ```
 ┌───────────────────┬───────────┬───────────┬───────────────┐
@@ -101,7 +101,7 @@ ARENA: alloue lineairement, libere TOUT d'un coup
 └───────────────────┴───────────┴───────────┴───────────────┘
 ```
 
-## Exemple concret - Pool Allocator 📈
+## Exemple concret - Pool Allocator 
 
 ```cpp
 #include <iostream>
@@ -177,7 +177,7 @@ int main() {
 }
 ```
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au chapitre suivant, tu dois savoir :
 - [ ] Pourquoi `new`/`delete` est interdit sur le hot path en HFT

@@ -1,10 +1,10 @@
-# Chapitre 06 - Getters, Setters et Encapsulation 🔐
+# Chapitre 06 - Getters, Setters et Encapsulation 
 
-## Concept fondamental 🎯
+## Concept fondamental 
 
 L'**encapsulation** est le principe de cacher les details internes d'une classe et de controler l'acces aux donnees via des methodes publiques. Les **getters** lisent, les **setters** modifient avec validation.
 
-## Pourquoi encapsuler ? 🤔
+## Pourquoi encapsuler ? 
 
 ```
 SANS encapsulation :             AVEC encapsulation :
@@ -19,7 +19,7 @@ compte.solde = -999; // OK       |   void set(val)   |
                                  // set() verifie val >= 0
 ```
 
-## Getters (accesseurs) 📖
+## Getters (accesseurs) 
 
 ```cpp
 class Personne {
@@ -36,7 +36,7 @@ public:
 
 Le mot-cle **const** apres la methode garantit qu'elle ne modifie pas l'objet.
 
-## Setters (mutateurs) avec validation ✅
+## Setters (mutateurs) avec validation 
 
 ```cpp
 class Personne {
@@ -61,7 +61,7 @@ public:
 };
 ```
 
-## Pattern : setter retournant *this (fluent interface) 🔗
+## Pattern : setter retournant *this (fluent interface) 
 
 ```cpp
 class Config {
@@ -78,7 +78,7 @@ Config cfg;
 cfg.set_host("srv.com").set_port(443).set_timeout(30);  // Chainage
 ```
 
-## Quand NE PAS utiliser de getters/setters ⚠️
+## Quand NE PAS utiliser de getters/setters 
 
 Si une classe expose tous ses membres via get/set sans aucune logique, autant utiliser une **struct** :
 
@@ -99,7 +99,7 @@ struct Point {
 };
 ```
 
-## Bonnes pratiques 💡
+## Bonnes pratiques 
 
 1. Getter = **toujours const**
 2. Retourner les types lourds par **const reference**

@@ -155,7 +155,7 @@ copy(data.begin(), data.end(), ostream_iterator<int>(cout, " "));
 
 ---
 
-## Patterns LeetCode avec iterateurs 🏆
+## Patterns LeetCode avec iterateurs 
 
 ### Trouver la position d'un element
 
@@ -183,7 +183,7 @@ rotate(v.begin(), v.begin() + 2, v.end());  // v = {3, 4, 5, 1, 2}
 
 ---
 
-## Complexites a retenir 📋
+## Complexites a retenir 
 
 | Operation              | vector (random) | list (bidir)  | set (bidir)   |
 |-----------------------|-----------------|---------------|---------------|
@@ -194,7 +194,7 @@ rotate(v.begin(), v.begin() + 2, v.end());  // v = {3, 4, 5, 1, 2}
 
 ---
 
-## Quand utiliser quoi 🎯
+## Quand utiliser quoi 
 
 | Besoin                             | Outil                              |
 |------------------------------------|------------------------------------|

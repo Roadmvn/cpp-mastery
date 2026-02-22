@@ -72,7 +72,7 @@ double measure_random(const std::vector<int>& data, const std::vector<int>& indi
 
 int main() {
     std::cout << "╔══════════════════════════════════════════════════╗" << std::endl;
-    std::cout << "║     CACHE OPTIMIZATION BENCHMARK 🔥              ║" << std::endl;
+    std::cout << "║     CACHE OPTIMIZATION BENCHMARK               ║" << std::endl;
     std::cout << "╚══════════════════════════════════════════════════╝" << std::endl;
 
     constexpr int N = 16'000'000; // ~64 MB d'ints
@@ -158,7 +158,7 @@ int main() {
 
     // === Conclusion ===
     std::cout << "\n╔══════════════════════════════════════════════════╗" << std::endl;
-    std::cout << "║  CONCLUSION 📊                                   ║" << std::endl;
+    std::cout << "║  CONCLUSION                                    ║" << std::endl;
     std::cout << "║  - L'acces sequentiel domine grace au prefetch    ║" << std::endl;
     std::cout << "║  - Le stride >= cache line tue la performance     ║" << std::endl;
     std::cout << "║  - Les structs compactes sont critiques en HFT   ║" << std::endl;

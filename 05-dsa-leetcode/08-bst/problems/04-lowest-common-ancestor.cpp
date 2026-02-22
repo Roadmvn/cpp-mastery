@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #235 - Lowest Common Ancestor of a BST (Medium) 🔍
+// LeetCode #235 - Lowest Common Ancestor of a BST (Medium) 
 // https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
 // ============================================
 //

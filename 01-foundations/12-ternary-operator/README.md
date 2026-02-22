@@ -143,7 +143,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Reecris avec un ternaire : `int r; if (a > b) r = a; else r = b;`**
    > `int r = (a > b) ? a : b;`

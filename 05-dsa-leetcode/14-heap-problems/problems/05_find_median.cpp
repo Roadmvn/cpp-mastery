@@ -1,6 +1,6 @@
 /*
  * ============================================
- *  LeetCode #295 - Find Median from Data Stream (Hard) 🏔️
+ *  LeetCode #295 - Find Median from Data Stream (Hard) 🏔
  * ============================================
  *  Lien : https://leetcode.com/problems/find-median-from-data-stream/
  *
@@ -10,8 +10,8 @@
  *  - findMedian() : retourner la mediane des elements ajoutes
  *
  *  Exemple :
- *  addNum(1), addNum(2) → findMedian() = 1.5
- *  addNum(3) → findMedian() = 2.0
+ *  addNum(1), addNum(2)  findMedian() = 1.5
+ *  addNum(3)  findMedian() = 2.0
  *
  *  Contraintes :
  *  - -10^5 <= num <= 10^5
@@ -55,8 +55,8 @@ public:
  * ─── SOLUTION OPTIMALE : Deux heaps ──────────────
  *
  * On partitionne les nombres en deux moities :
- * - maxHeap : moitie gauche (les plus petits) → acces au max
- * - minHeap : moitie droite (les plus grands) → acces au min
+ * - maxHeap : moitie gauche (les plus petits)  acces au max
+ * - minHeap : moitie droite (les plus grands)  acces au min
  *
  *  Invariants :
  *  1. Tout dans maxHeap <= tout dans minHeap
@@ -69,8 +69,8 @@ public:
  *
  *  add(2): maxHeap=[1], minHeap=[2]        median=(1+2)/2=1.5
  *
- *  add(3): maxHeap push 3→[3,1], top(3)>min top(2)
- *          move 3→minHeap, rebalance
+ *  add(3): maxHeap push 3[3,1], top(3)>min top(2)
+ *          move 3minHeap, rebalance
  *          maxHeap=[2,1], minHeap=[3]       median=2
  *
  *  add(4): maxHeap push 4, rebalance
@@ -87,7 +87,7 @@ public:
  *  │    /   \         │  │    /             │
  *  │  [2]   [1]       │  │  [5]             │
  *  │                  │  │                  │
- *  │  top = 3 ────────┼──┼→ top = 4         │
+ *  │  top = 3 ────────┼──┼ top = 4         │
  *  └──────────────────┘  └──────────────────┘
  *            mediane = 3 (maxHeap a 1 de plus)
  *

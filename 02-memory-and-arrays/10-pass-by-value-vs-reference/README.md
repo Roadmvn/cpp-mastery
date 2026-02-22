@@ -1,6 +1,6 @@
-# Chapitre 10 : Passage par Valeur vs par Reference 🔄
+# Chapitre 10 : Passage par Valeur vs par Reference 
 
-## Ce que tu vas apprendre 🎯
+## Ce que tu vas apprendre 
 
 - La difference entre passage par valeur et par reference
 - L'operateur `&` dans les parametres de fonctions
@@ -9,7 +9,7 @@
 
 ---
 
-## Passage par valeur : la copie 📋
+## Passage par valeur : la copie 
 
 Par defaut, C++ **copie** la variable quand tu la passes a une fonction. La fonction travaille sur sa propre copie — l'original ne bouge pas.
 
@@ -18,9 +18,9 @@ Par defaut, C++ **copie** la variable quand tu la passes a une fonction. La fonc
     ┌─────────────────┐         ┌─────────────────┐
     │   main()        │         │   doubler(x)    │
     │                 │  COPIE  │                  │
-    │   age = 25      │ ──────► │   x = 25        │
+    │   age = 25      │ ────── │   x = 25        │
     │                 │         │   x = x * 2     │
-    │   age = 25 ✓    │         │   x = 50        │
+    │   age = 25     │         │   x = 50        │
     │   (inchange)    │         │   (copie locale) │
     └─────────────────┘         └─────────────────┘
 ```
@@ -40,7 +40,7 @@ int main() {
 
 ---
 
-## Passage par reference : l'original 🎯
+## Passage par reference : l'original 
 
 Avec `&`, tu passes **l'adresse** de la variable. La fonction modifie directement l'original.
 
@@ -49,9 +49,9 @@ Avec `&`, tu passes **l'adresse** de la variable. La fonction modifie directemen
     ┌─────────────────┐         ┌─────────────────┐
     │   main()        │         │   doubler(x)    │
     │                 │  REF    │                  │
-    │   age = 25      │◄──────► │   x → age       │
+    │   age = 25      │◄────── │   x  age       │
     │                 │         │   x = x * 2     │
-    │   age = 50 ✓    │         │   (modifie      │
+    │   age = 50     │         │   (modifie      │
     │   (modifie!)    │         │    l'original)   │
     └─────────────────┘         └─────────────────┘
 ```
@@ -71,7 +71,7 @@ int main() {
 
 ---
 
-## Visualisation de la stack 🏗️
+## Visualisation de la stack 
 
 ```
     PASSAGE PAR VALEUR               PASSAGE PAR REFERENCE
@@ -79,7 +79,7 @@ int main() {
     │ Stack Frame:     │             │ Stack Frame:     │
     │ doubler()        │             │ doubler()        │
     │ ┌──────────────┐ │             │ ┌──────────────┐ │
-    │ │ x = 25 (copy)│ │             │ │ x → 0x7FF004 │─┼──┐
+    │ │ x = 25 (copy)│ │             │ │ x  0x7FF004 │─┼──┐
     │ └──────────────┘ │             │ └──────────────┘ │  │
     ├──────────────────┤             ├──────────────────┤  │
     │ Stack Frame:     │             │ Stack Frame:     │  │
@@ -94,7 +94,7 @@ int main() {
 
 ---
 
-## const& : le meilleur des deux mondes 🛡️
+## const& : le meilleur des deux mondes 
 
 `const&` passe par reference (pas de copie = rapide) mais interdit la modification (securite).
 
@@ -113,7 +113,7 @@ void afficher(const MarketData& data) {
 
 ---
 
-## Quand utiliser quoi ? 📊
+## Quand utiliser quoi ? 
 
 | Situation                          | Utilise              | Pourquoi                               |
 |------------------------------------|----------------------|----------------------------------------|
@@ -126,7 +126,7 @@ void afficher(const MarketData& data) {
 
 ---
 
-## Swap : l'exemple classique 🔄
+## Swap : l'exemple classique 
 
 ```cpp
 void swap(int& a, int& b) {
@@ -169,17 +169,17 @@ int main() {
 
 ---
 
-## Points cles a retenir 🔑
+## Points cles a retenir 
 
 1. **Par valeur** : la fonction recoit une copie (l'original est safe)
 2. **Par reference `&`** : la fonction modifie l'original directement
 3. **`const&`** : reference en lecture seule = performance + securite
-4. Types primitifs → par valeur. Structs/objets → par `const&`
+4. Types primitifs  par valeur. Structs/objets  par `const&`
 5. Utilise `&` quand tu veux modifier l'original (swap, out-params)
 
 ---
 
-## Compilation 🔧
+## Compilation 
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp && ./exercise

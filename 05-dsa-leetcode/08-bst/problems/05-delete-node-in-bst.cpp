@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #450 - Delete Node in a BST (Medium) 🔍
+// LeetCode #450 - Delete Node in a BST (Medium) 
 // https://leetcode.com/problems/delete-node-in-a-bst/
 // ============================================
 //

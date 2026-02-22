@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #100 - Same Tree (Easy) 🌳
+// LeetCode #100 - Same Tree (Easy) 
 // https://leetcode.com/problems/same-tree/
 // ============================================
 //

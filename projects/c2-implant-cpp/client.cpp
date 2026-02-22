@@ -2,7 +2,7 @@
 // client.cpp - Client C2 (Implant Simule) Educatif
 // ==========================================================================
 //
-// DISCLAIMER EDUCATIF ⚠️
+// DISCLAIMER EDUCATIF 
 // Ce client est une simulation educative d'implant C2.
 // - Se connecte UNIQUEMENT sur 127.0.0.1:4444 (localhost)
 // - Commandes limitees a une whitelist explicite

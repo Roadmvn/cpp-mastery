@@ -177,12 +177,12 @@ void exercise_outliers() {
     std::cout << "  Distribution bimodale (N=" << N << ", outliers=" << outlier_count << "):\n";
     print_percentiles("  Résultats", p);
     std::cout << "\n  Conclusion:\n";
-    std::cout << "    → mean=" << std::fixed << std::setprecision(1) << p.mean
+    std::cout << "     mean=" << std::fixed << std::setprecision(1) << p.mean
               << " ns (gonflée par les outliers " << std::setprecision(0)
               << p.p999 << " ns)\n";
-    std::cout << "    → p50=" << p.p50 << " ns  = vrai coût normal\n";
-    std::cout << "    → p99.9=" << p.p999 << " ns = outlier (1 op/1000)\n";
-    std::cout << "    → Optimiser sur p50: OK. Ignorer p99.9: DANGER en HFT!\n";
+    std::cout << "     p50=" << p.p50 << " ns  = vrai coût normal\n";
+    std::cout << "     p99.9=" << p.p999 << " ns = outlier (1 op/1000)\n";
+    std::cout << "     Optimiser sur p50: OK. Ignorer p99.9: DANGER en HFT!\n";
 }
 
 // ─────────────────────────────────────────────

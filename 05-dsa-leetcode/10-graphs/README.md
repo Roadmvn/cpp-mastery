@@ -1,4 +1,4 @@
-# 10 - Graphs : Theorie des graphes 📊
+# 10 - Graphs : Theorie des graphes 
 
 ## C'est quoi un graphe ?
 
@@ -16,7 +16,7 @@ DIRIGE (oriented) :         NON DIRIGE :
 Aretes : A->B, A->C, B->D, C->D    Aretes : A-B, A-C, B-D, C-D
 ```
 
-## Representations en memoire 📋
+## Representations en memoire 
 
 ```
 Graphe :    0 --- 1
@@ -54,7 +54,7 @@ ADJACENCY MATRIX :
   Meilleur   | Graphe creux   | Graphe dense
 ```
 
-## Algorithmes essentiels 🔧
+## Algorithmes essentiels 
 
 ```
 1. DFS / BFS : parcourir, composantes connexes
@@ -64,7 +64,7 @@ ADJACENCY MATRIX :
 5. Detection de cycle : DFS avec etats (blanc/gris/noir)
 ```
 
-## Detection de cycle dans un graphe dirige 🔄
+## Detection de cycle dans un graphe dirige 
 
 ```
 Etats des noeuds :
@@ -83,7 +83,7 @@ DFS depuis A :
   A(gris) -> B(gris) -> C(gris) -> D(gris) -> A est GRIS = CYCLE!
 ```
 
-## Union-Find (Disjoint Set) 🔗
+## Union-Find (Disjoint Set) 
 
 ```
 Detecter si deux noeuds sont dans le meme composant.
@@ -98,7 +98,7 @@ find(1) = 0           find(3) = 2
 union(1,3) -> parent: [0,0,2,0]  -> {0,1,2,3} tout connecte
 ```
 
-## Quand utiliser quoi ? 🎯
+## Quand utiliser quoi ? 
 
 | Probleme | Algorithme |
 |----------|-----------|
@@ -108,7 +108,7 @@ union(1,3) -> parent: [0,0,2,0]  -> {0,1,2,3} tout connecte
 | Aretes redondantes | Union-Find |
 | Plus court chemin (poids) | Dijkstra (priority queue) |
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au pattern suivant, tu dois savoir :
 - [ ] Construire un graphe (adjacency list)

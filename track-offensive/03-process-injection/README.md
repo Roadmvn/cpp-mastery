@@ -1,6 +1,6 @@
 # Chapitre 03 - Injection de Processus (Simulation IPC) 💉
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce chapitre est **strictement educatif**. L'injection de processus est une technique
 > avancee etudiee pour **comprendre les attaques et mieux s'en defendre**.
 > Nous utilisons des **simulations IPC** (Inter-Process Communication) pour illustrer
@@ -9,7 +9,7 @@
 
 ---
 
-## Concept 📖
+## Concept 
 
 L'injection de processus consiste a **faire executer du code dans l'espace memoire
 d'un autre processus**. Sur Windows, cela passe par des APIs comme `VirtualAllocEx`,
@@ -20,7 +20,7 @@ Ici, on **simule le concept** avec des mecanismes IPC Unix :
 - **fork() + pipe** (communication parent-enfant)
 - **Signaux** (notification entre processus)
 
-### Pourquoi c'est important en Red Team ? 🎯
+### Pourquoi c'est important en Red Team ? 
 
 L'injection de processus permet de :
 - **Cacher du code** dans un processus legitime (evasion)
@@ -30,7 +30,7 @@ L'injection de processus permet de :
 
 ---
 
-## Schema ASCII - Injection de Processus 🏗️
+## Schema ASCII - Injection de Processus 
 
 ### Injection Classique (Windows - Conceptuel)
 
@@ -47,7 +47,7 @@ L'injection de processus permet de :
 │  3. WriteProcess │         │  │             │  │
 │     Memory()     │────────>│  │ [CODE ECRIT]│  │
 │                  │         │  │             │  │
-│  4. CreateRemote │         │  │  ↓ Execute! │  │
+│  4. CreateRemote │         │  │   Execute! │  │
 │     Thread()     │────────>│  │ [RUNNING]   │  │
 │                  │         │  └────────────┘  │
 └─────────────────┘         └─────────────────┘
@@ -88,7 +88,7 @@ L'injection de processus permet de :
 
 ---
 
-## Exemple - Simulation avec fork + pipe 💻
+## Exemple - Simulation avec fork + pipe 
 
 ```cpp
 #include <iostream>
@@ -194,7 +194,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Apres ce chapitre, tu dois savoir :
 - [ ] Le concept d'injection de processus (ecrire du code dans un autre processus)

@@ -1,6 +1,6 @@
-# Chapitre 13 : Memoire Dynamique - new / delete 🏗️
+# Chapitre 13 : Memoire Dynamique - new / delete 
 
-## Ce que tu vas apprendre 🎯
+## Ce que tu vas apprendre 
 
 - `new` et `delete` pour allouer/liberer de la memoire
 - `new[]` et `delete[]` pour les tableaux dynamiques
@@ -10,7 +10,7 @@
 
 ---
 
-## Pourquoi la memoire dynamique ? 🤔
+## Pourquoi la memoire dynamique ? 
 
 La stack est limitee (~1-8 MB) et la taille doit etre connue a la compilation. Parfois tu as besoin de :
 
@@ -22,7 +22,7 @@ Solution : allouer sur le **heap** avec `new`.
 
 ---
 
-## new et delete : allocation simple 📦
+## new et delete : allocation simple 
 
 ```cpp
 // Allocation d'un seul element
@@ -42,7 +42,7 @@ q = nullptr;
 ```
     STACK                          HEAP
     ┌──────────────────┐           ┌──────────────┐
-    │ p = 0x55A000     │──────────►│ 42           │
+    │ p = 0x55A000     │──────────│ 42           │
     │ (8 octets)       │           │ (4 octets)   │
     └──────────────────┘           └──────────────┘
     Automatiquement libere          Manuellement libere
@@ -51,7 +51,7 @@ q = nullptr;
 
 ---
 
-## new[] et delete[] : tableaux dynamiques 📊
+## new[] et delete[] : tableaux dynamiques 
 
 ```cpp
 int taille;
@@ -76,7 +76,7 @@ arr = nullptr;
 
     STACK                          HEAP
     ┌──────────────┐               ┌─────┬─────┬─────┬─────┬─────┐
-    │ arr = 0xA000 │──────────────►│  0  │ 10  │ 20  │ 30  │ 40  │
+    │ arr = 0xA000 │──────────────│  0  │ 10  │ 20  │ 30  │ 40  │
     └──────────────┘               └─────┴─────┴─────┴─────┴─────┘
                                    0xA000 0xA004 0xA008 0xA00C 0xA010
 
@@ -91,7 +91,7 @@ arr = nullptr;
 
 ---
 
-## Memory Leak : le tueur silencieux 💀
+## Memory Leak : le tueur silencieux 
 
 Un **memory leak** arrive quand tu alloues de la memoire sans jamais la liberer. Le programme consomme de plus en plus de RAM jusqu'a crash.
 
@@ -99,7 +99,7 @@ Un **memory leak** arrive quand tu alloues de la memoire sans jamais la liberer.
 // FUITE MEMOIRE : p est perdu, impossible de liberer
 void fuite() {
     int* p = new int(42);
-    // oublie delete p → fuite !
+    // oublie delete p  fuite !
 }  // p est detruit (variable locale) mais la memoire heap reste allouee
 
 // FUITE MEMOIRE : reassignation sans delete
@@ -111,11 +111,11 @@ delete p;           // ne libere que int(20)
 ```
     MEMORY LEAK
     ┌──────────────┐               ┌───────────┐
-    │ p = 0xB000   │──────────────►│ 20        │  ← Seul celui-ci sera libere
+    │ p = 0xB000   │──────────────│ 20        │   Seul celui-ci sera libere
     └──────────────┘               └───────────┘
 
                                    ┌───────────┐
-                                   │ 10        │  ← PERDU ! Pas de pointeur
+                                   │ 10        │   PERDU ! Pas de pointeur
                                    └───────────┘     vers cette memoire
                                    0xA000            = MEMORY LEAK
 ```
@@ -130,34 +130,34 @@ delete p;           // ne libere que int(20)
 
 ---
 
-## delete vs delete[] : ne te trompe pas ! ⚠️
+## delete vs delete[] : ne te trompe pas ! 
 
 | Allocation      | Liberation correcte | Liberation incorrecte     |
 |----------------|--------------------|-----------------------------|
-| `new int`       | `delete p;`        | `delete[] p;` → UB         |
-| `new int[10]`   | `delete[] p;`      | `delete p;` → UB           |
+| `new int`       | `delete p;`        | `delete[] p;`  UB         |
+| `new int[10]`   | `delete[] p;`      | `delete p;`  UB           |
 
 **UB** = Undefined Behavior = tout peut arriver (crash, corruption, rien du tout).
 
 ---
 
-## Cycle de vie heap vs stack 🔄
+## Cycle de vie heap vs stack 
 
 ```
     STACK                              HEAP
     ┌──────────────────────────┐       ┌──────────────────────────┐
     │ int x = 5;               │       │ int* p = new int(5);     │
-    │ → Cree en entrant scope  │       │ → Cree quand TU le dis   │
-    │ → Detruit en sortant     │       │ → Detruit quand TU le dis│
-    │ → Taille fixe (compil)   │       │ → Taille variable (exec) │
-    │ → Rapide                 │       │ → Plus lent              │
-    │ → Pas de fuite possible  │       │ → Fuite possible         │
+    │  Cree en entrant scope  │       │  Cree quand TU le dis   │
+    │  Detruit en sortant     │       │  Detruit quand TU le dis│
+    │  Taille fixe (compil)   │       │  Taille variable (exec) │
+    │  Rapide                 │       │  Plus lent              │
+    │  Pas de fuite possible  │       │  Fuite possible         │
     └──────────────────────────┘       └──────────────────────────┘
 ```
 
 ---
 
-## Exemple complet : tableau dynamique 📋
+## Exemple complet : tableau dynamique 
 
 ```cpp
 #include <iostream>
@@ -193,7 +193,7 @@ int main() {
 
 ---
 
-## Points cles a retenir 🔑
+## Points cles a retenir 
 
 1. **`new`** alloue sur le heap, retourne un pointeur
 2. **`delete`** libere un element, **`delete[]`** libere un tableau
@@ -205,7 +205,7 @@ int main() {
 
 ---
 
-## Compilation 🔧
+## Compilation 
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp && ./exercise

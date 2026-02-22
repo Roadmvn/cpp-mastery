@@ -1,5 +1,5 @@
 // ============================================
-// PATTERN : BFS vs DFS - Templates 🔄
+// PATTERN : BFS vs DFS - Templates 
 // ============================================
 // Squelettes copier-coller pour BFS et DFS
 // Compile : g++ -std=c++17 -o pattern pattern-template.cpp

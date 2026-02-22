@@ -16,7 +16,7 @@ Simulateur complet qui:
 │  ┌──────────────────┐    ┌─────────────────┐   ┌───────────────┐  │
 │  │  Order Generator │    │   Order Book    │   │  Stats Engine │  │
 │  │                  │    │                 │   │               │  │
-│  │  marche aléat.   │───►│  PriceLevels    │──►│  trades/s     │  │
+│  │  marche aléat.   │───│  PriceLevels    │──│  trades/s     │  │
 │  │  + spread        │    │  FIFO matching  │   │  spread moyen │  │
 │  │  + volume dist.  │    │  price-time     │   │  VWAP         │  │
 │  │                  │    │  priority       │   │  p50/p99 lat. │  │

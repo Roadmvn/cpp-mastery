@@ -1,6 +1,6 @@
-# Chapitre 04 - Networking TCP/UDP 🌐
+# Chapitre 04 - Networking TCP/UDP 
 
-## Pourquoi c'est critique en HFT ⚡
+## Pourquoi c'est critique en HFT 
 
 Le market data arrive par le **reseau**. Chaque microseconde de latence reseau
 est une microseconde de retard sur le signal de trading. En HFT :
@@ -8,7 +8,7 @@ est une microseconde de retard sur le signal de trading. En HFT :
 - **TCP** pour l'envoi d'ordres (fiabilite obligatoire)
 - **Kernel bypass** (DPDK, Solarflare) pour les ultras (on y reviendra)
 
-## TCP vs UDP - Comparaison HFT 📊
+## TCP vs UDP - Comparaison HFT 
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -16,19 +16,19 @@ est une microseconde de retard sur le signal de trading. En HFT :
 │                                                                  │
 │  Client                              Server                     │
 │    │                                   │                        │
-│    ├── SYN ──────────────────────────►│  ← 3-way handshake     │
+│    ├── SYN ──────────────────────────│   3-way handshake     │
 │    │◄────────────────────── SYN+ACK ──┤    AVANT d'envoyer     │
-│    ├── ACK ──────────────────────────►│    la moindre donnee   │
+│    ├── ACK ──────────────────────────│    la moindre donnee   │
 │    │                                   │    (~100 us RTT)       │
 │    │                                   │                        │
-│    ├── DATA ─────────────────────────►│                        │
-│    │◄────────────────────── ACK ──────┤  ← Chaque paquet      │
-│    ├── DATA ─────────────────────────►│    est acquitte        │
+│    ├── DATA ─────────────────────────│                        │
+│    │◄────────────────────── ACK ──────┤   Chaque paquet      │
+│    ├── DATA ─────────────────────────│    est acquitte        │
 │    │◄────────────────────── ACK ──────┤                        │
 │    │                                   │                        │
-│    │  Retransmission si perte ↻       │  ← Fiable mais LENT   │
+│    │  Retransmission si perte ↻       │   Fiable mais LENT   │
 │    │  Controle de flux (window)       │                        │
-│    │  Nagle algorithm (batching!)     │  ← Desactiver!        │
+│    │  Nagle algorithm (batching!)     │   Desactiver!        │
 └─────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────┐
@@ -36,10 +36,10 @@ est une microseconde de retard sur le signal de trading. En HFT :
 │                                                                  │
 │  Sender                              Receiver                   │
 │    │                                   │                        │
-│    ├── DATA ─────────────────────────►│  ← Pas de handshake!  │
-│    ├── DATA ─────────────────────────►│    Fire and forget.    │
+│    ├── DATA ─────────────────────────│   Pas de handshake!  │
+│    ├── DATA ─────────────────────────│    Fire and forget.    │
 │    ├── DATA ──────────── X (perdu)    │    Pas d'ACK.          │
-│    ├── DATA ─────────────────────────►│    Pas de retransmit.  │
+│    ├── DATA ─────────────────────────│    Pas de retransmit.  │
 │    │                                   │                        │
 │    │  Overhead minimal                │                        │
 │    │  Header: 8 bytes (vs 20+ TCP)   │                        │
@@ -47,10 +47,10 @@ est une microseconde de retard sur le signal de trading. En HFT :
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## UDP Multicast - Market Data Distribution 📡
+## UDP Multicast - Market Data Distribution 
 
 ```
-MULTICAST: 1 sender → N receivers simultanement
+MULTICAST: 1 sender  N receivers simultanement
 
   Exchange Feed Handler
          │
@@ -73,7 +73,7 @@ MULTICAST: 1 sender → N receivers simultanement
   (pas de middleware, pas de message broker)
 ```
 
-## Optimisations reseau HFT 🔧
+## Optimisations reseau HFT 
 
 ```
 ┌──────────────────────────────────────────────────┐
@@ -94,7 +94,7 @@ MULTICAST: 1 sender → N receivers simultanement
 └──────────────────────────────────────────────────┘
 ```
 
-## Architecture reseau typique HFT 🏗️
+## Architecture reseau typique HFT 
 
 ```
                     Exchange
@@ -113,19 +113,19 @@ MULTICAST: 1 sender → N receivers simultanement
          SPSC Queue (lock-free)
                 │
          ┌──────▼──────┐
-         │  Strategy   │  ← Decision en < 1 us
+         │  Strategy   │   Decision en < 1 us
          │  Engine     │
          └──────┬──────┘
                 │
          TCP Connection
                 │
          ┌──────▼──────┐
-         │  Exchange   │  ← Envoi d'ordre
+         │  Exchange   │   Envoi d'ordre
          │  Gateway    │
          └─────────────┘
 ```
 
-## Exemple concret - UDP Sender/Receiver 📈
+## Exemple concret - UDP Sender/Receiver 
 
 ```cpp
 // Cote sender:
@@ -151,7 +151,7 @@ MarketData data;
 recvfrom(sock, &data, sizeof(data), 0, nullptr, nullptr);
 ```
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au chapitre suivant, tu dois savoir :
 - [ ] Pourquoi UDP est prefere a TCP pour le market data en HFT

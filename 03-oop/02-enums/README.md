@@ -1,6 +1,6 @@
 # Chapitre 02 - Les Enumerations (enum) en C++ 🔢
 
-## Concept fondamental 🎯
+## Concept fondamental 
 
 Une **enumeration** definit un type avec un ensemble fini de valeurs nommees. C'est le moyen propre de representer des constantes liees entre elles.
 
@@ -18,7 +18,7 @@ Problemes de l'enum classique :
 - Conversion implicite vers int (pas type-safe)
 - Risque de collision de noms
 
-## Enum class (C++11) - La bonne pratique ✅
+## Enum class (C++11) - La bonne pratique 
 
 ```cpp
 enum class Direction { NORD, SUD, EST, OUEST };
@@ -28,7 +28,7 @@ Direction d = Direction::NORD;
 int val = static_cast<int>(d);    // Conversion explicite : OK
 ```
 
-## Comparaison visuelle 🔍
+## Comparaison visuelle 
 
 ```
 enum classique           enum class (C++11)
@@ -42,7 +42,7 @@ enum classique           enum class (C++11)
   Type-safe: NON           Type-safe: OUI
 ```
 
-## Underlying type (type sous-jacent) 🧬
+## Underlying type (type sous-jacent) 
 
 ```cpp
 // Par defaut : int (4 bytes)
@@ -56,7 +56,7 @@ enum class Status : uint8_t {   // Force 1 byte
 sizeof(Status);  // 1 byte au lieu de 4
 ```
 
-## Valeurs personnalisees 🔧
+## Valeurs personnalisees 
 
 ```cpp
 enum class HttpCode : uint16_t {
@@ -67,7 +67,7 @@ enum class HttpCode : uint16_t {
 };
 ```
 
-## Pattern : enum vers string 📝
+## Pattern : enum vers string 
 
 ```cpp
 enum class Niveau { DEBUTANT, INTERMEDIAIRE, AVANCE };
@@ -82,7 +82,7 @@ std::string to_string(Niveau n) {
 }
 ```
 
-## Utilisation avec switch ⚡
+## Utilisation avec switch 
 
 ```cpp
 enum class Action { ACHETER, VENDRE, ANNULER };
@@ -97,7 +97,7 @@ void executer(Action a) {
 }
 ```
 
-## Bonnes pratiques 💡
+## Bonnes pratiques 
 
 1. **Toujours** utiliser `enum class` (jamais `enum` seul)
 2. Specifier le type sous-jacent si la taille compte

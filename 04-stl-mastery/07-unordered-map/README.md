@@ -1,4 +1,4 @@
-# Unordered Map 🗺️
+# Unordered Map 
 
 > Hash table — acces O(1) en moyenne, LE conteneur des frequency counters
 
@@ -20,24 +20,24 @@ Hash Table interne :
 ┌─────────────────────────────────────┐
 │ Bucket Array (taille = N)           │
 ├─────┬───────────────────────────────┤
-│ [0] │ → null                        │
-│ [1] │ → ("bob", 87) → null         │
-│ [2] │ → ("alice", 95) → null       │
-│ [3] │ → null                        │
-│ [4] │ → ("charlie", 92) → null     │
-│ [5] │ → null                        │
+│ [0] │  null                        │
+│ [1] │  ("bob", 87)  null         │
+│ [2] │  ("alice", 95)  null       │
+│ [3] │  null                        │
+│ [4] │  ("charlie", 92)  null     │
+│ [5] │  null                        │
 │ ... │                               │
 └─────┴───────────────────────────────┘
 
 Comment ca marche :
-1. hash("alice") % N = 2   → bucket [2]
-2. hash("bob") % N = 1     → bucket [1]
-3. hash("charlie") % N = 4 → bucket [4]
+1. hash("alice") % N = 2    bucket [2]
+2. hash("bob") % N = 1      bucket [1]
+3. hash("charlie") % N = 4  bucket [4]
 
 COLLISION : si deux cles tombent dans le meme bucket
-hash("dave") % N = 2 → bucket [2] deja occupe !
+hash("dave") % N = 2  bucket [2] deja occupe !
 
-│ [2] │ → ("alice", 95) → ("dave", 78) → null
+│ [2] │  ("alice", 95)  ("dave", 78)  null
          chained hashing (liste chainee)
 ```
 
@@ -84,7 +84,7 @@ for (auto it = scores.begin(); it != scores.end(); ++it) {
 
 ---
 
-## Patterns LeetCode avec Hash Map 🏆
+## Patterns LeetCode avec Hash Map 
 
 ### Two Sum (LE classique)
 ```cpp
@@ -120,7 +120,7 @@ for (string& word : words) {
 
 ---
 
-## Complexites a retenir 📋
+## Complexites a retenir 
 
 | Operation         | Moyenne | Pire cas |
 |------------------|---------|----------|
@@ -131,7 +131,7 @@ for (string& word : words) {
 
 ---
 
-## Quand utiliser unordered_map 🎯
+## Quand utiliser unordered_map 
 
 | Signal dans l'enonce           | Pattern                     |
 |--------------------------------|-----------------------------|

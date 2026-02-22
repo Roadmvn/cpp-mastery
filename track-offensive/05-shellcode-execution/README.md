@@ -1,6 +1,6 @@
-# Chapitre 05 - Execution de Shellcode (Concept Educatif) 🧬
+# Chapitre 05 - Execution de Shellcode (Concept Educatif) 
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce chapitre est **strictement educatif**. Le shellcode presente ici fait **uniquement**
 > un appel systeme `exit(0)` - il ne fait RIEN de malveillant. L'objectif est de comprendre
 > comment du code machine brut peut etre execute en memoire, car c'est fondamental pour
@@ -9,7 +9,7 @@
 
 ---
 
-## Concept 📖
+## Concept 
 
 Le **shellcode** est du code machine brut (des octets) qui peut etre execute directement
 par le processeur. Contrairement a un programme compile, le shellcode :
@@ -17,7 +17,7 @@ par le processeur. Contrairement a un programme compile, le shellcode :
 - Est **position-independent** (fonctionne a n'importe quelle adresse)
 - Est souvent **tres compact** (quelques dizaines d'octets)
 
-### Pourquoi c'est important en Red Team ? 🎯
+### Pourquoi c'est important en Red Team ? 
 
 Comprendre le shellcode permet de :
 - Analyser les **payloads** utilises dans les exploits
@@ -27,7 +27,7 @@ Comprendre le shellcode permet de :
 
 ---
 
-## Schema ASCII - Shellcode en Memoire 🏗️
+## Schema ASCII - Shellcode en Memoire 
 
 ### Du Code Source au Code Machine
 
@@ -39,7 +39,7 @@ CODE C                     ASSEMBLEUR                  SHELLCODE (octets)
 │ exit(0);     │ ───────> │ syscall      │ ─────────> │ 00 00            │
 │              │          │              │            │ 0F 05            │
 └──────────────┘          └──────────────┘            └──────────────────┘
-                                                       ↑
+                                                       
                                                        Ce sont juste des
                                                        octets en memoire !
 ```
@@ -51,21 +51,21 @@ MEMOIRE DU PROCESSUS
 ┌────────────────────────────────────────────────┐
 │  Page 1 : CODE (.text)                          │
 │  Permissions : R-X (Read + Execute, no Write)   │
-│  → Le programme peut lire et executer           │
-│  → Mais PAS ecrire (protection W^X)             │
+│   Le programme peut lire et executer           │
+│   Mais PAS ecrire (protection W^X)             │
 ├────────────────────────────────────────────────┤
 │  Page 2 : DONNEES (.data)                       │
 │  Permissions : RW- (Read + Write, no Execute)   │
-│  → Le programme peut lire et ecrire             │
-│  → Mais PAS executer (DEP/NX bit)               │
+│   Le programme peut lire et ecrire             │
+│   Mais PAS executer (DEP/NX bit)               │
 ├────────────────────────────────────────────────┤
 │  Page 3 : HEAP                                  │
 │  Permissions : RW- (Read + Write, no Execute)   │
-│  → Meme protection que les donnees              │
+│   Meme protection que les donnees              │
 ├────────────────────────────────────────────────┤
 │  Page 4 : STACK                                 │
 │  Permissions : RW- (Read + Write, no Execute)   │
-│  → La stack n'est pas executable non plus        │
+│   La stack n'est pas executable non plus        │
 └────────────────────────────────────────────────┘
 
 PROBLEME : Le shellcode est dans une zone RW- (pas executable)
@@ -78,7 +78,7 @@ SOLUTION EDUCATIVE : mprotect() pour ajouter le flag X
 1. ALLOCATION        2. COPIE            3. PROTECTION       4. EXECUTION
 ┌──────────┐        ┌──────────┐        ┌──────────┐       ┌──────────┐
 │  mmap()  │        │ memcpy() │        │ mprotect │       │ cast en  │
-│  alloue  │ ──────>│ copie le │ ──────>│ RW- → R-X│ ────> │ pointeur │
+│  alloue  │ ──────>│ copie le │ ──────>│ RW-  R-X│ ────> │ pointeur │
 │  memoire │        │ shellcode│        │ rend     │       │ fonction │
 │  RW-     │        │ dans buf │        │ executable│       │ et appel │
 └──────────┘        └──────────┘        └──────────┘       └──────────┘
@@ -86,7 +86,7 @@ SOLUTION EDUCATIVE : mprotect() pour ajouter le flag X
 
 ---
 
-## Shellcode Educatif : exit(0) Uniquement 🔬
+## Shellcode Educatif : exit(0) Uniquement 
 
 Le shellcode ci-dessous fait **uniquement** un appel systeme `exit(0)`.
 C'est l'equivalent de `_exit(0)` en C.
@@ -113,7 +113,7 @@ syscall             ; appel au noyau
 
 ---
 
-## Exemple - Execution de Shellcode exit(0) 💻
+## Exemple - Execution de Shellcode exit(0) 
 
 ```cpp
 #include <iostream>
@@ -200,12 +200,12 @@ g++ -std=c++17 -o shellcode_demo example.cpp
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Apres ce chapitre, tu dois savoir :
 - [ ] Ce qu'est un shellcode (code machine brut, position-independent)
 - [ ] Les protections memoire (DEP/NX, W^X) et pourquoi elles existent
 - [ ] Comment mmap/mprotect controlent les permissions memoire
-- [ ] Le flux : allouer → copier → rendre executable → executer
+- [ ] Le flux : allouer  copier  rendre executable  executer
 - [ ] La difference entre les syscalls Linux et macOS
 - [ ] Pourquoi les antivirus surveillent les changements de permissions memoire

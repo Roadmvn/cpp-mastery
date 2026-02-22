@@ -33,7 +33,7 @@ void scale_prices_opt(const double* __restrict__ in,
                       double* __restrict__ out,
                       int n, double factor) {
     // Unroll x4 aide le compilateur à remplir le pipeline d'exécution OOO.
-    // Chaque itération traite 4 doubles → 1 instruction VMULPD (AVX2, 256 bits).
+    // Chaque itération traite 4 doubles  1 instruction VMULPD (AVX2, 256 bits).
     int i = 0;
     for (; i + 3 < n; i += 4) {
         out[i+0] = in[i+0] * factor;
@@ -177,7 +177,7 @@ void demo_simd_concept() {
     std::cout << "  vmulpd   ymm0, ymm0, ymm1   ; 4 multiplications en 1 cycle\n";
     std::cout << "  vmovupd  [out + i*8], ymm0  ; écrit 4 doubles en mémoire\n\n";
     std::cout << "  1 itération = 4 doubles = 32 bytes lus + 32 bytes écrits\n";
-    std::cout << "  Bande passante L1: ~3 ns pour 64 bytes → ~750 GB/s\n";
+    std::cout << "  Bande passante L1: ~3 ns pour 64 bytes  ~750 GB/s\n";
 }
 
 int main() {

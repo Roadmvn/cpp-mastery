@@ -56,7 +56,7 @@ static const uint8_t XOR_KEY = 0x55;
 
 // TODO 2 : Implementer isSandboxTiming
 // Mesure le temps reel ecoule apres un sleep de SLEEP_DURATION_MS ms
-// Si le temps mesure est inferieur a THRESHOLD_MS → sandbox acceleree
+// Si le temps mesure est inferieur a THRESHOLD_MS  sandbox acceleree
 bool isSandboxTiming() {
     const int SLEEP_DURATION_MS = 2000;
     const int THRESHOLD_MS = 1500;
@@ -110,8 +110,8 @@ bool hasSuspiciousHostname() {
 }
 
 // TODO 3d : Calculer le score de suspicion et decider
-// Scoring : CPU < 2 → +1 pt | RAM < 2 GB → +1 pt | hostname suspect → +2 pts
-// Si score >= 2 → VM probable
+// Scoring : CPU < 2  +1 pt | RAM < 2 GB  +1 pt | hostname suspect  +2 pts
+// Si score >= 2  VM probable
 bool isVM() {
     int score = 0;
 

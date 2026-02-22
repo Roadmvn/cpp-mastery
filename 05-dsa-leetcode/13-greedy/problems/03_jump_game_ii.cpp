@@ -10,7 +10,7 @@
  *
  *  Exemple :
  *  Input:  nums = [2,3,1,1,4]
- *  Output: 2 (0→1→4)
+ *  Output: 2 (014)
  *
  *  Contraintes :
  *  - 1 <= nums.length <= 10^4
@@ -65,17 +65,17 @@ public:
  *
  *  Saut 0: position 0
  *          |  portee = [1,2]
- *          ↓
+ *          
  *  Saut 1: positions 1,2
  *          |  depuis 1: portee jusqu'a 4
  *          |  depuis 2: portee jusqu'a 3
- *          ↓
- *  Saut 2: positions 3,4 → ARRIVEE
+ *          
+ *  Saut 2: positions 3,4  ARRIVEE
  *
- *  i=0: farthest=max(0,2)=2, i==currentEnd(0) → jumps=1, currentEnd=2
- *  i=1: farthest=max(2,4)=4, >= n-1 → on sait qu'un saut de plus suffit
- *  i=2: i==currentEnd(2) → jumps=2, currentEnd=4
- *  → Reponse : 2
+ *  i=0: farthest=max(0,2)=2, i==currentEnd(0)  jumps=1, currentEnd=2
+ *  i=1: farthest=max(2,4)=4, >= n-1  on sait qu'un saut de plus suffit
+ *  i=2: i==currentEnd(2)  jumps=2, currentEnd=4
+ *   Reponse : 2
  *
  * Complexite :
  *  - Temps  : O(n) - un seul passage

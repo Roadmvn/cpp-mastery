@@ -1,6 +1,6 @@
 # 13 - Greedy 🤑
 
-## C'est quoi le Greedy ? 🤔
+## C'est quoi le Greedy ? 
 
 L'approche greedy (gloutonne) consiste a faire **le meilleur choix local a chaque etape**
 en esperant que ca mene a la **meilleure solution globale**.
@@ -10,9 +10,9 @@ en esperant que ca mene a la **meilleure solution globale**.
 
 ---
 
-## Quand l'utiliser ? 🎯
+## Quand l'utiliser ? 
 
-- Le probleme a une **propriete de choix glouton** (choix local optimal → global optimal)
+- Le probleme a une **propriete de choix glouton** (choix local optimal  global optimal)
 - Il y a une **sous-structure optimale** (solution optimale = sous-solutions optimales)
 - Mots cles : "maximum", "minimum", "le plus possible", "le moins possible"
 - Problemes d'**intervalles**, de **scheduling**, de **monnaie**
@@ -20,7 +20,7 @@ en esperant que ca mene a la **meilleure solution globale**.
 
 ---
 
-## Schema ASCII - Choix localement optimal 📊
+## Schema ASCII - Choix localement optimal 
 
 ```
     GREEDY : a chaque etape, prendre le meilleur choix local
@@ -29,10 +29,10 @@ en esperant que ca mene a la **meilleure solution globale**.
 
     Index:    0    1    2    3    4
     Valeur:  [2]  [3]  [1]  [1]  [4]
-              ↓
+              
          On peut aller 2 cases max
-              ├──→ index 1 (val=3, reach=4) ← MEILLEUR CHOIX
-              └──→ index 2 (val=1, reach=3)
+              ├── index 1 (val=3, reach=4)  MEILLEUR CHOIX
+              └── index 2 (val=1, reach=3)
 
     ═══════════════════════════════════════
     Greedy vs Dynamic Programming :
@@ -40,14 +40,14 @@ en esperant que ca mene a la **meilleure solution globale**.
 
     Greedy :                    DP :
     ┌─────────┐                ┌─────────┐
-    │ Choix 1 │ → meilleur     │ Choix 1 │ → tester TOUTES
+    │ Choix 1 │  meilleur     │ Choix 1 │  tester TOUTES
     └────┬────┘   local        └────┬────┘   les options
-         ↓                     ┌────┼────┐
+                              ┌────┼────┐
     ┌─────────┐           ┌────┴┐ ┌┴───┐ ┌┴────┐
-    │ Choix 2 │ → meilleur│ Op1 │ │Op2 │ │Op3  │
+    │ Choix 2 │  meilleur│ Op1 │ │Op2 │ │Op3  │
     └────┬────┘   local   └────┬┘ └┬───┘ └┬────┘
-         ↓                     └───┼──────┘
-    ┌─────────┐                    ↓
+                              └───┼──────┘
+    ┌─────────┐                    
     │ Resultat│           ┌──────────────┐
     └─────────┘           │ Meilleur de  │
     O(n) rapide           │ tous         │
@@ -62,7 +62,7 @@ en esperant que ca mene a la **meilleure solution globale**.
 
 ---
 
-## Le pattern general 📐
+## Le pattern general 
 
 ```
 trier les donnees (souvent necessaire)
@@ -79,7 +79,7 @@ retourner resultat
 
 ---
 
-## Strategies greedy courantes 🔑
+## Strategies greedy courantes 
 
 | Strategie | Description | Exemple |
 |-----------|-------------|---------|
@@ -87,11 +87,11 @@ retourner resultat
 | **Max reach** | Maintenir la portee max | Jump Game |
 | **Running sum** | Garder/reset la somme | Maximum Subarray (Kadane) |
 | **Comptage** | Compter les frequences | Task Scheduler |
-| **Deux passes** | Gauche→droite puis droite→gauche | Candy |
+| **Deux passes** | Gauchedroite puis droitegauche | Candy |
 
 ---
 
-## Complexite typique ⏱️
+## Complexite typique 
 
 | Approche | Temps | Espace |
 |----------|-------|--------|
@@ -101,7 +101,7 @@ retourner resultat
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au pattern suivant, tu dois pouvoir :
 - [ ] Expliquer la difference entre greedy et DP

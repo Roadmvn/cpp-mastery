@@ -1,4 +1,4 @@
-# Setup & Hello World 🚀
+# Setup & Hello World 
 
 ## Pourquoi c'est important
 
@@ -102,11 +102,11 @@ Tu dois voir :
 Hello, World!
 ```
 
-C'est fait. Tu viens de compiler ton premier programme C++. 💪
+C'est fait. Tu viens de compiler ton premier programme C++. 
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer a la suite, assure-toi de savoir repondre :
 
@@ -121,4 +121,4 @@ Avant de passer a la suite, assure-toi de savoir repondre :
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

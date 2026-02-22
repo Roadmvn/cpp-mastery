@@ -67,16 +67,16 @@ int largestRectangleBrute(vector<int>& heights) {
 //             0  1  2  3  4  5
 //
 //   Traitement de la pile :
-//   i=0 : h=2, pile vide → push 0, pile=[0]
-//   i=1 : h=1 < h[0]=2 → pop 0:
+//   i=0 : h=2, pile vide  push 0, pile=[0]
+//   i=1 : h=1 < h[0]=2  pop 0:
 //           largeur = i - pile_vide => largeur=1, aire=2*1=2
 //          push 1, pile=[1]
-//   i=2 : h=5 > h[1]=1 → push 2, pile=[1,2]
-//   i=3 : h=6 > h[2]=5 → push 3, pile=[1,2,3]
-//   i=4 : h=2 < h[3]=6 → pop 3: largeur=4-2-1=1, aire=6*1=6
-//           h=2 < h[2]=5 → pop 2: largeur=4-1-1=2, aire=5*2=10  ← MAX
-//           h=2 = h[1]=1? non, 2 > 1 → push 4, pile=[1,4]
-//   i=5 : h=3 > h[4]=2 → push 5, pile=[1,4,5]
+//   i=2 : h=5 > h[1]=1  push 2, pile=[1,2]
+//   i=3 : h=6 > h[2]=5  push 3, pile=[1,2,3]
+//   i=4 : h=2 < h[3]=6  pop 3: largeur=4-2-1=1, aire=6*1=6
+//           h=2 < h[2]=5  pop 2: largeur=4-1-1=2, aire=5*2=10   MAX
+//           h=2 = h[1]=1? non, 2 > 1  push 4, pile=[1,4]
+//   i=5 : h=3 > h[4]=2  push 5, pile=[1,4,5]
 //   Fin  : depiler tout
 //     pop 5: largeur=6-4-1=1, aire=3*1=3
 //     pop 4: largeur=6-1-1=4, aire=2*4=8

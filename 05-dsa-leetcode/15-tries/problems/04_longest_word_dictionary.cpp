@@ -8,8 +8,8 @@
 // En cas d'egalite, retourner le mot lexicographiquement le plus petit.
 //
 // Exemple :
-//   words=["w","wo","wor","worl","world"] → "world"
-//   words=["a","banana","app","appl","ap","apply","apple"] → "apple"
+//   words=["w","wo","wor","worl","world"]  "world"
+//   words=["a","banana","app","appl","ap","apply","apple"]  "apple"
 //
 // Compile : g++ -std=c++17 04_longest_word_dictionary.cpp -o 04
 
@@ -65,18 +65,18 @@ string longestWordBrute(vector<string>& words) {
 //
 //   Trie (apres insertion) :
 //   ROOT
-//   └── [a]* ← "a"
-//       └── [p]* ← "ap"
-//           └── [p]* ← "app"
-//               └── [l]* ← "appl"
-//                   └── [e]* ← "apple"  ← chemin valide le plus long !
+//   └── [a]*  "a"
+//       └── [p]*  "ap"
+//           └── [p]*  "app"
+//               └── [l]*  "appl"
+//                   └── [e]*  "apple"   chemin valide le plus long !
 //
 //   DFS depuis ROOT :
-//   [a] : isEnd=true → explorer
-//   [a][p] : isEnd=true → explorer
-//   [a][p][p] : isEnd=true → explorer
-//   [a][p][p][l] : isEnd=true → explorer
-//   [a][p][p][l][e] : isEnd=true, longueur=5 → candidat !
+//   [a] : isEnd=true  explorer
+//   [a][p] : isEnd=true  explorer
+//   [a][p][p] : isEnd=true  explorer
+//   [a][p][p][l] : isEnd=true  explorer
+//   [a][p][p][l][e] : isEnd=true, longueur=5  candidat !
 // -----------------------------------------------
 struct TrieNode {
     TrieNode* children[26];
@@ -161,7 +161,7 @@ int main() {
         cout << "Brute  : \"" << longestWordBrute(words) << "\"" << endl;
         cout << "Optimal: \"" << longestWordOptimal(words) << "\"" << endl;
         // "abcd" n'est pas valide car "a" est absent
-        // "bc" : "b" present → valide (longueur 2), vs "b" (longueur 1)
+        // "bc" : "b" present  valide (longueur 2), vs "b" (longueur 1)
         // Attendu : "bc"
         cout << endl;
     }

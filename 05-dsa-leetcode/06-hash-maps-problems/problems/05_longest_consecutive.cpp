@@ -7,8 +7,8 @@
 // Contrainte : algorithme en O(n).
 //
 // Exemple :
-//   Input : nums=[100,4,200,1,3,2] → Output: 4  (sequence: 1,2,3,4)
-//   Input : nums=[0,3,7,2,5,8,4,6,0,1] → Output: 9  (0..8)
+//   Input : nums=[100,4,200,1,3,2]  Output: 4  (sequence: 1,2,3,4)
+//   Input : nums=[0,3,7,2,5,8,4,6,0,1]  Output: 9  (0..8)
 //
 // Compile : g++ -std=c++17 05_longest_consecutive.cpp -o 05
 
@@ -56,21 +56,21 @@ int longestConsecutiveBrute(vector<int>& nums) {
 // Principe :
 //   1. Mettre tous les elements dans un hash set (O(1) lookup).
 //   2. Pour chaque element n, verifier si (n-1) est dans le set.
-//      Si OUI → n n'est pas le debut, on saute (evite le recomptage).
-//      Si NON → n est le debut d'une sequence → compter.
+//      Si OUI  n n'est pas le debut, on saute (evite le recomptage).
+//      Si NON  n est le debut d'une sequence  compter.
 //
 // Schema ASCII :
 //
 //   nums = [100, 4, 200, 1, 3, 2]
 //   set  = {100, 4, 200, 1, 3, 2}
 //
-//   n=100 : 99 absent → debut ! 100, 101? non → longueur=1
-//   n=4   : 3 present → PAS debut, skip
-//   n=200 : 199 absent → debut ! 200, 201? non → longueur=1
-//   n=1   : 0 absent → debut !
-//              1→2→3→4→5? non → longueur=4   ← MAX
-//   n=3   : 2 present → PAS debut, skip
-//   n=2   : 1 present → PAS debut, skip
+//   n=100 : 99 absent  debut ! 100, 101? non  longueur=1
+//   n=4   : 3 present  PAS debut, skip
+//   n=200 : 199 absent  debut ! 200, 201? non  longueur=1
+//   n=1   : 0 absent  debut !
+//              12345? non  longueur=4    MAX
+//   n=3   : 2 present  PAS debut, skip
+//   n=2   : 1 present  PAS debut, skip
 //
 //   Resultat : 4
 //

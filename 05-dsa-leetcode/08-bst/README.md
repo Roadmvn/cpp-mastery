@@ -1,4 +1,4 @@
-# 08 - BST : Binary Search Tree 🔍
+# 08 - BST : Binary Search Tree 
 
 ## C'est quoi un BST ?
 
@@ -24,7 +24,7 @@ Propriete BST (pour CHAQUE noeud) :
   - Ce n'est PAS juste parent-enfant, c'est TOUT le sous-arbre!
 ```
 
-## Pourquoi utiliser un BST ? 🎯
+## Pourquoi utiliser un BST ? 
 
 ```
 Recherche dans un tableau trie : O(log n) avec binary search
@@ -41,7 +41,7 @@ alors qu'un tableau trie necessite O(n) pour inserer/supprimer.
          Min/Max      |  O(1)       |  O(log n)
 ```
 
-## Propriete cle : Inorder = tri croissant 📊
+## Propriete cle : Inorder = tri croissant 
 
 ```
 BST :       [5]
@@ -56,7 +56,7 @@ Inorder traversal : 2 -> 3 -> 4 -> 5 -> 7 -> 8
 Cette propriete est utilisee dans BEAUCOUP de problemes BST.
 ```
 
-## Quand utiliser ce pattern ? 🎯
+## Quand utiliser ce pattern ? 
 
 | Situation | Approche |
 |-----------|----------|
@@ -66,7 +66,7 @@ Cette propriete est utilisee dans BEAUCOUP de problemes BST.
 | Plus proche ancetre commun | Exploiter la propriete BST |
 | Supprimer un noeud | 3 cas selon les enfants |
 
-## Template de base 📋
+## Template de base 
 
 ```cpp
 // Recherche dans un BST
@@ -93,7 +93,7 @@ void inorder(TreeNode* root, int& k, int& result) {
 }
 ```
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au pattern suivant, tu dois savoir :
 - [ ] Rechercher une valeur dans un BST en O(log n)

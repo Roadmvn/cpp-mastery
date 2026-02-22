@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #230 - Kth Smallest Element in a BST (Medium) 🔍
+// LeetCode #230 - Kth Smallest Element in a BST (Medium) 
 // https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 // ============================================
 //

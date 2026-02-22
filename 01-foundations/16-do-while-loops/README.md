@@ -97,7 +97,7 @@ Le menu s'affiche toujours au moins une fois. L'utilisateur sort en choisissant 
 
 ---
 
-## Quand utiliser quoi ? 📋
+## Quand utiliser quoi ? 
 
 ```
   Situation                          -->  Boucle
@@ -112,7 +112,7 @@ Le menu s'affiche toujours au moins une fois. L'utilisateur sort en choisissant 
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Quelle est la difference fondamentale entre while et do-while ?**
    > `while` teste avant d'executer (0 a N fois), `do-while` execute puis teste (1 a N fois).
@@ -125,4 +125,4 @@ Le menu s'affiche toujours au moins une fois. L'utilisateur sort en choisissant 
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

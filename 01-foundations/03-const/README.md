@@ -1,4 +1,4 @@
-# Const & Constantes 🔒
+# Const & Constantes 
 
 ## Pourquoi c'est important
 
@@ -130,7 +130,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Quelle est la difference entre `const` et `constexpr` ?**
    > `const` promet que la variable ne sera pas modifiee apres initialisation (mais la valeur peut venir du runtime). `constexpr` garantit que la valeur est calculee a la compilation.
@@ -143,4 +143,4 @@ int main() {
 
 ---
 
-Passe aux exercices dans `exercise.cpp`. 👊
+Passe aux exercices dans `exercise.cpp`. 

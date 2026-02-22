@@ -1,4 +1,4 @@
-# Mini-Projet : Programme Bancaire 🏦
+# Mini-Projet : Programme Bancaire 
 
 ## Description
 

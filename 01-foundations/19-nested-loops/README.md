@@ -32,7 +32,7 @@ for (int i = 0; i < 3; i++) {         // Boucle externe
 
 ---
 
-## Complexite ⚠️
+## Complexite 
 
 Les boucles imbriquees multiplient le nombre d'operations :
 
@@ -122,7 +122,7 @@ Pour sortir des deux boucles, utilise un flag ou un `goto` (rarement recommande)
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Combien d'iterations pour 2 boucles imbriquees de 10 ?**
    > 10 x 10 = 100 iterations.
@@ -135,4 +135,4 @@ Pour sortir des deux boucles, utilise un flag ou un `goto` (rarement recommande)
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

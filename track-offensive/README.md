@@ -1,4 +1,4 @@
-# Track Offensive : Red Team C++ 🔴
+# Track Offensive : Red Team C++ 
 
 **Ecris des outils que les antivirus ne voient pas.**
 
@@ -8,7 +8,7 @@ Cobalt Strike, Brute Ratel, Sliver — les meilleurs frameworks C2 sont écrits 
 
 ---
 
-## Disclaimer ⚠️
+## Disclaimer 
 
 **Ce track est strictement éducatif.**
 
@@ -24,7 +24,7 @@ Tu es responsable de l'usage que tu fais de ces connaissances.
 
 ---
 
-## Pourquoi C++ pour le Red Team ? 💀
+## Pourquoi C++ pour le Red Team ? 
 
 | Avantage | Explication |
 |----------|-------------|
@@ -37,7 +37,7 @@ Tu es responsable de l'usage que tu fais de ces connaissances.
 
 ---
 
-## Prérequis 📋
+## Prérequis 
 
 Tu **dois** avoir complété ces sections avant de commencer :
 
@@ -51,7 +51,7 @@ La section [04-stl-mastery](../04-stl-mastery) est recommandée mais pas obligat
 
 ---
 
-## Roadmap détaillée 🗺️
+## Roadmap détaillée 
 
 ### 01 — Win32 API Basics 🪟
 [`01-win32-api-basics/`](01-win32-api-basics/)
@@ -70,7 +70,7 @@ Windows expose des milliers de fonctions via la Win32 API. C'est la porte d'entr
 
 ---
 
-### 02 — Process Enumeration 🔍
+### 02 — Process Enumeration 
 [`02-process-enumeration/`](02-process-enumeration/)
 
 Avant d'injecter quoi que ce soit, tu dois savoir **ce qui tourne**. Énumérer les processus, c'est la première étape de toute opération offensive. Tu vas apprendre à voir tout ce que voit le Task Manager, et plus encore.
@@ -93,7 +93,7 @@ Avant d'injecter quoi que ce soit, tu dois savoir **ce qui tourne**. Énumérer 
 L'injection de processus, c'est l'art de faire exécuter ton code **dans** un autre processus. C'est la technique fondamentale du maldev moderne. Tu vas apprendre la méthode classique et ses variantes.
 
 **Concepts clés :**
-- Classic injection : `OpenProcess` → `VirtualAllocEx` → `WriteProcessMemory` → `CreateRemoteThread`
+- Classic injection : `OpenProcess`  `VirtualAllocEx`  `WriteProcessMemory`  `CreateRemoteThread`
 - Permissions et tokens : `PROCESS_ALL_ACCESS`, `SeDebugPrivilege`
 - APC Injection : `QueueUserAPC` — plus discret que CreateRemoteThread
 - Early Bird Injection : injection avant que le thread ne commence
@@ -104,7 +104,7 @@ L'injection de processus, c'est l'art de faire exécuter ton code **dans** un au
 
 ---
 
-### 04 — DLL Injection 📦
+### 04 — DLL Injection 
 [`04-dll-injection/`](04-dll-injection/)
 
 Une DLL, c'est du code qui se charge dans l'espace mémoire d'un processus. L'injection de DLL te permet de faire tourner ta propre bibliothèque dans n'importe quel processus. Technique utilisée autant par les jeux (mods) que par les APT.
@@ -139,7 +139,7 @@ Le shellcode, c'est du code machine brut — pas de headers, pas de sections PE,
 
 ---
 
-### 06 — API Hooking 🪝
+### 06 — API Hooking 
 [`06-api-hooking/`](06-api-hooking/)
 
 Les EDR (Endpoint Detection & Response) hookent les fonctions Windows pour surveiller ce que font les programmes. Comprendre le hooking, c'est comprendre comment fonctionne la défense — et comment la contourner.
@@ -174,7 +174,7 @@ Le code le plus puissant est inutile s'il se fait détecter. L'évasion, c'est l
 
 ---
 
-### 08 — Persistence Mechanisms 🔄
+### 08 — Persistence Mechanisms 
 [`08-persistence-mechanisms/`](08-persistence-mechanisms/)
 
 Avoir accès, c'est bien. Garder l'accès après un reboot, c'est mieux. La persistence, c'est l'art de survivre aux redémarrages et aux tentatives de nettoyage.
@@ -193,7 +193,7 @@ Avoir accès, c'est bien. Garder l'accès après un reboot, c'est mieux. La pers
 
 ---
 
-## Projet final : Custom C2 Implant 🏗️
+## Projet final : Custom C2 Implant 
 [`projects/custom-implant/`](projects/custom-implant/)
 
 Tu vas construire un **implant C2 complet** qui combine tout ce que tu as appris :
@@ -209,7 +209,7 @@ Tu vas construire un **implant C2 complet** qui combine tout ce que tu as appris
 
 ---
 
-## Architecture d'un implant C2 🏛️
+## Architecture d'un implant C2 🏛
 
 ```
     ┌─────────────────────────────────────────────────────────┐
@@ -292,7 +292,7 @@ Tu vas construire un **implant C2 complet** qui combine tout ce que tu as appris
 
 ---
 
-## Environnement de lab recommandé 🧪
+## Environnement de lab recommandé 
 
 ```
 Host (Linux/Mac)
@@ -306,7 +306,7 @@ Travaille **toujours** dans un environnement isolé. Jamais sur ta machine princ
 
 ---
 
-## Let's hack 🔥
+## Let's hack 
 
 ```
 x86_64-w64-mingw32-g++ -std=c++17 -o implant.exe 01-win32-api-basics/exercise.cpp -lws2_32

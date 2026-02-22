@@ -1,4 +1,4 @@
-# Portee des Variables (Scope) 🎯
+# Portee des Variables (Scope) 
 
 ## Pourquoi c'est important
 
@@ -119,7 +119,7 @@ void foo() {
 
 ---
 
-## Resume des portees 📋
+## Resume des portees 
 
 ```
   Type       │ Declaration       │ Visible ou ?          │ Lifetime
@@ -132,7 +132,7 @@ void foo() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Qu'est-ce que la portee locale ?**
    > Une variable n'est accessible que dans le bloc `{}` ou elle est declaree.
@@ -145,4 +145,4 @@ void foo() {
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

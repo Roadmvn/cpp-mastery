@@ -110,7 +110,7 @@ Stats compute_stats(const double* data, int n) {
     double max_val = data[0];
     double sum     = 0.0;
 
-    // TODO: boucle optimisée (pas de branchement sur min/max → utiliser std::min/max)
+    // TODO: boucle optimisée (pas de branchement sur min/max  utiliser std::min/max)
     for (int i = 0; i < n; i++) {
         // TODO
     }

@@ -144,7 +144,7 @@ int main() {
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 1. **Que se passe-t-il si tu oublies un `break` dans un case ?**
    > L'execution "tombe" (fall-through) dans le case suivant et execute son code aussi, jusqu'au prochain `break` ou la fin du switch.

@@ -7,8 +7,8 @@
 // dans n'importe quel ordre.
 //
 // Exemple :
-//   Input : nums=[1,1,1,2,2,3], k=2 → Output: [1,2]
-//   Input : nums=[1],           k=1 → Output: [1]
+//   Input : nums=[1,1,1,2,2,3], k=2  Output: [1,2]
+//   Input : nums=[1],           k=1  Output: [1]
 //
 // Compile : g++ -std=c++17 04_top_k_frequent.cpp -o 04
 
@@ -56,11 +56,11 @@ vector<int> topKFrequentBrute(vector<int>& nums, int k) {
 //   Min-heap de (frequence, element), taille max = k=2 :
 //
 //   Inserer (3,1) : heap=[(3,1)]
-//   Inserer (2,2) : heap=[(2,2), (3,1)]  ← heap plein
-//   Inserer (1,3) : 1 < heap.top().freq=2 → on ignore (3 pas assez frequent)
+//   Inserer (2,2) : heap=[(2,2), (3,1)]   heap plein
+//   Inserer (1,3) : 1 < heap.top().freq=2  on ignore (3 pas assez frequent)
 //
 //   Resultat : extraire tous les elements du heap
-//   → [1, 2]
+//    [1, 2]
 // -----------------------------------------------
 vector<int> topKFrequentOptimal(vector<int>& nums, int k) {
     unordered_map<int, int> freq;
@@ -100,9 +100,9 @@ vector<int> topKFrequentOptimal(vector<int>& nums, int k) {
 //   idx: 0  1    2    3
 //        []  [3]  [2]  [1]
 //
-//   Parcourir de droite (frequence max → 0) :
-//   idx=3 : [1] → on prend 1, reste=1
-//   idx=2 : [2] → on prend 2, reste=0 → STOP
+//   Parcourir de droite (frequence max  0) :
+//   idx=3 : [1]  on prend 1, reste=1
+//   idx=2 : [2]  on prend 2, reste=0  STOP
 //
 //   Resultat : [1, 2]
 // -----------------------------------------------

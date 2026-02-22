@@ -1,6 +1,6 @@
-# Chapitre 05 - Multithreading & Atomics 🧵
+# Chapitre 05 - Multithreading & Atomics 
 
-## Pourquoi c'est critique en HFT ⚡
+## Pourquoi c'est critique en HFT 
 
 Un systeme HFT typique a **3-5 threads dedies**, chacun pin a un core CPU specifique.
 Pas de thread pool, pas de task queue generique. Chaque thread a un role precis
@@ -9,7 +9,7 @@ et tourne en **busy-loop** (jamais de sleep, jamais de yield).
 Le threading en HFT, c'est de l'horlogerie: chaque thread est une piece du mecanisme,
 et la communication inter-thread doit etre **lock-free** et **zero-allocation**.
 
-## Architecture multi-thread HFT 🏗️
+## Architecture multi-thread HFT 
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -21,7 +21,7 @@ et la communication inter-thread doit etre **lock-free** et **zero-allocation**.
 │  │  Thread       │      │  Thread       │     │  Thread       │ │
 │  │               │      │               │     │               │ │
 │  │  - recv UDP   │      │  - analyse    │     │  - send TCP   │ │
-│  │  - parse msg  │ ───► │  - decide     │ ──► │  - manage     │ │
+│  │  - parse msg  │ ─── │  - decide     │ ── │  - manage     │ │
 │  │  - normalize  │ SPSC │  - signal     │SPSC │  - confirm    │ │
 │  │               │Queue │               │Queue│               │ │
 │  │  BUSY LOOP    │      │  BUSY LOOP    │     │  BUSY LOOP    │ │
@@ -41,13 +41,13 @@ et la communication inter-thread doit etre **lock-free** et **zero-allocation**.
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## std::thread - Les bases 📋
+## std::thread - Les bases 
 
 ```
 Creation et gestion de threads:
 
   ┌──────────────┐     std::thread t(func)    ┌──────────────┐
-  │  Main Thread │ ──────────────────────────► │  New Thread  │
+  │  Main Thread │ ────────────────────────── │  New Thread  │
   │              │                             │  func()      │
   │  continue... │                             │  running...  │
   │              │     t.join()                │              │
@@ -55,12 +55,12 @@ Creation et gestion de threads:
   │  until done  │                             └──────────────┘
   └──────────────┘
 
-  t.join()    → attend la fin du thread (bloquant)
-  t.detach()  → laisse tourner independamment (dangereux en HFT)
-  t.joinable() → verifie si le thread est encore actif
+  t.join()     attend la fin du thread (bloquant)
+  t.detach()   laisse tourner independamment (dangereux en HFT)
+  t.joinable()  verifie si le thread est encore actif
 ```
 
-## std::atomic - Operations thread-safe sans lock 🔒
+## std::atomic - Operations thread-safe sans lock 
 
 ```
 SANS atomic (DATA RACE - UB):          AVEC atomic (SAFE):
@@ -77,7 +77,7 @@ SANS atomic (DATA RACE - UB):          AVEC atomic (SAFE):
   Resultat: 1 (FAUX!)                   Resultat: 2 (CORRECT)
 ```
 
-## std::mutex vs std::atomic en HFT ⚖️
+## std::mutex vs std::atomic en HFT ⚖
 
 ```
 ┌──────────────────────┬───────────────┬────────────────┐
@@ -85,14 +85,14 @@ SANS atomic (DATA RACE - UB):          AVEC atomic (SAFE):
 ├──────────────────────┼───────────────┼────────────────┤
 │ Latence (no contest) │  ~25 ns       │  ~5 ns         │
 │ Latence (conteste)   │  ~1000+ ns    │  ~50 ns (CAS)  │
-│ Peut bloquer?        │  OUI ❌       │  NON ✅        │
-│ Priority inversion?  │  OUI ❌       │  NON ✅        │
+│ Peut bloquer?        │  OUI        │  NON         │
+│ Priority inversion?  │  OUI        │  NON         │
 │ Usage HFT            │  Init/logging │  Hot path      │
 │ Complexite           │  Simple       │  Expert        │
 └──────────────────────┴───────────────┴────────────────┘
 ```
 
-## Thread Affinity - Pinning 📌
+## Thread Affinity - Pinning 
 
 ```
 SANS affinity:                      AVEC affinity:
@@ -125,8 +125,8 @@ Pattern: un thread attend une condition, un autre le reveille
      │  lock(mutex)                      │
      │  data_ready = true                │
      │  unlock(mutex)                    │
-     │  cv.notify_one() ─────────────►   │  REVEILLE! 🔔
-     │                                   │  verifie pred → true
+     │  cv.notify_one() ─────────────   │  REVEILLE! 
+     │                                   │  verifie pred  true
      │                                   │  traite data
      │                                   │
 
@@ -134,7 +134,7 @@ Pattern: un thread attend une condition, un autre le reveille
   car cv.wait() implique un syscall (futex) trop lent
 ```
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au chapitre suivant, tu dois savoir :
 - [ ] Pourquoi chaque thread HFT est pin a un core dedie

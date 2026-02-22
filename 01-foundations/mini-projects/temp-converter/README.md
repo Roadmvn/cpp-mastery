@@ -1,4 +1,4 @@
-# Mini-Projet : Convertisseur de Temperature 🌡️
+# Mini-Projet : Convertisseur de Temperature 🌡
 
 ## Description
 

@@ -22,17 +22,17 @@ LIFO : Last In, First Out
            |
            v
        ┌──────┐
-       │  30  │  ← push() ajoute ici
+       │  30  │   push() ajoute ici
        ├──────┤
        │  20  │
        ├──────┤
-       │  10  │  ← le premier ajoute sort en dernier
+       │  10  │   le premier ajoute sort en dernier
        └──────┘
 
 pop() retire 30 (le dernier ajoute)
 
        ┌──────┐
-       │  20  │  ← nouveau top()
+       │  20  │   nouveau top()
        ├──────┤
        │  10  │
        └──────┘
@@ -40,10 +40,10 @@ pop() retire 30 (le dernier ajoute)
 En interne, stack<T> utilise un deque<T> par defaut :
 ┌──────────────────────────┐
 │ stack<int>               │
-│   container = deque<int> │  ← adaptateur, pas un conteneur
-│   push() → push_back()  │     il encapsule un autre conteneur
-│   pop()  → pop_back()   │
-│   top()  → back()       │
+│   container = deque<int> │   adaptateur, pas un conteneur
+│   push()  push_back()  │     il encapsule un autre conteneur
+│   pop()   pop_back()   │
+│   top()   back()       │
 └──────────────────────────┘
 ```
 
@@ -72,7 +72,7 @@ s.pop();            // retire 42, retourne void
 
 ---
 
-## Patterns LeetCode avec Stack 🏆
+## Patterns LeetCode avec Stack 
 
 ### 1. Validation de parentheses
 ```cpp
@@ -118,7 +118,7 @@ vector<int> nextGreater(vector<int>& nums) {
 
 ---
 
-## Quand utiliser un Stack en LeetCode 🎯
+## Quand utiliser un Stack en LeetCode 
 
 | Signal dans l'enonce              | Pattern Stack           |
 |-----------------------------------|-------------------------|

@@ -19,8 +19,8 @@
 //
 //   ~ = eau piegee (total = 6)
 //
-// Exemple 1 : height = [0,1,0,2,1,0,1,3,2,1,2,1] → 6
-// Exemple 2 : height = [4,2,0,3,2,5] → 9
+// Exemple 1 : height = [0,1,0,2,1,0,1,3,2,1,2,1]  6
+// Exemple 2 : height = [4,2,0,3,2,5]  9
 //
 // Contraintes :
 // - n == height.length
@@ -76,23 +76,23 @@ int trap_bruteforce(vector<int>& height) {
 //
 // Si max_left < max_right :
 //   L'eau a gauche est limitee par max_left (pas par max_right)
-//   → on peut calculer l'eau a gauche avec certitude
-//   → avancer left
+//    on peut calculer l'eau a gauche avec certitude
+//    avancer left
 //
 // Si max_right <= max_left :
 //   L'eau a droite est limitee par max_right
-//   → on peut calculer l'eau a droite avec certitude
-//   → reculer right
+//    on peut calculer l'eau a droite avec certitude
+//    reculer right
 //
 // Visuellement :
 //
 //   left_max=1        right_max=2
-//       ↓                  ↓
+//                         
 //   [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 //       L                          R
 //
-//   left_max < right_max → on sait que l'eau a L
-//   est limitee par left_max → water += left_max - height[L]
+//   left_max < right_max  on sait que l'eau a L
+//   est limitee par left_max  water += left_max - height[L]
 
 int trap_optimal(vector<int>& height) {
     int n = height.size();

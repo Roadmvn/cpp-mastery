@@ -1,6 +1,6 @@
-# Chapitre 09 : Adresses Memoire 🧠
+# Chapitre 09 : Adresses Memoire 
 
-## Ce que tu vas apprendre 🎯
+## Ce que tu vas apprendre 
 
 - Comment fonctionne la RAM (memoire vive)
 - L'operateur `&` pour obtenir l'adresse d'une variable
@@ -10,7 +10,7 @@
 
 ---
 
-## La RAM : comment ca marche vraiment 🔍
+## La RAM : comment ca marche vraiment 
 
 Ton programme tourne en RAM. Chaque variable que tu crees occupe un emplacement memoire avec une **adresse unique** (comme une adresse postale).
 
@@ -19,15 +19,15 @@ Ton programme tourne en RAM. Chaque variable que tu crees occupe un emplacement 
     ┌─────────────────────────────┐
     │  Adresse      Contenu       │
     │  ────────     ─────────     │
-    │  0x7FFF0000   ...           │  ← Adresses hautes (Stack)
-    │  0x7FFF0004   42            │  ← int age = 42;
-    │  0x7FFF0008   3.14          │  ← double pi = 3.14;
-    │  0x7FFF0010   'A'           │  ← char grade = 'A';
+    │  0x7FFF0000   ...           │   Adresses hautes (Stack)
+    │  0x7FFF0004   42            │   int age = 42;
+    │  0x7FFF0008   3.14          │   double pi = 3.14;
+    │  0x7FFF0010   'A'           │   char grade = 'A';
     │  ...          ...           │
     │  ...          ...           │
-    │  0x00400000   instructions  │  ← Code du programme
+    │  0x00400000   instructions  │   Code du programme
     │  ...          ...           │
-    │  0x00200000   donnees heap  │  ← Adresses basses (Heap)
+    │  0x00200000   donnees heap  │   Adresses basses (Heap)
     └─────────────────────────────┘
 ```
 
@@ -35,7 +35,7 @@ Chaque adresse est un **nombre hexadecimal** (base 16) qui identifie un octet en
 
 ---
 
-## L'operateur & (adresse-de) 📍
+## L'operateur & (adresse-de) 
 
 L'operateur `&` place devant une variable retourne son **adresse en memoire**.
 
@@ -76,12 +76,12 @@ Les adresses changent a chaque execution (ASLR — Address Space Layout Randomiz
 
 ---
 
-## Stack vs Heap : les deux zones memoire 🏗️
+## Stack vs Heap : les deux zones memoire 
 
 ```
     MEMOIRE DU PROGRAMME
     ┌────────────────────────────────────┐  Adresses hautes
-    │            STACK  ↓                │  0x7FFF...
+    │            STACK                  │  0x7FFF...
     │  ┌──────────────────────────────┐  │
     │  │  Variables locales           │  │
     │  │  Parametres de fonctions     │  │
@@ -89,18 +89,18 @@ Les adresses changent a chaque execution (ASLR — Address Space Layout Randomiz
     │  │  Automatiquement geree       │  │
     │  │  LIFO (Last In, First Out)   │  │
     │  └──────────────────────────────┘  │
-    │             ↓ grandit vers le bas   │
+    │              grandit vers le bas   │
     │                                    │
     │         espace libre               │
     │                                    │
-    │             ↑ grandit vers le haut  │
+    │              grandit vers le haut  │
     │  ┌──────────────────────────────┐  │
     │  │  Allocation dynamique        │  │
     │  │  new / malloc                │  │
     │  │  Manuellement geree         │  │
     │  │  Fragmentable               │  │
     │  └──────────────────────────────┘  │
-    │            HEAP  ↑                 │  0x0040...
+    │            HEAP                   │  0x0040...
     ├────────────────────────────────────┤
     │       Donnees globales/static      │
     ├────────────────────────────────────┤
@@ -119,7 +119,7 @@ Les adresses changent a chaque execution (ASLR — Address Space Layout Randomiz
 
 ---
 
-## Taille des types et disposition memoire 📐
+## Taille des types et disposition memoire 
 
 Les variables occupent un nombre fixe d'octets selon leur type :
 
@@ -143,7 +143,7 @@ Les variables occupent un nombre fixe d'octets selon leur type :
 
 ---
 
-## Localite spatiale : pourquoi ca compte en HFT 🏎️
+## Localite spatiale : pourquoi ca compte en HFT 
 
 Le processeur ne lit pas la RAM octet par octet. Il charge des **lignes de cache** (64 octets typiquement). Si tes donnees sont proches en memoire, elles arrivent dans le cache ensemble = **acces ultra rapide**.
 
@@ -166,7 +166,7 @@ C'est pour ca que les arrays sont ultra performants : **localite spatiale**.
 
 ---
 
-## Afficher les adresses d'un array 📊
+## Afficher les adresses d'un array 
 
 ```cpp
 #include <iostream>
@@ -187,17 +187,17 @@ int main() {
 **Sortie :**
 ```
 tableau[0] = 10  adresse: 0x7ffeeb30
-tableau[1] = 20  adresse: 0x7ffeeb34    ← +4 octets (sizeof(int))
-tableau[2] = 30  adresse: 0x7ffeeb38    ← +4 octets
-tableau[3] = 40  adresse: 0x7ffeeb3c    ← +4 octets
-tableau[4] = 50  adresse: 0x7ffeeb40    ← +4 octets
+tableau[1] = 20  adresse: 0x7ffeeb34     +4 octets (sizeof(int))
+tableau[2] = 30  adresse: 0x7ffeeb38     +4 octets
+tableau[3] = 40  adresse: 0x7ffeeb3c     +4 octets
+tableau[4] = 50  adresse: 0x7ffeeb40     +4 octets
 ```
 
 Les adresses sont **contigues** ! C'est ca la localite spatiale.
 
 ---
 
-## Points cles a retenir 🔑
+## Points cles a retenir 
 
 1. **`&variable`** donne l'adresse memoire d'une variable
 2. Les adresses sont en **hexadecimal** (base 16)
@@ -208,7 +208,7 @@ Les adresses sont **contigues** ! C'est ca la localite spatiale.
 
 ---
 
-## Compilation 🔧
+## Compilation 
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp && ./exercise

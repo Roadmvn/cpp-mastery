@@ -9,10 +9,10 @@
 //
 // Exemple :
 //   addWord("bad"), addWord("dad"), addWord("mad")
-//   search("pad") → false
-//   search("bad") → true
-//   search(".ad") → true  (bad, dad ou mad)
-//   search("b..") → true  (bad)
+//   search("pad")  false
+//   search("bad")  true
+//   search(".ad")  true  (bad, dad ou mad)
+//   search("b..")  true  (bad)
 //
 // Compile : g++ -std=c++17 02_design_add_search_words.cpp -o 02
 
@@ -68,14 +68,14 @@ public:
 //
 //   search(".ad") :
 //   pos=0, c='.', tester tous les enfants de ROOT
-//     Essayer [b] : pos=1, c='a' → [a] existe
-//       pos=2, c='d' → [d] existe, isEnd=true → TROUVE !
+//     Essayer [b] : pos=1, c='a'  [a] existe
+//       pos=2, c='d'  [d] existe, isEnd=true  TROUVE !
 //
 //   search("b..") :
-//   pos=0, c='b' → [b] existe
-//   pos=1, c='.' → tester tous les enfants de [b]
-//     Essayer [a] : pos=2, c='.' → tester tous enfants de [a]
-//       Essayer [d] : isEnd=true → TROUVE !
+//   pos=0, c='b'  [b] existe
+//   pos=1, c='.'  tester tous les enfants de [b]
+//     Essayer [a] : pos=2, c='.'  tester tous enfants de [a]
+//       Essayer [d] : isEnd=true  TROUVE !
 // -----------------------------------------------
 struct TrieNode {
     TrieNode* children[26];

@@ -1,4 +1,4 @@
-# Mini-Projet : Calculatrice CLI 🧮
+# Mini-Projet : Calculatrice CLI 
 
 ## Description
 

@@ -66,10 +66,10 @@ public:
         HookAction action = evaluate(func, arg);
 
         // TON CODE ICI selon action :
-        // ALLOW   → "PASS: func(arg)"
-        // BLOCK   → "BLOCKED: func(arg)"
-        // LOG_ONLY → log + "PASS: func(arg)"
-        // MODIFY  → "MODIFIED: func(arg) -> func(modified_arg)"
+        // ALLOW    "PASS: func(arg)"
+        // BLOCK    "BLOCKED: func(arg)"
+        // LOG_ONLY  log + "PASS: func(arg)"
+        // MODIFY   "MODIFIED: func(arg) -> func(modified_arg)"
 
         return "";
     }

@@ -11,12 +11,12 @@ SCALAIRE (sans SIMD):          SIMD (avec AVX2 - 4x double):
 
   for each float:                Un seul cycle CPU:
     result = a * b + c            ┌─────────────────────────────────┐
-                                  │  a[0]  a[1]  a[2]  a[3]        │  ← registre YMM (256 bits)
+                                  │  a[0]  a[1]  a[2]  a[3]        │   registre YMM (256 bits)
     4 iterations × N ns           │   ×     ×     ×     ×          │
     = 4N ns                       │  b[0]  b[1]  b[2]  b[3]        │
                                   │   +     +     +     +          │
                                   │  c[0]  c[1]  c[2]  c[3]        │
-                                  │   ↓     ↓     ↓     ↓          │
+                                  │                            │
                                   │ r[0]  r[1]  r[2]  r[3]        │
                                   └─────────────────────────────────┘
                                     1 instruction = N ns
@@ -29,11 +29,11 @@ SCALAIRE (sans SIMD):          SIMD (avec AVX2 - 4x double):
 Évolution des extensions SIMD Intel/AMD:
 
   MMX  (1997):  64 bits   = 2x int32  ou 8x int8
-  SSE  (1999): 128 bits   = 4x float  ou 2x double    ← registres XMM
+  SSE  (1999): 128 bits   = 4x float  ou 2x double     registres XMM
   SSE2 (2001): 128 bits   = 4x double
-  AVX  (2011): 256 bits   = 8x float  ou 4x double    ← registres YMM
+  AVX  (2011): 256 bits   = 8x float  ou 4x double     registres YMM
   AVX2 (2013): 256 bits   + instructions entières
-  AVX-512(2017):512 bits  = 16x float ou 8x double    ← registres ZMM
+  AVX-512(2017):512 bits  = 16x float ou 8x double     registres ZMM
 
   ┌──────────────────────────────────────────────────────────────────┐
   │  Registre YMM0 (AVX, 256 bits = 4 doubles de 64 bits chacun)   │
@@ -59,12 +59,12 @@ Code C++ standard:                Code C++ avec hint de vectorisation:
 
   Le compilateur (gcc -O2) analyse:
   ┌──────────────────────────────────────────────────────────────────┐
-  │  - Indépendance des itérations? → OUI (c[i] ne dépend pas de   │
+  │  - Indépendance des itérations?  OUI (c[i] ne dépend pas de   │
   │    c[i-1])                                                        │
-  │  - Aliasing possible? → NON si __restrict__ ou noalias           │
-  │  - Alignement? → OUI si alignas(32) sur les tableaux             │
-  │  - Taille connue? → Mieux si multiple de 4 (ou padding)          │
-  │  → VECTORISATION AUTOMATIQUE (on voit "ymm" dans l'assembleur)   │
+  │  - Aliasing possible?  NON si __restrict__ ou noalias           │
+  │  - Alignement?  OUI si alignas(32) sur les tableaux             │
+  │  - Taille connue?  Mieux si multiple de 4 (ou padding)          │
+  │   VECTORISATION AUTOMATIQUE (on voit "ymm" dans l'assembleur)   │
   └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -75,7 +75,7 @@ Problème: sur 1 million de prix, calculer min, max, mean.
 
 APPROCHE SCALAIRE:
   min = prices[0]
-  for i in [1..N]: if prices[i] < min → min = prices[i]
+  for i in [1..N]: if prices[i] < min  min = prices[i]
   Coût: N comparaisons séquentielles
 
 APPROCHE SIMD (conceptuelle avec 4 doubles en parallèle):
@@ -84,8 +84,8 @@ APPROCHE SIMD (conceptuelle avec 4 doubles en parallèle):
             ├─────────────────┤  ├─────────────────┤
               Chunk 0 (4 val)       Chunk 1 (4 val)
 
-  Chunk 0: min_vec = min(100.1, 99.8, 100.5, 99.9) → en 1 instruction
-  Chunk 1: min_vec = min(100.2, 100.0, 99.7, 100.3) → en 1 instruction
+  Chunk 0: min_vec = min(100.1, 99.8, 100.5, 99.9)  en 1 instruction
+  Chunk 1: min_vec = min(100.2, 100.0, 99.7, 100.3)  en 1 instruction
   ...
   Réduction finale: min(min_vec[0], min_vec[1], min_vec[2], min_vec[3])
 
@@ -123,8 +123,8 @@ Opération: calculer VWAP sur 100,000 prix
   Version SSE manuel   :  ~200 µs  (même résultat, mais garanti)
   Version AVX2 manuel  :  ~100 µs
 
-  → La vectorisation auto est souvent suffisante si le code est propre.
-  → Les intrinsics manuels servent quand le compilateur ne peut pas deviner.
+   La vectorisation auto est souvent suffisante si le code est propre.
+   Les intrinsics manuels servent quand le compilateur ne peut pas deviner.
 ```
 
 ## Checkpoint

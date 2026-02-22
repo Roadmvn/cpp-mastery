@@ -1,6 +1,6 @@
 # Chapitre 14 : Recursion 🔁
 
-## Ce que tu vas apprendre 🎯
+## Ce que tu vas apprendre 
 
 - Le concept de recursion (une fonction qui s'appelle elle-meme)
 - Cas de base et cas recursif
@@ -10,7 +10,7 @@
 
 ---
 
-## C'est quoi la recursion ? 🔍
+## C'est quoi la recursion ? 
 
 Une fonction **recursive** est une fonction qui s'appelle elle-meme. Elle a toujours :
 
@@ -27,7 +27,7 @@ int factorielle(int n) {
 
 ---
 
-## La Call Stack : visualisation 🏗️
+## La Call Stack : visualisation 
 
 Quand `factorielle(4)` est appelee :
 
@@ -35,13 +35,13 @@ Quand `factorielle(4)` est appelee :
     APPELS (empiler)                    RETOURS (depiler)
 
     ┌──────────────────┐                ┌──────────────────┐
-    │ factorielle(1)   │  → return 1    │ return 1         │ ← 1
+    │ factorielle(1)   │   return 1    │ return 1         │  1
     ├──────────────────┤                ├──────────────────┤
-    │ factorielle(2)   │  → 2 * f(1)   │ return 2 * 1 = 2 │ ← 2
+    │ factorielle(2)   │   2 * f(1)   │ return 2 * 1 = 2 │  2
     ├──────────────────┤                ├──────────────────┤
-    │ factorielle(3)   │  → 3 * f(2)   │ return 3 * 2 = 6 │ ← 6
+    │ factorielle(3)   │   3 * f(2)   │ return 3 * 2 = 6 │  6
     ├──────────────────┤                ├──────────────────┤
-    │ factorielle(4)   │  → 4 * f(3)   │ return 4 * 6 = 24│ ← 24
+    │ factorielle(4)   │   4 * f(3)   │ return 4 * 6 = 24│  24
     └──────────────────┘                └──────────────────┘
 
     La stack EMPILE les appels       Puis DEPILE les retours
@@ -52,7 +52,7 @@ Chaque appel recursif cree un **stack frame** avec ses propres variables locales
 
 ---
 
-## Schema detaille de la call stack 📐
+## Schema detaille de la call stack 
 
 ```
     factorielle(4) — Etat de la stack a chaque etape :
@@ -81,22 +81,22 @@ Chaque appel recursif cree un **stack frame** avec ses propres variables locales
 
 ---
 
-## Stack Overflow ⚠️
+## Stack Overflow 
 
 Si tu oublies le cas de base ou si la recursion est trop profonde :
 
 ```cpp
-// PAS DE CAS DE BASE → stack overflow !
+// PAS DE CAS DE BASE  stack overflow !
 int infini(int n) {
     return n * infini(n - 1);  // ne s'arrete jamais
 }
 
-// RECURSION TROP PROFONDE → stack overflow aussi
+// RECURSION TROP PROFONDE  stack overflow aussi
 int deepRecursion(int n) {
     if (n <= 0) return 0;
     return deepRecursion(n - 1);
 }
-// deepRecursion(1000000) → crash (stack ~1-8 MB = ~10000-100000 frames)
+// deepRecursion(1000000)  crash (stack ~1-8 MB = ~10000-100000 frames)
 ```
 
 ---
@@ -135,7 +135,7 @@ int nbChiffres(int n) {
 
 ---
 
-## Recursion vs Iteration 🔄
+## Recursion vs Iteration 
 
 | Aspect          | Recursion                      | Iteration (boucle)            |
 |-----------------|--------------------------------|-------------------------------|
@@ -149,7 +149,7 @@ int nbChiffres(int n) {
 
 ---
 
-## Points cles a retenir 🔑
+## Points cles a retenir 
 
 1. Recursion = une fonction qui s'appelle elle-meme
 2. **Cas de base** obligatoire (sinon stack overflow)
@@ -160,7 +160,7 @@ int nbChiffres(int n) {
 
 ---
 
-## Compilation 🔧
+## Compilation 
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp && ./exercise

@@ -8,9 +8,9 @@
 // l'ordre des elements restants.
 //
 // Exemple :
-//   text1="abcde", text2="ace" → 3  (sous-sequence "ace")
-//   text1="abc",   text2="abc" → 3  (sous-sequence "abc")
-//   text1="abc",   text2="def" → 0  (pas de sous-sequence commune)
+//   text1="abcde", text2="ace"  3  (sous-sequence "ace")
+//   text1="abc",   text2="abc"  3  (sous-sequence "abc")
+//   text1="abc",   text2="def"  0  (pas de sous-sequence commune)
 //
 // Compile : g++ -std=c++17 05_longest_common_subsequence.cpp -o 05
 
@@ -74,15 +74,15 @@ int lcsMemo(const string& s1, const string& s2, int i, int j) {
 //   b    0   1   1   1
 //   c    0   1  [2]  2
 //   d    0   1   2   2
-//   e    0   1   2  [3]  ← reponse = 3
+//   e    0   1   2  [3]   reponse = 3
 //
 //   Remplissage :
 //   si s1[i-1] == s2[j-1] : dp[i][j] = dp[i-1][j-1] + 1
 //   sinon                 : dp[i][j] = max(dp[i-1][j], dp[i][j-1])
 //
-//   dp[1][1] : 'a'=='a' → dp[0][0]+1 = 1
-//   dp[3][2] : 'c'=='c' → dp[2][1]+1 = 2
-//   dp[5][3] : 'e'=='e' → dp[4][2]+1 = 3
+//   dp[1][1] : 'a'=='a'  dp[0][0]+1 = 1
+//   dp[3][2] : 'c'=='c'  dp[2][1]+1 = 2
+//   dp[5][3] : 'e'=='e'  dp[4][2]+1 = 3
 // -----------------------------------------------
 int longestCommonSubsequenceOptimal(const string& text1, const string& text2) {
     int m = text1.size(), n = text2.size();

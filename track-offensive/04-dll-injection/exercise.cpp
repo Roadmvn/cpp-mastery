@@ -30,9 +30,9 @@ struct Plugin {
 };
 
 // TODO 1 : Cree un fichier plugin_lib.cpp separement avec :
-// - extern "C" const char* plugin_name() → retourne le nom du plugin
-// - extern "C" int execute(const char* arg) → affiche l'argument et retourne 0
-// - extern "C" void cleanup() → affiche un message de nettoyage
+// - extern "C" const char* plugin_name()  retourne le nom du plugin
+// - extern "C" int execute(const char* arg)  affiche l'argument et retourne 0
+// - extern "C" void cleanup()  affiche un message de nettoyage
 
 // TODO 2 : Charge un plugin depuis un chemin
 // Utilise dlopen avec RTLD_NOW

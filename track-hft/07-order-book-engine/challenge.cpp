@@ -13,10 +13,10 @@
 //   Nouvel ordre BUY 100.30 qty=3000
 //
 //   ASKS:          [100.20 vol=5000][100.30 vol=5000][100.40 vol=2000]
-//                       ↑ best ask (100.20 ≤ 100.30) → MATCH!
+//                        best ask (100.20 ≤ 100.30)  MATCH!
 //
-//   Round 1: ask 100.20, FIFO order[0] qty=2000 → trade 2000@100.20 (reste buy=1000)
-//   Round 2: ask 100.20, FIFO order[1] qty=3000 → trade 1000@100.20 (buy fully filled)
+//   Round 1: ask 100.20, FIFO order[0] qty=2000  trade 2000@100.20 (reste buy=1000)
+//   Round 2: ask 100.20, FIFO order[1] qty=3000  trade 1000@100.20 (buy fully filled)
 //            order[1] reste avec qty=2000
 //
 //   TRADES GÉNÉRÉS:
@@ -166,10 +166,10 @@ public:
     //   Si BID entrant:
     //     while remaining > 0 AND best_ask <= order.price:
     //       trades += asks.begin().consume(remaining, ...)
-    //       si niveau vide → supprimer du map asks
+    //       si niveau vide  supprimer du map asks
     //   Idem pour ASK entrant (contre bids, bid >= order.price)
     //
-    //   Si remaining > 0 après matching → resting order (add_order)
+    //   Si remaining > 0 après matching  resting order (add_order)
     //   Mettre à jour les stats (total_trades, total_volume, total_turnover)
     //
     // Retourne la liste de tous les trades générés.
@@ -179,7 +179,7 @@ public:
 
         // TODO: matching loop BID contre asks
         // TODO: matching loop ASK contre bids
-        // TODO: si reste → add_order(o avec quantity=remaining)
+        // TODO: si reste  add_order(o avec quantity=remaining)
         // TODO: mettre à jour total_trades, total_volume, total_turnover
 
         return all_trades;
@@ -190,9 +190,9 @@ public:
         // TODO: afficher les N meilleurs niveaux de chaque côté
         // Format:
         //   ASK  100.50  1000  [1000]
-        //   ASK  100.40  2000  [2000]  ← best ask
+        //   ASK  100.40  2000  [2000]   best ask
         //   ── SPREAD 0.10 ──
-        //   BID  100.30  4000  [4000]  ← best bid
+        //   BID  100.30  4000  [4000]   best bid
         //   BID  100.20  1500  [500][1000]
         std::cout << "=== " << symbol << " ===\n";
         std::cout << "[TODO: implémenter print]\n";

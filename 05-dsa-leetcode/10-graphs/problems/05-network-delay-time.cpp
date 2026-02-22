@@ -1,5 +1,5 @@
 // ============================================
-// LeetCode #743 - Network Delay Time (Medium) 📊
+// LeetCode #743 - Network Delay Time (Medium) 
 // https://leetcode.com/problems/network-delay-time/
 // ============================================
 //

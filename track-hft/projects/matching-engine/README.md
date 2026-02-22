@@ -18,9 +18,9 @@ Un matching engine simplifié qui implémente:
 │  │   OrderBook     │       │   MatchingEngine                 │  │
 │  │                 │       │                                  │  │
 │  │  bids (map)     │◄──────│  submit_order(Order)             │  │
-│  │  asks (map)     │       │  → match contre côté opposé      │  │
-│  │                 │       │  → génère Trade list             │  │
-│  │  add_order()    │       │  → remaining → add_order()       │  │
+│  │  asks (map)     │       │   match contre côté opposé      │  │
+│  │                 │       │   génère Trade list             │  │
+│  │  add_order()    │       │   remaining  add_order()       │  │
 │  │  cancel_order() │       │                                  │  │
 │  │  get_best_*()   │       │  cancel_order(id)                │  │
 │  │  print()        │       │  get_book_snapshot()             │  │
@@ -49,12 +49,12 @@ Nouvel ordre BUY limit 100.30 qty=5000
         ▼
   2. Chercher dans asks tous les niveaux ≤ 100.30
         │
-  asks: [100.20→5000][100.25→2000][100.30→3000][100.40→8000]
-         ↑ matché     ↑ matché     ↑ matché     ✗ trop cher
+  asks: [100.205000][100.252000][100.303000][100.408000]
+          matché      matché      matché      trop cher
         │
         ▼
   3. FIFO matching par niveau:
-     - 100.20: trade 5000 → buy qty reste = 0  (partiellement rempli selon volume)
+     - 100.20: trade 5000  buy qty reste = 0  (partiellement rempli selon volume)
      - ...
 
   4. Si qty restante > 0: add_order(resting BUY @ 100.30, qty_remaining)

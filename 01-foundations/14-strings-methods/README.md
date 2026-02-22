@@ -113,7 +113,7 @@ s.insert(5, " World");  // "Hello World!"
 
 ---
 
-## Schema recapitulatif 📋
+## Schema recapitulatif 
 
 ```
   string s = "Hello World";
@@ -131,7 +131,7 @@ s.insert(5, " World");  // "Hello World!"
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer aux exercices :
 
@@ -146,4 +146,4 @@ Avant de passer aux exercices :
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

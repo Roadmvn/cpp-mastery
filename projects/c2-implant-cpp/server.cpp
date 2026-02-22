@@ -2,7 +2,7 @@
 // server.cpp - Serveur C2 Educatif
 // ==========================================================================
 //
-// DISCLAIMER EDUCATIF ⚠️
+// DISCLAIMER EDUCATIF 
 // Ce serveur est une simulation educative d'infrastructure C2.
 // - Ecoute UNIQUEMENT sur 127.0.0.1:4444 (localhost)
 // - Accepte une seule connexion a la fois (simplicite pedagogique)

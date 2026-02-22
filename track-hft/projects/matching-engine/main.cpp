@@ -46,7 +46,7 @@ void scenario_aggressive_bid(MatchingEngine& me) {
     std::cout << "SCENARIO 2 : Ordre BUY agressif (price-time priority)\n";
     std::cout << "========================================\n\n";
 
-    // BUY 100.15, qty=9000 → doit matcher contre asks à 100.10 (total 7000)
+    // BUY 100.15, qty=9000  doit matcher contre asks à 100.10 (total 7000)
     // puis 2000 restants restent dans le book comme resting BID à 100.15
     std::cout << ">>> BUY LIMIT 100.15 qty=9000\n";
     auto result = me.submit_order(Side::BID, 100.15, 9000, true);
@@ -67,7 +67,7 @@ void scenario_full_fill(MatchingEngine& me) {
     std::cout << "SCENARIO 3 : Ordre ASK qui traverse le spread\n";
     std::cout << "========================================\n\n";
 
-    // SELL 99.90, qty=3000 → doit matcher contre BIDs >= 99.90
+    // SELL 99.90, qty=3000  doit matcher contre BIDs >= 99.90
     // Best bid est à 100.15 (resting du scénario 2), puis 99.90
     std::cout << ">>> SELL LIMIT 99.90 qty=3000\n";
     auto result = me.submit_order(Side::ASK, 99.90, 3000, true);

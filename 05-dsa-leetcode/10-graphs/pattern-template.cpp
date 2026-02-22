@@ -1,5 +1,5 @@
 // ============================================
-// PATTERN : Graphs - Templates 📊
+// PATTERN : Graphs - Templates 
 // ============================================
 // Squelettes copier-coller pour les graphes
 // Compile : g++ -std=c++17 -o pattern pattern-template.cpp

@@ -1,6 +1,6 @@
-# 14 - Heap / Priority Queue 🏔️
+# 14 - Heap / Priority Queue 🏔
 
-## C'est quoi un Heap ? 🤔
+## C'est quoi un Heap ? 
 
 Un heap (tas) est un **arbre binaire complet** ou chaque parent est plus petit (min-heap)
 ou plus grand (max-heap) que ses enfants. En C++, `priority_queue` est un **max-heap** par defaut.
@@ -10,7 +10,7 @@ ou plus grand (max-heap) que ses enfants. En C++, `priority_queue` est un **max-
 
 ---
 
-## Quand l'utiliser ? 🎯
+## Quand l'utiliser ? 
 
 - Trouver le **k-ieme plus grand/petit** element
 - Maintenir les **top k** elements en temps reel
@@ -21,7 +21,7 @@ ou plus grand (max-heap) que ses enfants. En C++, `priority_queue` est un **max-
 
 ---
 
-## Schema ASCII - Min-heap et Max-heap 🌳
+## Schema ASCII - Min-heap et Max-heap 
 
 ```
     MAX-HEAP (parent >= enfants)     MIN-HEAP (parent <= enfants)
@@ -41,11 +41,11 @@ ou plus grand (max-heap) que ses enfants. En C++, `priority_queue` est un **max-
     ┌──────────────┬───────────┐
     │ Operation    │ Complexite│
     ├──────────────┼───────────┤
-    │ push()       │ O(log n)  │  ← insertion + bubble up
-    │ pop()        │ O(log n)  │  ← suppression + bubble down
-    │ top()        │ O(1)      │  ← acces au sommet
+    │ push()       │ O(log n)  │   insertion + bubble up
+    │ pop()        │ O(log n)  │   suppression + bubble down
+    │ top()        │ O(1)      │   acces au sommet
     │ size()       │ O(1)      │
-    │ Construire   │ O(n)      │  ← heapify
+    │ Construire   │ O(n)      │   heapify
     └──────────────┴───────────┘
 
     ═══════════════════════════════════════════════
@@ -53,11 +53,11 @@ ou plus grand (max-heap) que ses enfants. En C++, `priority_queue` est un **max-
     ═══════════════════════════════════════════════
 
     Ajouter 3 :         Bubble up :
-         [5]                [3]         ← 3 < 5, swap
+         [5]                [3]          3 < 5, swap
         /   \              /   \
-      [10]  [15]        [10]   [5]      ← 3 monte
+      [10]  [15]        [10]   [5]       3 monte
       /                 /
-    [3] ← nouveau    [15]               ← ancien parent descend
+    [3]  nouveau    [15]                ancien parent descend
 
     ═══════════════════════════════════════════════
     Pattern deux heaps pour la mediane :
@@ -77,7 +77,7 @@ ou plus grand (max-heap) que ses enfants. En C++, `priority_queue` est un **max-
 
 ---
 
-## Le pattern general 📐
+## Le pattern general 
 
 ```
 // Pour le k-ieme plus grand : min-heap de taille k
@@ -93,7 +93,7 @@ retourner minHeap.top()   // k-ieme plus grand
 
 ---
 
-## Syntaxe C++ essentielle 🔧
+## Syntaxe C++ essentielle 
 
 | Type | Declaration |
 |------|-------------|
@@ -104,7 +104,7 @@ retourner minHeap.top()   // k-ieme plus grand
 
 ---
 
-## Complexite typique ⏱️
+## Complexite typique 
 
 | Probleme | Temps | Espace |
 |----------|-------|--------|
@@ -115,7 +115,7 @@ retourner minHeap.top()   // k-ieme plus grand
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer au pattern suivant, tu dois pouvoir :
 - [ ] Declarer un min-heap et un max-heap en C++

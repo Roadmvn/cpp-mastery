@@ -111,7 +111,7 @@ int coinChangeDP(const vector<int>& coins, int amount) {
 //    a    0  0  0  0
 //    b    0  1  1  1
 //    o    0  1  2  2
-//    m    0  1  2  3  ← reponse
+//    m    0  1  2  3   reponse
 // ==============================================
 int lcsDP(const string& s1, const string& s2) {
     int m = s1.size(), n = s2.size();

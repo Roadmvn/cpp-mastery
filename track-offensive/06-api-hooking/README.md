@@ -1,6 +1,6 @@
 # Chapitre 06 - API Hooking (Interception de Fonctions) 🎣
 
-> **DISCLAIMER EDUCATIF** ⚠️
+> **DISCLAIMER EDUCATIF** 
 > Ce chapitre est **strictement educatif**. Le hooking de fonctions est une technique
 > utilisee legitimement par les debuggers, les outils de monitoring, et les sandboxes.
 > Les EDR l'utilisent pour surveiller les appels systeme.
@@ -8,7 +8,7 @@
 
 ---
 
-## Concept 📖
+## Concept 
 
 Le **hooking** consiste a **intercepter un appel de fonction** pour :
 - **Logger** l'appel (quels arguments, quand, combien de fois)
@@ -19,7 +19,7 @@ Le **hooking** consiste a **intercepter un appel de fonction** pour :
 Sur Unix, la technique principale est **LD_PRELOAD** (Linux) / **DYLD_INSERT_LIBRARIES** (macOS) :
 le systeme charge NOTRE lib avant les autres, nos fonctions remplacent celles de la libc.
 
-### Pourquoi c'est important en Red Team ? 🎯
+### Pourquoi c'est important en Red Team ? 
 
 Le hooking permet de :
 - **Monitorer les appels** d'un programme (ce qu'il lit, ecrit, envoie)
@@ -29,7 +29,7 @@ Le hooking permet de :
 
 ---
 
-## Schema ASCII - Hooking de Fonctions 🏗️
+## Schema ASCII - Hooking de Fonctions 
 
 ### Appel Normal vs Appel Hooke
 
@@ -65,10 +65,10 @@ APPEL NORMAL                          APPEL HOOKE (LD_PRELOAD)
 
 ```
 SANS LD_PRELOAD :
-Programme → libc.so → fonction originale
+Programme  libc.so  fonction originale
 
 AVEC LD_PRELOAD :
-Programme → hook.so (NOTRE lib) → libc.so → fonction originale
+Programme  hook.so (NOTRE lib)  libc.so  fonction originale
               │
               ├─ Log l'appel
               ├─ Peut modifier les args
@@ -94,7 +94,7 @@ Programme → hook.so (NOTRE lib) → libc.so → fonction originale
 
 ---
 
-## Exemple - Hook de malloc avec LD_PRELOAD 💻
+## Exemple - Hook de malloc avec LD_PRELOAD 
 
 ### La lib de hooking
 
@@ -124,7 +124,7 @@ extern "C" void* malloc(size_t size) {
 
     void* ptr = real_malloc(size);
 
-    // Log (utilise fprintf car cout utilise malloc → recursion infinie)
+    // Log (utilise fprintf car cout utilise malloc  recursion infinie)
     fprintf(stderr, "[HOOK] malloc(%zu) = %p [total: %d appels, %zu bytes]\n",
             size, ptr, malloc_count, total_allocated);
 
@@ -183,7 +183,7 @@ DYLD_INSERT_LIBRARIES=./hook_malloc.dylib DYLD_FORCE_FLAT_NAMESPACE=1 ./test_pro
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Apres ce chapitre, tu dois savoir :
 - [ ] Ce qu'est le hooking et pourquoi c'est utilise (defensif ET offensif)

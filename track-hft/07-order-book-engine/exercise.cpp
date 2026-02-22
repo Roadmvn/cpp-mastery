@@ -72,12 +72,12 @@ struct PriceLevel {
 //
 // Deux maps:
 //   bids: std::map<double, PriceLevel, std::greater<double>>
-//         → le best bid est le premier élément (prix max)
+//          le best bid est le premier élément (prix max)
 //
 //   asks: std::map<double, PriceLevel, std::less<double>>
-//         → le best ask est le premier élément (prix min)
+//          le best ask est le premier élément (prix min)
 //
-// Un index id→(side, price) pour les annulations rapides.
+// Un index id(side, price) pour les annulations rapides.
 
 class SimpleOrderBook {
 public:
@@ -86,7 +86,7 @@ public:
     // Asks: prix croissant (best ask = begin())
     std::map<double, PriceLevel, std::less<double>>    asks;
 
-    // Index: order_id → (side, price) pour cancel en O(log N)
+    // Index: order_id  (side, price) pour cancel en O(log N)
     struct OrderRef { Side side; double price; };
     std::unordered_map<uint64_t, OrderRef> order_index;
 
@@ -139,9 +139,9 @@ public:
     //   │   Prix        │    Volume    │   Côté     │
     //   ├──────────────┼──────────────┼────────────┤
     //   │   100.50      │    3000      │   ASK      │
-    //   │   100.30      │    5000      │   ASK ←    │  ← best ask
+    //   │   100.30      │    5000      │   ASK     │   best ask
     //   │── SPREAD 0.10 ─────────────────────────  │
-    //   │   100.20      │    4000      │   BID ←    │  ← best bid
+    //   │   100.20      │    4000      │   BID     │   best bid
     //   │   100.10      │    1500      │   BID      │
     //   └──────────────┴──────────────┴────────────┘
 

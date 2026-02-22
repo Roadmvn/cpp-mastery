@@ -22,7 +22,7 @@
 //    a) Verifier si des variables d'env d'analyse sont presentes
 //       (CUCKOO, SANDBOX, ANALYSIS_ENV, etc.)
 //    b) Verifier si le repertoire /tmp contient des patterns suspects
-//       (pillow, panda, etc.) → Linux uniquement, skip sur macOS
+//       (pillow, panda, etc.)  Linux uniquement, skip sur macOS
 //    c) Calculer un score final et afficher un rapport detaille
 //
 //  PARTIE C - Demonstration pedagogique
@@ -100,7 +100,7 @@ bool checkSuspiciousEnvVars(VMReport& report) {
 
     // TON CODE ICI
     // Pour chaque var dans suspect_vars :
-    //   getenv(var.c_str()) != nullptr → var presente → suspect
+    //   getenv(var.c_str()) != nullptr  var presente  suspect
     // Ajouter les indicateurs dans report.indicators
     // Retourner true si au moins une variable trouvee
 
@@ -114,10 +114,10 @@ VMReport buildVMReport() {
     // TON CODE ICI
     // 1. Remplir cpu_count, ram_gb, suspicious_hostname, suspicious_env_vars
     // 2. Calculer le score :
-    //    cpu_count < 2     → +1
-    //    ram_gb < 2        → +1
-    //    suspicious_hostname → +2
-    //    suspicious_env_vars → +2
+    //    cpu_count < 2      +1
+    //    ram_gb < 2         +1
+    //    suspicious_hostname  +2
+    //    suspicious_env_vars  +2
     // 3. Retourner le rapport
 
     return report;

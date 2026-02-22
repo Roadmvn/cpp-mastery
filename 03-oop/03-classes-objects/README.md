@@ -1,10 +1,10 @@
-# Chapitre 03 - Classes et Objets 🏛️
+# Chapitre 03 - Classes et Objets 🏛
 
-## Concept fondamental 🎯
+## Concept fondamental 
 
 Une **classe** est un plan (blueprint) qui definit les donnees (attributs) et les comportements (methodes) d'un type. Un **objet** est une instance concrete d'une classe.
 
-## Declaration d'une classe 📝
+## Declaration d'une classe 
 
 ```cpp
 class Compteur {
@@ -22,7 +22,7 @@ public:                     // Accessible de partout
 };
 ```
 
-## Objet en memoire 🧠
+## Objet en memoire 
 
 ```
 Stack (ou Heap si new)
@@ -44,7 +44,7 @@ Segment code (partage entre tous les objets Compteur)
 +---------------------------+
 ```
 
-## public / private / protected 🔒
+## public / private / protected 
 
 ```
 +------------------+------------------+------------------+
@@ -59,7 +59,7 @@ Segment code (partage entre tous les objets Compteur)
 +------------------+------------------+------------------+
 ```
 
-## Methodes definies hors de la classe 🔧
+## Methodes definies hors de la classe 
 
 ```cpp
 class Calculatrice {
@@ -86,7 +86,7 @@ double Calculatrice::get_resultat() const {
 }
 ```
 
-## Le pointeur this 👈
+## Le pointeur this 
 
 ```cpp
 class Point {
@@ -103,7 +103,7 @@ Point p;
 p.deplacer(1, 2).deplacer(3, 4);  // Method chaining
 ```
 
-## const correctness ⚡
+## const correctness 
 
 ```cpp
 class Cercle {
@@ -121,7 +121,7 @@ public:
 };
 ```
 
-## Bonnes pratiques 💡
+## Bonnes pratiques 
 
 1. **Tout en private** par defaut, n'exposer que ce qui est necessaire
 2. Marquer **const** toutes les methodes qui ne modifient pas l'objet

@@ -1,4 +1,4 @@
-# Namespaces 📁
+# Namespaces 
 
 ## Pourquoi c'est important
 
@@ -161,7 +161,7 @@ int r = ctu::calculate(5, 10);
 
 ---
 
-## Checkpoint ✅
+## Checkpoint 
 
 Avant de passer aux exercices, assure-toi de savoir repondre :
 
@@ -176,4 +176,4 @@ Avant de passer aux exercices, assure-toi de savoir repondre :
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 👊
+Passe aux exercices dans `exercise.cpp` quand t'es pret. 

@@ -1,4 +1,4 @@
-# Two Pointers 👉👈
+# Two Pointers 
 
 > Le pattern qui transforme du O(n^2) en O(n)
 
@@ -31,10 +31,10 @@ Array : [1, 3, 5, 7, 9, 11, 15]
    └──────────── ──────────────┘
       Se rapprochent l'un de l'autre
 
-Iteration 1 :  left=0, right=6  →  sum = 1+15 = 16 (trop grand → right--)
-Iteration 2 :  left=0, right=5  →  sum = 1+11 = 12 (trop petit → left++)
-Iteration 3 :  left=1, right=5  →  sum = 3+11 = 14 (trop grand → right--)
-Iteration 4 :  left=1, right=4  →  sum = 3+9  = 12 (TROUVE)
+Iteration 1 :  left=0, right=6    sum = 1+15 = 16 (trop grand  right--)
+Iteration 2 :  left=0, right=5    sum = 1+11 = 12 (trop petit  left++)
+Iteration 3 :  left=1, right=5    sum = 3+11 = 14 (trop grand  right--)
+Iteration 4 :  left=1, right=4    sum = 3+9  = 12 (TROUVE)
 ```
 
 ### Variante 2 : Meme direction (lent/rapide)
@@ -53,15 +53,15 @@ Array : [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
 
 Objectif : retirer les doublons (garder un de chaque)
 
-Etape 1 : f=1, nums[f]=0 == nums[s]=0  →  on skip
+Etape 1 : f=1, nums[f]=0 == nums[s]=0    on skip
   [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
    s  f
 
-Etape 2 : f=2, nums[f]=1 != nums[s]=0  →  s++, copie
+Etape 2 : f=2, nums[f]=1 != nums[s]=0    s++, copie
   [0, 1, 1, 1, 1, 2, 2, 3, 3, 4]
       s  f
 
-Etape 3 : f=3, nums[f]=1 == nums[s]=1  →  on skip
+Etape 3 : f=3, nums[f]=1 == nums[s]=1    on skip
   [0, 1, 1, 1, 1, 2, 2, 3, 3, 4]
       s     f
 

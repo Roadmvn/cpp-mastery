@@ -1,6 +1,6 @@
-# Chapitre 12 : Null Pointers et Dangling Pointers ⚠️
+# Chapitre 12 : Null Pointers et Dangling Pointers 
 
-## Ce que tu vas apprendre 🎯
+## Ce que tu vas apprendre 
 
 - `nullptr` (C++11) vs `NULL` vs `0`
 - Verifier si un pointeur est null avant de l'utiliser
@@ -24,17 +24,17 @@ int* old2 = 0;        // Aussi valide mais ambigu
 ```
     Pointeur valide              Pointeur null
     ┌──────────┐    ┌───────┐   ┌──────────┐
-    │ ptr =    │───►│ 42    │   │ ptr =    │───► RIEN (nullptr)
+    │ ptr =    │───│ 42    │   │ ptr =    │─── RIEN (nullptr)
     │ 0x7FF04  │    └───────┘   │ nullptr  │
     └──────────┘                └──────────┘
 
-    *ptr = 42  ✓                 *ptr = CRASH ! ✗
+    *ptr = 42                   *ptr = CRASH ! 
                                  (segmentation fault)
 ```
 
 ---
 
-## Pourquoi verifier null ? 💀
+## Pourquoi verifier null ? 
 
 Dereferencier un pointeur null = **segmentation fault** = crash du programme.
 
@@ -62,14 +62,14 @@ if (ptr) {
 
 ---
 
-## Dangling pointer : le piege mortel 🪤
+## Dangling pointer : le piege mortel 
 
 Un **dangling pointer** pointe vers une zone memoire qui a ete liberee ou qui n'existe plus. C'est le bug le plus dangereux en C/C++.
 
 ```
     AVANT                          APRES delete
     ┌──────────┐    ┌───────┐     ┌──────────┐    ┌───────┐
-    │ ptr =    │───►│ 42    │     │ ptr =    │───►│ ???   │
+    │ ptr =    │───│ 42    │     │ ptr =    │───│ ???   │
     │ 0x7FF04  │    │ VALID │     │ 0x7FF04  │    │ FREED │
     └──────────┘    └───────┘     └──────────┘    └───────┘
 
@@ -116,7 +116,7 @@ int main() {
     ├───────────────────┤        ├───────────────────┤
     │ Stack: main       │        │ Stack: main       │
     │ ┌───────────────┐ │        │ ┌───────────────┐  │
-    │ │ p = 0x7FF100  │─┼────►   │ │ p = 0x7FF100  │──┼── DANGLING !
+    │ │ p = 0x7FF100  │─┼────   │ │ p = 0x7FF100  │──┼── DANGLING !
     │ └───────────────┘ │        │ └───────────────┘  │
     └───────────────────┘        └───────────────────┘
 ```
@@ -131,7 +131,7 @@ int* p = &arr[2];   // p pointe vers arr[2]
 
 ---
 
-## Les regles d'or des pointeurs 📏
+## Les regles d'or des pointeurs 
 
 | Regle                                          | Exemple                        |
 |------------------------------------------------|--------------------------------|
@@ -143,7 +143,7 @@ int* p = &arr[2];   // p pointe vers arr[2]
 
 ---
 
-## Comparaison : NULL vs nullptr vs 0 🔍
+## Comparaison : NULL vs nullptr vs 0 
 
 ```cpp
 void foo(int x)    { cout << "int" << endl; }
@@ -158,7 +158,7 @@ foo(nullptr);  // Appelle foo(int*) — sans ambiguite !
 
 ---
 
-## Points cles a retenir 🔑
+## Points cles a retenir 
 
 1. **`nullptr`** = pointeur null, toujours l'utiliser (pas NULL ni 0)
 2. Dereferencier un null = **crash** (segfault)
@@ -169,7 +169,7 @@ foo(nullptr);  // Appelle foo(int*) — sans ambiguite !
 
 ---
 
-## Compilation 🔧
+## Compilation 
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp && ./exercise

@@ -1,6 +1,6 @@
 /*
  * ============================================
- *  LeetCode #973 - K Closest Points (Medium) 🏔️
+ *  LeetCode #973 - K Closest Points (Medium) 🏔
  * ============================================
  *  Lien : https://leetcode.com/problems/k-closest-points-to-origin/
  *
@@ -49,7 +49,7 @@ public:
  * ─── SOLUTION OPTIMALE : Max-heap de taille k ────
  *
  * Utiliser un max-heap de taille k.
- * On stocke les distances (negatives pour min → max-heap trick
+ * On stocke les distances (negatives pour min  max-heap trick
  * ou on utilise directement un max-heap et on pop quand taille > k).
  *
  *  Trace pour points=[[1,3],[-2,2],[5,8],[0,1]], k=2 :
@@ -57,10 +57,10 @@ public:
  *  Distances : (1,3)=10, (-2,2)=8, (5,8)=89, (0,1)=1
  *
  *  Max-heap (par distance) :
- *  push (10,[1,3])   → heap: [(10,[1,3])]
- *  push (8,[-2,2])   → heap: [(10,[1,3]), (8,[-2,2])]
- *  push (89,[5,8])   → taille 3 > k=2, pop max(89) → [(10,[1,3]), (8,[-2,2])]
- *  push (1,[0,1])    → taille 3 > k=2, pop max(10) → [(8,[-2,2]), (1,[0,1])]
+ *  push (10,[1,3])    heap: [(10,[1,3])]
+ *  push (8,[-2,2])    heap: [(10,[1,3]), (8,[-2,2])]
+ *  push (89,[5,8])    taille 3 > k=2, pop max(89)  [(10,[1,3]), (8,[-2,2])]
+ *  push (1,[0,1])     taille 3 > k=2, pop max(10)  [(8,[-2,2]), (1,[0,1])]
  *
  *  Resultat : [[-2,2], [0,1]]
  *
