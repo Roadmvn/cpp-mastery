@@ -56,43 +56,45 @@ Si `g++ --version` affiche un numéro de version, t'es bon. Let's go.
 ## Roadmap
 
 ```
-                        FULL C++ : ZERO TO HERO
-    ═══════════════════════════════════════════════════════
+                    FULL C++ : ZERO TO HERO
+  ============================================================
 
-    Semaines 1-3          Semaines 4-5          Semaines 6-7
-    ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-    │  FOUNDATIONS │─────│   MEMORY &   │─────│     OOP      │
-    │              │      │   ARRAYS     │      │              │
-    │ Variables    │      │ Pointeurs    │      │ Classes      │
-    │ Boucles      │      │ new/delete   │      │ Héritage     │
-    │ Fonctions    │      │ Références   │      │ Polymorphisme│
-    │ Conditions   │      │ Récursion    │      │ Smart Ptrs   │
-    └──────────────┘      └──────────────┘      └──────────────┘
-                                                       │
-                    ┌──────────────────────────────────┘
-                    ▼
-    Semaines 8-9          Semaines 10-14
-    ┌──────────────┐      ┌──────────────┐
-    │ STL MASTERY  │─────│  DSA &       │
-    │              │      │  LEETCODE    │
-    │ Vectors      │      │              │
-    │ Maps/Sets    │      │ Two Pointers │
-    │ Queues       │      │ Binary Search│
-    │ Algorithmes  │      │ Trees/Graphs │
-    │ Lambdas      │      │ DP & Greedy  │
-    └──────────────┘      └──────────────┘
-                                 │
-              ┌──────────────────┼──────────────────┐
-              ▼                                     ▼
-    ┌──────────────────┐              ┌──────────────────┐
-    │  TRACK HFT       │              │ TRACK OFFENSIVE  │
-    │                  │              │                  │
-    │ Cache Lines      │              │ Win32 API        │
-    │ Lock-Free        │              │ Process Injection│
-    │ SIMD             │              │ Shellcode        │
-    │ Networking       │              │ Evasion          │
-    │ Matching Engine  │              │ C2 Implants      │
-    └──────────────────┘              └──────────────────┘
+  Semaines 1-3        Semaines 4-5        Semaines 6-7
+  +----------------+  +----------------+  +----------------+
+  |  FOUNDATIONS   |  |  MEMORY &      |  |     OOP        |
+  |                |--|  ARRAYS        |--|                |
+  | Variables      |  | Pointeurs      |  | Classes        |
+  | Boucles        |  | new/delete     |  | Heritage       |
+  | Fonctions      |  | References     |  | Polymorphisme  |
+  | Conditions     |  | Recursion      |  | Smart Ptrs     |
+  +----------------+  +----------------+  +--------+-------+
+                                                   |
+                      +----------------------------+
+                      |
+                      v
+  Semaines 8-9        Semaines 10-14
+  +----------------+  +----------------+
+  |  STL MASTERY   |  |  DSA &         |
+  |                |--|  LEETCODE      |
+  | Vectors        |  |               |
+  | Maps/Sets      |  | Two Pointers  |
+  | Queues         |  | Binary Search |
+  | Algorithmes    |  | Trees/Graphs  |
+  | Lambdas        |  | DP & Greedy   |
+  +----------------+  +-------+--------+
+                              |
+              +---------------+---------------+
+              |                               |
+              v                               v
+  +-------------------+       +-------------------+
+  |    TRACK HFT      |       |  TRACK OFFENSIVE  |
+  |                   |       |                   |
+  | Cache Lines       |       | Win32 API         |
+  | Lock-Free         |       | Process Injection |
+  | SIMD              |       | Shellcode         |
+  | Networking        |       | Evasion           |
+  | Matching Engine   |       | C2 Implants       |
+  +-------------------+       +-------------------+
 ```
 
 ---
@@ -130,7 +132,7 @@ g++ -std=c++17 -Wall -Wextra -o programme fichier.cpp
 
 ---
 
-## Table des matières 📑
+## Table des matieres
 
 ### Fondations (Semaines 1-3)
 | # | Chapitre | Description |
