@@ -1,4 +1,4 @@
-# Variables & Types de donnees 
+# Variables & Types de donnees
 
 ## Pourquoi c'est important
 
@@ -137,7 +137,7 @@ int main() {
 
 ---
 
-## Checkpoint 
+## Checkpoint
 
 1. **Quelle est la difference entre `float` et `double` ?**
    > `float` = 4 bytes, ~7 chiffres de precision. `double` = 8 bytes, ~15 chiffres. En finance/HFT, on utilise `double` pour la precision.
@@ -150,4 +150,4 @@ int main() {
 
 ---
 
-Passe aux exercices dans `exercise.cpp`. 
+Passe aux exercices dans `exercise.cpp`.

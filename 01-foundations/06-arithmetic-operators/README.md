@@ -1,4 +1,4 @@
-# Operateurs Arithmetiques 
+# Operateurs Arithmetiques
 
 ## Pourquoi c'est important
 
@@ -138,7 +138,7 @@ Rendement : 1.49497 %
 
 ---
 
-## Checkpoint 
+## Checkpoint
 
 1. **Que donne `7 / 2` en C++ si les deux operandes sont des `int` ?**
    > `3`. La division entiere tronque le resultat. Pour obtenir `3.5`, il faut au moins un `double` : `7.0 / 2`.

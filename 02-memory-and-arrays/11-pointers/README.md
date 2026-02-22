@@ -1,6 +1,6 @@
-# Chapitre 11 : Pointeurs 
+# Chapitre 11 : Pointeurs
 
-## Ce que tu vas apprendre 
+## Ce que tu vas apprendre
 
 - Declarer un pointeur avec `*`
 - Obtenir l'adresse avec `&` et dereferencier avec `*`
@@ -10,14 +10,14 @@
 
 ---
 
-## C'est quoi un pointeur ? 
+## C'est quoi un pointeur ?
 
 Un pointeur est une variable qui **stocke une adresse memoire**. Au lieu de contenir une valeur directement, il contient l'adresse ou se trouve cette valeur.
 
 ```
     Variable normale          Pointeur
     ┌──────────┐              ┌──────────┐         ┌──────────┐
-    │ age = 25 │              │ ptr =    │──────── │ age = 25 │
+    │ age = 25 │              │ ptr =    │────────► │ age = 25 │
     │ @0x7FF04 │              │ 0x7FF04  │         │ @0x7FF04 │
     └──────────┘              └──────────┘         └──────────┘
                                @0x7FF10
@@ -28,7 +28,7 @@ Un pointeur est une variable qui **stocke une adresse memoire**. Au lieu de cont
 
 ---
 
-## Declaration et utilisation 
+## Declaration et utilisation
 
 ```cpp
 int age = 25;
@@ -50,7 +50,7 @@ cout << *ptr << endl;   // 25 (dereferencement : valeur A l'adresse)
 
 ---
 
-## Schema detaille : pointeur vers donnee 
+## Schema detaille : pointeur vers donnee
 
 ```
     STACK
@@ -74,7 +74,7 @@ cout << *ptr << endl;   // 25 (dereferencement : valeur A l'adresse)
 
 ---
 
-## Modifier une valeur via un pointeur ✏
+## Modifier une valeur via un pointeur
 
 ```cpp
 int score = 100;
@@ -90,7 +90,7 @@ C'est comme ca que les fonctions modifient des variables via des pointeurs (styl
 
 ---
 
-## Arithmetique des pointeurs 🔢
+## Arithmetique des pointeurs
 
 L'arithmetique de pointeurs ne travaille pas en octets mais en **elements du type pointe**.
 
@@ -103,7 +103,7 @@ L'arithmetique de pointeurs ne travaille pas en octets mais en **elements du typ
     │   10   │   20   │   30   │   40   │   50   │
     └────────┴────────┴────────┴────────┴────────┘
     0x100    0x104    0x108    0x10C    0x110
-    p        p+1     p+2      p+3      p+4
+    p        p+1      p+2      p+3      p+4
 
     p        adresse 0x100, *p     = 10
     p + 1    adresse 0x104, *(p+1) = 20
@@ -124,7 +124,7 @@ for (int i = 0; i < 5; i++) {
 
 ---
 
-## Pointeurs et arrays : la relation secrete 🤝
+## Pointeurs et arrays : la relation secrete
 
 Le nom d'un array est en fait un **pointeur vers son premier element**.
 
@@ -139,13 +139,13 @@ cout << *(arr + 2) << endl;   // 30
 ```
 
 ```
-    arr[i]  ≡  *(arr + i)
-    &arr[i] ≡  arr + i
+    arr[i]  ==  *(arr + i)
+    &arr[i] ==  arr + i
 ```
 
 ---
 
-## Pointeur comme parametre de fonction 📮
+## Pointeur comme parametre de fonction
 
 Style C classique (avant les references) :
 
@@ -169,7 +169,7 @@ En C++ moderne, on prefere les references (`&`), mais les pointeurs sont essenti
 
 ---
 
-## Points cles a retenir 
+## Points cles a retenir
 
 1. **`int* p`** declare un pointeur vers un int
 2. **`&var`** donne l'adresse d'une variable
@@ -180,7 +180,7 @@ En C++ moderne, on prefere les references (`&`), mais les pointeurs sont essenti
 
 ---
 
-## Compilation 
+## Compilation
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp && ./exercise

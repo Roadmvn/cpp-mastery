@@ -1,4 +1,4 @@
-# Full C++ : De Zero a Hero 
+# Full C++ : De Zero a Hero
 
 **Maîtrise C++ de A à Z — LeetCode, HFT, Red Team.**
 
@@ -6,7 +6,7 @@ Un repo structuré, progressif et sans bullshit pour apprendre C++ en partant de
 
 ---
 
-## Pour qui ? 
+## Pour qui ?
 
 - Tu n'as **jamais codé** ou tu viens d'un autre langage
 - Tu veux **grind LeetCode** en C++ (le langage le plus rapide sur les judges)
@@ -18,7 +18,7 @@ Pas besoin de diplôme. Pas besoin d'expérience. Juste un PC et de la ténacit�
 
 ---
 
-## Prérequis 
+## Prérequis
 
 ### Ce qu'il te faut
 
@@ -53,7 +53,7 @@ Si `g++ --version` affiche un numéro de version, t'es bon. Let's go.
 
 ---
 
-## Roadmap 
+## Roadmap
 
 ```
                         FULL C++ : ZERO TO HERO
@@ -61,12 +61,12 @@ Si `g++ --version` affiche un numéro de version, t'es bon. Let's go.
 
     Semaines 1-3          Semaines 4-5          Semaines 6-7
     ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
-    │  FOUNDATIONS  │─────│   MEMORY &   │─────│     OOP      │
+    │  FOUNDATIONS │─────│   MEMORY &   │─────│     OOP      │
     │              │      │   ARRAYS     │      │              │
     │ Variables    │      │ Pointeurs    │      │ Classes      │
-    │ Boucles     │      │ new/delete   │      │ Héritage     │
-    │ Fonctions   │      │ Références   │      │ Polymorphisme│
-    │ Conditions  │      │ Récursion    │      │ Smart Ptrs   │
+    │ Boucles      │      │ new/delete   │      │ Héritage     │
+    │ Fonctions    │      │ Références   │      │ Polymorphisme│
+    │ Conditions   │      │ Récursion    │      │ Smart Ptrs   │
     └──────────────┘      └──────────────┘      └──────────────┘
                                                        │
                     ┌──────────────────────────────────┘
@@ -85,7 +85,7 @@ Si `g++ --version` affiche un numéro de version, t'es bon. Let's go.
               ┌──────────────────┼──────────────────┐
               ▼                                     ▼
     ┌──────────────────┐              ┌──────────────────┐
-    │  TRACK HFT     │              │ TRACK OFFENSIVE │
+    │  TRACK HFT       │              │ TRACK OFFENSIVE  │
     │                  │              │                  │
     │ Cache Lines      │              │ Win32 API        │
     │ Lock-Free        │              │ Process Injection│
@@ -97,7 +97,7 @@ Si `g++ --version` affiche un numéro de version, t'es bon. Let's go.
 
 ---
 
-## Comment utiliser ce repo 
+## Comment utiliser ce repo
 
 Chaque chapitre suit le même format :
 
@@ -109,7 +109,7 @@ XX-nom-du-chapitre/
 └── challenge.cpp      # Défi bonus pour aller plus loin
 ```
 
-### La méthode 
+### La méthode
 
 1. **Lis le README.md** du chapitre — comprends la théorie
 2. **Code `exercise.cpp`** — mets en pratique immédiatement
@@ -211,13 +211,13 @@ g++ -std=c++17 -Wall -Wextra -o programme fichier.cpp
 | 14 | [Heap Problems](05-dsa-leetcode/14-heap-problems) | Top K, médiane, merge |
 | 15 | [Tries](05-dsa-leetcode/15-tries) | Arbres préfixés |
 
-### Tracks de spécialisation 
+### Tracks de spécialisation
 | Track | Description | Lien |
 |-------|-------------|------|
 | HFT Low-Latency  | Cache, lock-free, SIMD, networking, matching engine | [track-hft/](track-hft/) |
 | Offensive / Red Team  | Win32 API, injection, shellcode, evasion, C2 | [track-offensive/](track-offensive/) |
 
-### Projets finaux 
+### Projets finaux
 | Projet | Description |
 |--------|-------------|
 | [HFT Order Book Simulator](projects/hft-orderbook-simulator) | Simulateur d'order book complet |
@@ -225,7 +225,7 @@ g++ -std=c++17 -Wall -Wextra -o programme fichier.cpp
 
 ---
 
-## Structure du repo 
+## Structure du repo
 
 ```
 full-c++/
@@ -282,7 +282,7 @@ full-c++/
 
 ---
 
-## Let's go 
+## Let's go
 
 Commence par [01-foundations/01-setup-hello-world](01-foundations/01-setup-hello-world) et avance chapitre par chapitre. Pas de raccourcis. Chaque concept s'appuie sur le précédent.
 

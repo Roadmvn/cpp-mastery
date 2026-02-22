@@ -1,4 +1,4 @@
-# Two Pointers 
+# Two Pointers
 
 > Le pattern qui transforme du O(n^2) en O(n)
 
@@ -24,11 +24,11 @@ Les deux pointeurs partent de chaque extremite et convergent vers le centre.
 ```
 Array : [1, 3, 5, 7, 9, 11, 15]
 
-  left                        right
-   │                            │
-   v                            v
+  left                      right
+   │                          │
+   v                          v
  [ 1,  3,  5,  7,  9,  11, 15 ]
-   └──────────── ──────────────┘
+   └──────────────────────────┘
       Se rapprochent l'un de l'autre
 
 Iteration 1 :  left=0, right=6    sum = 1+15 = 16 (trop grand  right--)
@@ -67,7 +67,7 @@ Etape 3 : f=3, nums[f]=1 == nums[s]=1    on skip
 
 ...et ainsi de suite jusqu'a :
   [0, 1, 2, 3, 4, ...]   k=5 elements uniques
-               s                         f
+               s         f (hors limites)
 ```
 
 ---

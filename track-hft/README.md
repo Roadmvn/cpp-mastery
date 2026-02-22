@@ -1,4 +1,4 @@
-# Track HFT : Low-Latency C++ 
+# Track HFT : Low-Latency C++
 
 **Deviens le dev qui fait tourner les marchés financiers.**
 
@@ -8,7 +8,7 @@ Dans ce track, tu vas apprendre à écrire du code C++ qui rivalise avec ce qui 
 
 ---
 
-## Ce que tu vas maîtriser 
+## Ce que tu vas maîtriser
 
 - Optimisation cache L1/L2/L3 et data locality
 - Allocation mémoire custom sans fragmentation
@@ -20,7 +20,7 @@ Dans ce track, tu vas apprendre à écrire du code C++ qui rivalise avec ce qui 
 
 ---
 
-## Prérequis 
+## Prérequis
 
 Tu **dois** avoir complété ces sections avant de commencer :
 
@@ -35,9 +35,9 @@ Si tu n'as pas fait ces sections, retourne au [README principal](../README.md). 
 
 ---
 
-## Roadmap détaillée 
+## Roadmap détaillée
 
-### 01 — Cache Optimization 
+### 01 — Cache Optimization
 [`01-cache-optimization/`](01-cache-optimization/)
 
 Ton CPU est rapide. Ta RAM est lente. Le cache est le pont entre les deux, et la plupart des devs l'ignorent complètement. Tu vas apprendre comment structurer tes données pour que le CPU les trouve **toujours** dans le cache.
@@ -89,7 +89,7 @@ Les mutex tuent la performance. Quand un thread attend un lock, il dort. En HFT,
 
 ---
 
-### 04 — Networking : TCP & UDP 
+### 04 — Networking : TCP & UDP
 [`04-networking-tcp-udp/`](04-networking-tcp-udp/)
 
 Les marchés envoient des données via le réseau. Tu dois les recevoir le plus vite possible. TCP pour les ordres (fiabilité), UDP multicast pour les market data (vitesse). Tu vas coder des deux côtés.
@@ -106,7 +106,7 @@ Les marchés envoient des données via le réseau. Tu dois les recevoir le plus 
 
 ---
 
-### 05 — Multithreading & Atomics 
+### 05 — Multithreading & Atomics
 [`05-multithreading-atomics/`](05-multithreading-atomics/)
 
 Le HFT utilise le multithreading, mais pas comme une app web. Chaque thread est pinné à un core CPU. Pas de context switching, pas de migrations. Tu vas apprendre le threading de précision.
@@ -141,7 +141,7 @@ Ton CPU peut traiter 4, 8 ou même 16 données en **une seule instruction**. C'e
 
 ---
 
-### 07 — Order Book Engine 
+### 07 — Order Book Engine
 [`07-order-book-engine/`](07-order-book-engine/)
 
 L'order book, c'est le coeur de tout exchange. Buy orders d'un côté, sell orders de l'autre, et un matching engine au milieu qui croise les ordres. Tu vas en construire un de A à Z.
@@ -158,7 +158,7 @@ L'order book, c'est le coeur de tout exchange. Buy orders d'un côté, sell orde
 
 ---
 
-### 08 — Latency Measurement 
+### 08 — Latency Measurement
 [`08-latency-measurement/`](08-latency-measurement/)
 
 "Ce qui ne se mesure pas ne s'améliore pas." En HFT, tu mesures tout en nanosecondes. Tu vas apprendre à profiler ton code avec une précision chirurgicale.
@@ -176,7 +176,7 @@ L'order book, c'est le coeur de tout exchange. Buy orders d'un côté, sell orde
 
 ---
 
-## Projet final : Matching Engine 
+## Projet final : Matching Engine
 [`projects/matching-engine/`](projects/matching-engine/)
 
 Tout ce que tu as appris converge ici. Tu vas construire un **matching engine complet** avec :
@@ -191,7 +191,7 @@ Tout ce que tu as appris converge ici. Tu vas construire un **matching engine co
 
 ---
 
-## Architecture d'un système HFT 🏛
+## Architecture d'un système HFT
 
 ```
     ┌─────────────────────────────────────────────────────────────────┐
@@ -211,7 +211,7 @@ Tout ce que tu as appris converge ici. Tu vas construire un **matching engine co
              │ (lock-free)                         │
              ▼                                     │
     ┌───────────────────┐    ┌──────────────┐      │
-    │   ORDER BOOK      │───│   STRATEGY   │      │
+    │   ORDER BOOK      │───>│   STRATEGY   │      │
     │                   │    │   ENGINE     │      │
     │ Update bids/asks  │    │              │      │
     │ Price levels      │    │ Signal gen   │      │
@@ -220,8 +220,8 @@ Tout ce que tu as appris converge ici. Tu vas construire un **matching engine co
                                     │              │
                                     ▼              │
                              ┌──────────────┐      │
-                             │    RISK       │      │
-                             │   CHECK      │      │
+                             │     RISK     │      │
+                             │    CHECK     │      │
                              │              │      │
                              │ Position lim │      │
                              │ Order size   │      │
@@ -268,7 +268,7 @@ Chaque composant tourne sur son propre core CPU isolé, communique via des queue
 
 ---
 
-## Let's trade 
+## Let's trade
 
 ```
 g++ -std=c++17 -O2 -march=native -o cache 01-cache-optimization/exercise.cpp && ./cache

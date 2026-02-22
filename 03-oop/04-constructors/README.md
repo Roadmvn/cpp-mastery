@@ -1,10 +1,10 @@
-# Chapitre 04 - Constructeurs et Destructeurs 🔨
+# Chapitre 04 - Constructeurs et Destructeurs
 
-## Concept fondamental 
+## Concept fondamental
 
 Un **constructeur** est une methode speciale appelee automatiquement a la creation d'un objet. Un **destructeur** est appele automatiquement a sa destruction. Ils garantissent qu'un objet est toujours dans un etat valide.
 
-## Types de constructeurs 
+## Types de constructeurs
 
 ### Constructeur par defaut
 
@@ -31,7 +31,7 @@ Timer t(60);      // 60 secondes
 Timer t2{120};    // Initialisation uniforme (prefere)
 ```
 
-### Liste d'initialisation vs corps 
+### Liste d'initialisation vs corps
 
 ```cpp
 class Personne {
@@ -51,17 +51,17 @@ public:
 
 ```
 Liste d'initialisation       Corps du constructeur
-+----------------------+     +----------------------+
-| 1. Construit nom     |     | 1. Construit nom ""  |
-|    directement       |     | 2. Affecte nom = n   |
-| 2. Construit age     |     | 3. Construit age 0   |
-|    directement       |     | 4. Affecte age = a   |
-+----------------------+     +----------------------+
+┌──────────────────────┐     ┌──────────────────────┐
+│ 1. Construit nom     │     │ 1. Construit nom ""  │
+│    directement       │     │ 2. Affecte nom = n   │
+│ 2. Construit age     │     │ 3. Construit age 0   │
+│    directement       │     │ 4. Affecte age = a   │
+└──────────────────────┘     └──────────────────────┘
   1 etape par membre           2 etapes par membre
   = PLUS RAPIDE                = PLUS LENT
 ```
 
-## La liste d'initialisation est OBLIGATOIRE pour 🚨
+## La liste d'initialisation est OBLIGATOIRE pour
 
 1. Les membres **const**
 2. Les membres **reference** (`&`)
@@ -79,7 +79,7 @@ public:
 };
 ```
 
-## Destructeur 
+## Destructeur
 
 ```cpp
 class Fichier {
@@ -98,7 +98,7 @@ public:
 // Le fichier est ferme automatiquement quand l'objet sort du scope
 ```
 
-## Quand les destructeurs sont appeles 
+## Quand les destructeurs sont appeles
 
 ```
 {
@@ -111,7 +111,7 @@ delete p;                             // Destructeur appele par delete
 // SANS delete -> FUITE MEMOIRE (utiliser smart pointers)
 ```
 
-## Valeurs par defaut des membres (C++11) 🆕
+## Valeurs par defaut des membres (C++11)
 
 ```cpp
 class Serveur {
@@ -125,7 +125,7 @@ public:
 };
 ```
 
-## Bonnes pratiques 
+## Bonnes pratiques
 
 1. **Toujours** utiliser la liste d'initialisation
 2. Initialiser les membres dans l'ordre de declaration
@@ -133,7 +133,7 @@ public:
 4. Les destructeurs doivent etre `noexcept` (par defaut)
 5. Preferer les smart pointers pour eviter d'ecrire des destructeurs
 
-## Compilation 🔨
+## Compilation
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp

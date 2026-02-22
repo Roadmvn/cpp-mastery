@@ -1,4 +1,4 @@
-# Boucles While 
+# Boucles While
 
 ## Pourquoi c'est important
 
@@ -18,21 +18,15 @@ while (condition) {
 ```
 
 ```
-  ┌──────────────────┐
-  │  Condition vraie? │◄──────────────┐
-  └────────┬─────────┘               │
-           │ OUI                     │
-           ▼                         │
-  ┌──────────────────┐               │
-  │  Executer le     │               │
-  │  bloc de code    │───────────────┘
-  └──────────────────┘
-           │ NON
-           ▼
-  ┌──────────────────┐
-  │  Suite du         │
-  │  programme        │
-  └──────────────────┘
+         ┌──────────────────┐
+    ┌───►│  Condition vraie?├──── NON ───► Suite du programme
+    │    └────────┬─────────┘
+    │             │ OUI
+    │             ▼
+    │    ┌──────────────────┐
+    └────┤  Executer le     │
+         │  bloc de code    │
+         └──────────────────┘
 ```
 
 ---
@@ -108,7 +102,7 @@ while (market_is_open) {
 
 ---
 
-## Piege classique : la boucle infinie accidentelle 
+## Piege classique : la boucle infinie accidentelle
 
 ```cpp
 int i = 10;
@@ -122,7 +116,7 @@ while (i > 0) {
 
 ---
 
-## Checkpoint 
+## Checkpoint
 
 1. **Quand est-ce que la condition du while est evaluee ?**
    > Avant chaque iteration. Si la condition est fausse des le depart, le bloc n'est jamais execute.
@@ -135,4 +129,4 @@ while (i > 0) {
 
 ---
 
-Passe aux exercices dans `exercise.cpp` quand t'es pret. 
+Passe aux exercices dans `exercise.cpp` quand t'es pret.

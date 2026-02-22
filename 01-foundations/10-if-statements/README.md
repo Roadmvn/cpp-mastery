@@ -1,4 +1,4 @@
-# Conditions if/else 🔀
+# Conditions if/else
 
 ## Pourquoi c'est important
 
@@ -186,7 +186,7 @@ int main() {
 
 ---
 
-## Checkpoint 
+## Checkpoint
 
 1. **Que se passe-t-il si tu ecris `if (x = 5)` au lieu de `if (x == 5)` ?**
    > `x = 5` est une affectation, pas une comparaison. x prend la valeur 5, et comme 5 est non-zero (true), le bloc if s'execute toujours. C'est un bug classique.

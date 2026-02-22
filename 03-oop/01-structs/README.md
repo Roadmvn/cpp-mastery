@@ -1,10 +1,10 @@
-# Chapitre 01 - Les Structures (struct) en C++ 
+# Chapitre 01 - Les Structures (struct) en C++
 
-## Concept fondamental 
+## Concept fondamental
 
 Une **struct** est un type de donnees compose qui regroupe plusieurs variables (membres) sous un meme nom. C'est la brique de base de la programmation orientee objet en C++.
 
-## Declaration et utilisation 
+## Declaration et utilisation
 
 ```cpp
 struct Point {
@@ -20,19 +20,19 @@ Point p2 = {1.0, 2.0};   // Initialisation agregate
 Point p3{5.0, 10.0};     // Initialisation uniforme (C++11)
 ```
 
-## Representation en memoire 
+## Representation en memoire
 
 ```
-+------------------+
-| struct Point     |
-+------------------+
-| double x  [8B]   |  offset 0
-| double y  [8B]   |  offset 8
-+------------------+
+┌──────────────────┐
+│ struct Point     │
+├──────────────────┤
+│ double x  [8B]   │  offset 0
+│ double y  [8B]   │  offset 8
+└──────────────────┘
   Total: 16 bytes
 ```
 
-## Struct avec methodes 
+## Struct avec methodes
 
 En C++, contrairement au C, les structs peuvent avoir des methodes :
 
@@ -51,7 +51,7 @@ struct Rectangle {
 };
 ```
 
-## Struct vs Class - La vraie difference 
+## Struct vs Class - La vraie difference
 
 | Aspect | struct | class |
 |--------|--------|-------|
@@ -66,7 +66,7 @@ class  = struct avec tout private par defaut
 
 C'est la **seule** difference technique. Le reste est convention.
 
-## Initialisation des membres (C++11) 🆕
+## Initialisation des membres (C++11)
 
 ```cpp
 struct Config {
@@ -79,7 +79,7 @@ Config c1;           // port=8080, host="localhost", debug=false
 Config c2{9090};     // port=9090, host="localhost", debug=false
 ```
 
-## Struct imbriquees 
+## Struct imbriquees
 
 ```cpp
 struct Adresse {
@@ -95,7 +95,7 @@ struct Personne {
 };
 ```
 
-## Passage par reference vs copie 
+## Passage par reference vs copie
 
 ```cpp
 void modifier(Point& p) {    // Par reference - modifie l'original
@@ -107,14 +107,14 @@ void afficher(const Point& p) {  // Par const ref - lecture seule, pas de copie
 }
 ```
 
-## Bonnes pratiques 
+## Bonnes pratiques
 
 1. Utiliser `struct` pour les types simples (donnees groupees)
 2. Toujours passer les structs par **const reference** si pas de modification
 3. Preferer l'initialisation uniforme `{}` a l'affectation membre par membre
 4. Utiliser les valeurs par defaut des membres (C++11+)
 
-## Compilation 🔨
+## Compilation
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp

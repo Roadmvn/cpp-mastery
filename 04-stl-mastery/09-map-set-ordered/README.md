@@ -1,4 +1,4 @@
-# Map et Set ordonnes 
+# Map et Set ordonnes
 
 > Arbres rouge-noir — ordre garanti, O(log n) partout, puissants pour les range queries
 
@@ -14,6 +14,7 @@
 set<int> s = {5, 3, 8, 1, 4, 7, 9};
 
 Arbre Rouge-Noir interne (B=Noir, R=Rouge) :
+
                   5(B)
                 /      \
             3(R)          8(R)
@@ -38,13 +39,13 @@ Iteration in-order = elements tries :
 
 ```
 map<int, string>             set<int>
-┌──────┬────────┐            ┌──────┐
-│  cle │ valeur │            │  cle │
-├──────┼────────┤            ├──────┤
-│   1  │ "un"   │            │   1  │
-│   3  │ "trois"│            │   3  │
-│   5  │ "cinq" │            │   5  │
-└──────┴────────┘            └──────┘
+┌──────┬──────────┐          ┌──────┐
+│  cle │  valeur  │          │  cle │
+├──────┼──────────┤          ├──────┤
+│   1  │ "un"     │          │   1  │
+│   3  │ "trois"  │          │   3  │
+│   5  │ "cinq"   │          │   5  │
+└──────┴──────────┘          └──────┘
 
 map = dictionnaire ordonne      set = ensemble ordonne
       "quelle valeur pour X ?"        "X existe-t-il ?"
@@ -57,11 +58,11 @@ map = dictionnaire ordonne      set = ensemble ordonne
 ### map<K,V>
 
 | Methode                   | Description                          | Complexite |
-|--------------------------|--------------------------------------|------------|
+|---------------------------|--------------------------------------|------------|
 | `m[key]`                  | Acces/creation                       | O(log n)   |
 | `m.insert({k,v})`         | Insere si absent                     | O(log n)   |
 | `m.find(key)`             | Iterateur (ou end)                   | O(log n)   |
-| `m.count(key)`            | 0 ou 1                              | O(log n)   |
+| `m.count(key)`            | 0 ou 1                               | O(log n)   |
 | `m.erase(key)`            | Supprime par cle                     | O(log n)   |
 | `m.lower_bound(key)`      | Premier element >= key               | O(log n)   |
 | `m.upper_bound(key)`      | Premier element > key                | O(log n)   |
@@ -70,10 +71,10 @@ map = dictionnaire ordonne      set = ensemble ordonne
 ### set<T>
 
 | Methode                   | Description                          | Complexite |
-|--------------------------|--------------------------------------|------------|
+|---------------------------|--------------------------------------|------------|
 | `s.insert(x)`             | Insere (ignore si present)           | O(log n)   |
 | `s.find(x)`               | Iterateur (ou end)                   | O(log n)   |
-| `s.count(x)`              | 0 ou 1                              | O(log n)   |
+| `s.count(x)`              | 0 ou 1                               | O(log n)   |
 | `s.erase(x)`              | Supprime x                           | O(log n)   |
 | `s.lower_bound(x)`        | Premier element >= x                 | O(log n)   |
 | `s.upper_bound(x)`        | Premier element > x                  | O(log n)   |
@@ -106,7 +107,7 @@ for (auto it = lo; it != hi; ++it) {
 
 ---
 
-## Patterns LeetCode avec set ordonne 
+## Patterns LeetCode avec set ordonne
 
 ### Sliding window minimum/maximum
 
@@ -171,18 +172,18 @@ ms.erase(1);           // supprimer TOUTES les occurrences de 1
 
 ---
 
-## Complexites a retenir 
+## Complexites a retenir
 
-| Operation               | map/set  | unordered_map/set |
-|------------------------|----------|-------------------|
-| Insert / Find / Erase   | O(log n) | O(1) moy / O(n) pire |
-| lower_bound/upper_bound | O(log n) | N/A               |
-| Iteration ordonnee      | O(n)     | O(n) mais non ordonne |
-| Min / Max               | O(1)     | O(n)              |
+| Operation               | map/set  | unordered_map/set        |
+|------------------------|----------|--------------------------|
+| Insert / Find / Erase   | O(log n) | O(1) moy / O(n) pire     |
+| lower_bound/upper_bound | O(log n) | N/A                      |
+| Iteration ordonnee      | O(n)     | O(n) mais non ordonne    |
+| Min / Max               | O(1)     | O(n)                     |
 
 ---
 
-## Quand utiliser map/set ordonne 
+## Quand utiliser map/set ordonne
 
 | Signal dans l'enonce                        | Pattern                         |
 |--------------------------------------------|---------------------------------|
@@ -191,7 +192,7 @@ ms.erase(1);           // supprimer TOUTES les occurrences de 1
 | "Suivant / predecesseur d'un element"       | lower_bound / upper_bound       |
 | "Fenetre glissante avec min/max dynamique"  | multiset                        |
 | "Compter les inversions"                    | Merge sort ou policy-based tree |
-| "Ordre alphabetique garanti"               | map ordonne                     |
+| "Ordre alphabetique garanti"                | map ordonne                     |
 
 ---
 

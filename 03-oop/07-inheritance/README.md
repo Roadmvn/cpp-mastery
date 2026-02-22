@@ -1,10 +1,10 @@
-# Chapitre 07 - Heritage (Inheritance) 
+# Chapitre 07 - Heritage (Inheritance)
 
-## Concept fondamental 
+## Concept fondamental
 
 L'**heritage** permet a une classe (derivee) d'heriter des attributs et methodes d'une autre classe (base). C'est le mecanisme cle du "is-a" : un Stock **est un** Instrument.
 
-## Syntaxe de base 
+## Syntaxe de base
 
 ```cpp
 class Animal {              // Classe de base
@@ -22,25 +22,25 @@ public:
 };
 ```
 
-## Hierarchie de classes 
+## Hierarchie de classes
 
 ```
-        +------------------+
-        |    Instrument    |  <- Classe de base
-        |  - symbol        |
-        |  - price         |
-        |  + get_symbol()  |
-        +------------------+
-           /      |      \
-          /       |       \
-+--------+  +--------+  +--------+
-|  Stock |  |  Bond  |  | Future |  <- Classes derivees
-| -shares|  | -coupon|  | -expiry|
-| -div   |  | -yield |  | -margin|
-+--------+  +--------+  +--------+
+             ┌──────────────────┐
+             │    Instrument    │  <- Classe de base
+             │  - symbol        │
+             │  - price         │
+             │  + get_symbol()  │
+             └──────────────────┘
+                /      |      \
+               /       |       \
+    ┌──────────┐  ┌──────────┐  ┌──────────┐
+    │  Stock   │  │   Bond   │  │  Future  │  <- Classes derivees
+    │ - shares │  │ - coupon │  │ - expiry │
+    │ - div    │  │ - yield  │  │ - margin │
+    └──────────┘  └──────────┘  └──────────┘
 ```
 
-## Types d'heritage 
+## Types d'heritage
 
 ```
 class Derived : public Base     -> public reste public, protected reste protected
@@ -59,7 +59,7 @@ private   ->     INACCESSIBLE (toujours)
 
 En pratique : **presque toujours public**.
 
-## Constructeurs herites 
+## Constructeurs herites
 
 ```cpp
 class Base {
@@ -80,7 +80,7 @@ public:
 Ordre de construction : **Base d'abord**, puis Derivee.
 Ordre de destruction : **Derivee d'abord**, puis Base (inverse).
 
-## Redefinition de methodes (hiding) 
+## Redefinition de methodes (hiding)
 
 ```cpp
 class Base {
@@ -100,13 +100,13 @@ d.saluer();          // "Bonjour (Derivee)"
 d.Base::saluer();    // "Bonjour (Base)" - acces explicite
 ```
 
-## protected vs private 
+## protected vs private
 
 - `private` : accessible uniquement dans la classe elle-meme
 - `protected` : accessible dans la classe ET ses derivees
 - `public` : accessible de partout
 
-## Bonnes pratiques 
+## Bonnes pratiques
 
 1. Utiliser l'heritage **public** (sauf raison specifique)
 2. Preferer `protected` a `private` pour les membres que les derivees doivent utiliser
@@ -114,7 +114,7 @@ d.Base::saluer();    // "Bonjour (Base)" - acces explicite
 4. Heritage = relation "is-a" (pas "has-a", pour ca utiliser la composition)
 5. Ne pas heriter plus de 2-3 niveaux de profondeur
 
-## Compilation 🔨
+## Compilation
 
 ```bash
 g++ -std=c++17 -Wall -Wextra -o exercise exercise.cpp
