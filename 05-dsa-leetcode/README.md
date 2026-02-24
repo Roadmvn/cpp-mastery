@@ -76,6 +76,13 @@ Suis cet ordre. Chaque pattern depend des precedents.
                                                    │  15. Tries       │
                                                    │                  │
                                                    └──────────────────┘
+                                                            │
+                                                            v
+  Phase 6 : Structures Avancees ──────────────────────────────────────
+  ┌──────────────────┐     ┌──────────────────┐
+  │  16. Union-Find  │────│  17. Monotonic   │
+  │  (DSU)           │     │  Stack           │
+  └──────────────────┘     └──────────────────┘
 ```
 
 ---
@@ -100,6 +107,8 @@ Suis cet ordre. Chaque pattern depend des precedents.
 | 13 | Greedy               | 5         | Easy-Hard   | Choix local optimal, intervalles, scheduling     |
 | 14 | Heap Problems        | 5         | Medium-Hard | Priority queue, top-K, median, merge K lists     |
 | 15 | Tries                | 3         | Medium-Hard | Prefix tree, autocomplete, recherche de mots     |
+| 16 | Union-Find           | 5         | Medium      | DSU, path compression, union by rank, cycles     |
+| 17 | Monotonic Stack      | 5         | Medium-Hard | NGE, NSE, histogramme, span, somme de min/max    |
 
 ---
 
@@ -122,6 +131,8 @@ Pose-toi ces questions :
 - Choix optimal a chaque etape ? **Greedy**
 - Sous-problemes qui se repetent ? **DP**
 - Explorer toutes les combinaisons ? **Backtracking**
+- Composantes connexes / fusionner des groupes ? **Union-Find**
+- Prochain plus grand / plus petit element ? **Monotonic Stack**
 
 ### Etape 3 : Brute Force d'abord (3-5 min)
 
@@ -171,6 +182,7 @@ Semaines 5-6  : Hash Maps + Trees + BST
 Semaines 7-8  : BFS/DFS + Graphs
 Semaines 9-10 : Dynamic Programming (la plus longue)
 Semaines 11-12: Backtracking + Greedy + Heaps + Tries
+Semaines 13-14: Union-Find + Monotonic Stack
 ```
 
 Apres ces 12 semaines, tu seras capable de resoudre 80% des problemes Medium en moins de 30 minutes. Et ca, c'est le niveau ou les recruteurs FAANG commencent a te prendre au serieux.
